@@ -1,0 +1,15 @@
+# this script has to be runned on github actions
+# it runs every 30 minutes, every day, starting at 7 until 22 hours
+name: 30-min-cron
+on:
+  schedule:
+    - cron: "*/30 7-22 * * *"
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call my API
+        run:  |
+          curl --request POST \
+          --url "https://cl-apto.tkwebdev.ca" \
+          --header "Authorization: Bearer ${{secrets.API_SECRET_KEY }}"
