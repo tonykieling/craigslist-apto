@@ -5,7 +5,7 @@ module.exports = (`<ul class="rows" id="search-results">
     <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-bed-bath-condo-huge/7389436000.html"
         class="result-image gallery"
         data-ids="3:00x0x_3mIKySsYo6fz_0gw0b1,3:00e0e_4cnNy7HZAl8z_0gw0b1,3:01010_itxJmiO9B5qz_0gw0b1,3:00x0x_77SGCKBhsoqz_0gw0b1,3:00n0n_f8qiSP5bcPUz_0gw0b1,3:00e0e_1u54UNeTw9Gz_0gw0b1,3:00505_hHXYubVs5fpz_0gw0b1,3:00K0K_7fAaLCIPoBrz_0gw0b1,3:00C0C_8V5XXmR3KEJz_0gw0b1,3:00C0C_94SBf69fHzFz_0gw0b1,3:00X0X_cmCKfPkWR7Oz_0gw0b1,3:00Q0Q_iUEJ9uSPj3Wz_0gw0b1,3:00O0O_3szJlkDF2Bvz_0gw0b1,3:00505_dQBHQBiaxmuz_0gw0b1,3:00q0q_7Fb2YpVxdONz_0gw0b1,3:00X0X_6TqkMHWPF9Vz_0gw0b1,3:00S0S_NcdrXLwYG3z_0gw0b1,3:00m0m_d1tyCMypdyIz_0gw0b1,3:00w0w_bKrDSd5EH6Wz_0gw0b1,3:01212_aQzt9AqTy8Az_0gw0b1,3:00N0N_1bck7x05Jmuz_0gw0b1,3:00c0c_3KE3lK0xng0z_0gw0b1">
-        <span class="result-price">$1,790</span>
+        <span class="result-price">$1,790X</span>
     </a>
 
     <div class="result-info">
