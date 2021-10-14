@@ -1,0 +1,52 @@
+1- cron job 
+  running at github action
+  executes curl each 30minutes from 7AM to 9PM
+  it will awake the server to proceed
+2- server
+  receives the request from the cron job
+  sends a request(s) to craigslist
+  receives the html and parses them to valid data
+  queries the database server
+  compares the data from craigslist and db
+  if any changes:
+    record the data in the db 
+    send an email to the admins
+
+1- cron tab runs and send a request to the server
+2- server receives the request and proceeds
+ 2.1 server queries db
+ 2.2 server requests craigslist
+ 2.3 server compares 2.1 and 2.2
+ 2.4 if any changes or new data:
+  2.4.1 records new data
+  2.4.2 sends email
+
+
+active: boolean
+changed: boolean
+
+-db
+1 2 3
+
+-cl
+1 3 4
+ 1 changed
+ 2 got deleted
+ 3 same
+ 4 new
+
+#database structure
+ - goods
+  id
+  cid (craigslist id)
+  description
+  price
+  region (joyce, patterson, 29th and nanaimo)
+  active - default true
+  changed - default false
+
+
+define the workflow and data strucutre
+  fromDB
+  fromWeb
+Xfake a db to compare with output.js data

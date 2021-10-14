@@ -1,6 +1,6 @@
 // const fetch = require("node-fetch");
 const data = require("../output.js");
-
+const dataFromDB = require("../data.js");
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -23,6 +23,64 @@ const getData = item => {
   );
 };
 
+
+const compareData = (fromDB, fromWeb) => {
+  /*
+  it will check and compare the data from web vs DB
+  and returns an object with 3 array properties:
+  result: {
+    newItems: [
+        {
+          postId,
+          url,
+          description,
+          price
+        }
+      ];
+    changed: [
+        {
+          postId,
+          url,
+          description,
+          price 
+        }  
+      ];
+    deleted: [
+      {
+        postId
+      }
+    ]
+  }
+  */
+  let result = {};
+  // for(let iDB = 0; iDB < fromDB.length; iDB++) {
+  //   console.log(`fromDB[${iDB}]`, fromDB[iDB]);
+  // }
+  
+  for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
+    console.log("- fromWeb[iWeb].postId", fromWeb[iWeb].postId);
+    for (let iDB = 0; iDB < fromDB.length; iDB++) {
+      console.log(`   fromDB[${iDB}].postId`, fromDB[iDB].postId);
+      if (fromWeb[iWeb].postId === fromDB[iDB].postId)
+        break;
+      
+      if (iDB === fromDB.length - 1) {
+        const newItems = result.hasOwnProperty("newItems") 
+          ? [...result["newItems"], fromWeb[iWeb]]
+          : fromWeb[iWeb];
+        console.log("    *****new item", newItems);
+
+        result = {
+          ...result,
+          newItems
+        };
+        console.log("--------- New:", result);
+      }
+    }
+    // console.log(`fromWeb[${iWeb}]`, fromWeb[iWeb]);
+  }
+}
+
 const f = async () => {
 //   // it gets data from craigslist and transform it into text
 //   const req = await fetch(
@@ -34,7 +92,6 @@ const f = async () => {
 //   const data = await req.text();
 // // console.log(data, data);
 
-
   // using jsdom
   // it converts the data into a tex format to a dom structure
   const dom = new JSDOM(data);
@@ -43,9 +100,11 @@ const f = async () => {
   const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
 
   const results = domElements.map(e => getData(e.querySelector(".result-info")));
-  console.log("results =>", results);
-  console.log("results.length =>", results.length);
+  // console.log("results =>", results);
+  // console.log("results.length =>", results.length);
 
+// console.log("dataFromDB", dataFromDB);
+  compareData(dataFromDB, results);
   return;
 }
 
