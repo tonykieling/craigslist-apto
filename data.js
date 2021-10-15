@@ -1,3 +1,4 @@
+// fake and temporario DB data
 module.exports = [
   {
     postId: '7389436000',

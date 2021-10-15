@@ -36,7 +36,7 @@ changed: boolean
  4 new
 
 #database structure
- - goods
+ - items
   id
   cid (craigslist id)
   description
@@ -45,8 +45,18 @@ changed: boolean
   active - default true
   changed - default false
 
-
-define the workflow and data strucutre
-  fromDB
-  fromWeb
+Xquery craigslist
+Xtransform html to data
+Xdefine the workflow and data strucutre to compare data from web vs data from DB
+  algorithm and function are done
 Xfake a db to compare with output.js data
+develop db's real structure
+develop server side function to
+  insert new items
+  update deleted and changed data
+run both to check the results
+format a mail message to be sent
+set the environment to mail
+send real message
+set github action
+deploy to vercel

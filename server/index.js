@@ -52,33 +52,77 @@ const compareData = (fromDB, fromWeb) => {
     ]
   }
   */
-  let result = {};
-  // for(let iDB = 0; iDB < fromDB.length; iDB++) {
-  //   console.log(`fromDB[${iDB}]`, fromDB[iDB]);
-  // }
-  
+
+  // it adds the item for the right place in the object that will be the return of compareData function
+  const checkProperty = (property, value) => {
+    return (
+      result[property]
+        ? [...result[property], value]
+        : [value]
+    );
+  };
+
+  let result = {};  
+  // check the data coming from web against db's data 
+  // to see whether there are new or changed items
   for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
-    console.log("- fromWeb[iWeb].postId", fromWeb[iWeb].postId);
     for (let iDB = 0; iDB < fromDB.length; iDB++) {
-      console.log(`   fromDB[${iDB}].postId`, fromDB[iDB].postId);
-      if (fromWeb[iWeb].postId === fromDB[iDB].postId)
+      if (fromWeb[iWeb].postId === fromDB[iDB].postId) {
+        //it is gonna check only price changing
+        if  (fromWeb[iWeb].price !== fromDB[iDB].price
+            // || fromWeb[iWeb].description !== fromDB[iDB].description
+            // || fromWeb[iWeb].url !== fromDB[iDB].url
+            ) 
+          {
+            // const changed = result.hasOwnProperty("changed") 
+            // ? [...result["changed"], fromWeb[iWeb]]
+            // : [fromWeb[iWeb]];
+
+            const changed = checkProperty("changed", fromWeb[iWeb]);
+  
+            result = {
+              ...result,
+              changed
+            };
+          }
         break;
+      }
       
       if (iDB === fromDB.length - 1) {
-        const newItems = result.hasOwnProperty("newItems") 
-          ? [...result["newItems"], fromWeb[iWeb]]
-          : fromWeb[iWeb];
-        console.log("    *****new item", newItems);
+        // const newItems = result.hasOwnProperty("newItems") 
+        //   ? [...result["newItems"], fromWeb[iWeb]]
+        //   : [fromWeb[iWeb]];
 
+        const newItems = checkProperty("newItems", fromWeb[iWeb]);
         result = {
           ...result,
           newItems
         };
-        console.log("--------- New:", result);
       }
     }
-    // console.log(`fromWeb[${iWeb}]`, fromWeb[iWeb]);
   }
+
+  // it checks the data from db against data from web to see whether there are deleted ones
+  for(let iDB = 0; iDB < fromDB.length; iDB++) {
+    for (let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
+      if (fromDB[iDB].postId === fromWeb[iWeb].postId)
+        break;
+
+      if (iWeb === fromWeb.length - 1) {
+        const deleted = checkProperty("deleted", fromDB[iDB]);
+        // const deleted = result["deleted"]
+        //   ? [...result["deleted"], fromDB[iDB]]
+        //   : [fromDB[iDB]];
+
+        result = {
+          ...result,
+          deleted
+        };
+      }
+    }
+  }
+
+  return result;
 }
 
 const f = async () => {
@@ -104,7 +148,9 @@ const f = async () => {
   // console.log("results.length =>", results.length);
 
 // console.log("dataFromDB", dataFromDB);
-  compareData(dataFromDB, results);
+// console.log("results", results, results.length);
+  const newData = compareData(dataFromDB, results);
+  console.log("newData", newData);
   return;
 }
 
