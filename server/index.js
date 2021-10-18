@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const mongoose = require("mongoose");
 // product schema
-const Item = mongoose.model("Item", mongoose.Schema(
+const Apto = mongoose.model("Apto", mongoose.Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
     
@@ -19,12 +19,16 @@ const Item = mongoose.model("Item", mongoose.Schema(
       type: String
     },
     active: {
-      type: Boolean,
-      default: true
+      type    : Boolean,
+      default : true
     },
     changed: {
-      type: Boolean,
-      default: false
+      type    : Boolean,
+      default : false
+    },
+    reactivated: {
+      type    : Boolean,
+      default : false
     }
   })
 );
@@ -67,32 +71,35 @@ result: {
         description,
         price
       }
-    ];
+    ],
   changed: [
       {
         postId,
-        url,
-        description,
         price 
       }  
-    ];
+    ],
   deleted: [
-    {
-      postId
-    }
-  ]
-}
+      {
+        postId
+      }
+    ],
+  reactivated: [
+      {
+        postId
+      }
+    ]
+  }
 */
 const compareData = (fromDB, fromWeb) => {
   // it adds the item for the right place in the object that will be the return of compareData function
-  const checkProperty = (property, value) => {
+  const checkProperty = (property, item) => {
     return (
       // three ways to check whether a property belongs to an object
       // result[property]
       // (property in result)
       result.hasOwnProperty(property)
-        ? [...result[property], value]
-        : [value]
+        ? [...result[property], item]
+        : [item]
     );
   };
 
@@ -101,7 +108,6 @@ const compareData = (fromDB, fromWeb) => {
   // to see whether there are new or changed items
   for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
     if (fromDB.length === 0) {
-      // console.log("  first time:::", fromWeb[iWeb]);
       const newItems = checkProperty("newItems", fromWeb[iWeb]);
       result = {
         ...result,
@@ -112,22 +118,47 @@ const compareData = (fromDB, fromWeb) => {
     for (let iDB = 0; iDB < fromDB.length; iDB++) {
       if (fromWeb[iWeb].postId === fromDB[iDB].postId) {
         //it is gonna check only price changing
-        if  (fromWeb[iWeb].price !== fromDB[iDB].price
-            // || fromWeb[iWeb].description !== fromDB[iDB].description
-            // || fromWeb[iWeb].url !== fromDB[iDB].url
-            ) 
-          {
-            // const changed = result.hasOwnProperty("changed") 
-            // ? [...result["changed"], fromWeb[iWeb]]
-            // : [fromWeb[iWeb]];
 
-            const changed = checkProperty("changed", fromWeb[iWeb]);
-  
-            result = {
-              ...result,
-              changed
-            };
-          }
+
+        let changedTemp = {};
+        if  (fromWeb[iWeb].price !== fromDB[iDB].price) {
+
+          changedTemp = {
+            ...fromWeb[iWeb],
+            price   : fromWeb[iWeb].price,
+            changed : true
+          };
+        }
+console.log(" 1111111 changed OBJ:", changedTemp);
+        if (!fromDB[iDB].active) {
+          // console.log("   got a reactivation!!!!!!!!!!!", changedTemp || fromWeb[iWeb]);
+          // const reactivated = checkProperty("reactivated", fromWeb[iWeb]);
+
+          // const k = (changed.hasOwnProperty("changed")) ? changed : fromWeb[iWeb];
+          // console.log("kkkkkkkkkkkkkkkkkk", k)
+          changedTemp = {
+            ...(("changed" in changedTemp) ? changedTemp : fromWeb[iWeb]),
+            reactivated: true
+          };
+console.log("==================> temp", changedTemp);
+          // changed = checkProperty("reactivated", temp);
+
+          // result = {
+          //   ...result,
+          //   reactivated
+          // };
+        }
+console.log(" 22 changed OBJ:", changedTemp);
+
+        if (("changed" in changedTemp) || ("reactivated" in changedTemp)) {
+          const changed = checkProperty("changed", changedTemp);
+          result = {
+            ...result,
+            changed
+          };
+        }
+
+
         break;
       }
       
@@ -175,13 +206,12 @@ const f = async () => {
   try {
 
     // it gets data from DB
-    const db = process.env.DB;
-    await mongoose.connect(db, {
+    await mongoose.connect(process.env.DB, {
       useNewUrlParser: true,
       useUnifiedTopology: true 
     });
 
-    const dataFromDB = await Item.find();
+    const dataFromDB = await Apto.find();
     // if (1) return 
     console.log("dataFromDB", dataFromDB.length);
 
@@ -210,7 +240,7 @@ const f = async () => {
     // console.log("dataFromDB", dataFromDB);
     // console.log("results", results, results.length);
       const newData = compareData(dataFromDB, dataDOM);
-      console.log("newData => ", newData);
+      console.log("newData => ", Object.getOwnPropertyNames(newData).length, Object.getOwnPropertyNames(newData), newData);
 
       // if (1) return;
 
@@ -218,18 +248,17 @@ const f = async () => {
       // it send the email
 
       // it inserts new data coming from web
-      console.log("XXXXXXXXXXXXXXXX newData:", newData);
       if (newData.newItems && (newData.newItems.length > 0)) {
         for (const item of newData.newItems) {
         // newData.newItems.forEach(async e => {
-          const toInsert = new Item({
+          const toInsert = new Apto({
             _id: new mongoose.Types.ObjectId(),
             postId      : item.postId,
             url         : item.url,
             description : item.description,
             price       : item.price
           });
-          console.log("   => tobeinsrted:", toInsert);
+          // console.log("   => tobeinsrted:", toInsert);
           
           await toInsert.save();
         }
@@ -238,12 +267,14 @@ const f = async () => {
       // it updates data coming from web about item changed
       if (newData.changed && (newData.changed.length > 0)) {
         for (const item of newData.changed) {
-          await Item
+          await Apto
             .updateOne(
               { postId: item.postId },
               {
-                price   : item.price,
-                changed : true
+                price     : item.changed ? item.price : undefined,
+                changed   : item.changed ? true : undefined,
+                reactivated : item.reactivated || undefined,
+                active    : item.reactivated || undefined
               }
             );
         }
@@ -252,7 +283,7 @@ const f = async () => {
       // it updates deleted data
       if (newData.deleted && (newData.deleted.length > 0)) {
         for (const item of newData.deleted) {
-          await Item
+          await Apto
             .updateOne(
               { postId: item.postId },
               {
@@ -261,6 +292,21 @@ const f = async () => {
             );
         }
       }
+
+      // // it ipdates reactivated items
+      // if (newData.reactivated && (newData.reactivated.length > 0)) {
+      //   for (const item of newData.reactivated) {
+      //     // if (item.reactivated)
+      //     await Apto
+      //       .updateOne(
+      //         { postId: item.postId },
+      //         {
+      //           active    : true,
+      //           reactivated : true
+      //         }
+      //       );
+      //   }
+      // }
 
   } catch (error) {
     console.log("XXXXXX, error", error.message);

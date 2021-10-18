@@ -24,7 +24,7 @@ module.exports = (`
             </h3>
 
             <span class="result-meta">
-                <span class="result-price">$1,680888</span>
+                <span class="result-price">$1,680 NEW PRICE</span>
 
                 <span class="housing">
                     551ft<sup>2</sup> -
@@ -49,6 +49,8 @@ module.exports = (`
             </span>
         </div>
     </li>
+
+
 
 
     <li class="result-row" data-pid="7388747820">
@@ -101,6 +103,8 @@ module.exports = (`
     </li>
 
 
+
+
     <li class="result-row" data-pid="7380919502" data-repost-of="6823460804">
         <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html"
             class="result-image gallery empty"></a>
@@ -146,15 +150,15 @@ module.exports = (`
         </div>
     </li>
 
-</ul>`);
 
 
-// it's gonna be the deleted item:
+
+    </ul>`);
     // <li class="result-row" data-pid="7389436000">
     //     <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-bed-bath-condo-huge/7389436000.html"
     //         class="result-image gallery"
     //         data-ids="3:00x0x_3mIKySsYo6fz_0gw0b1,3:00e0e_4cnNy7HZAl8z_0gw0b1,3:01010_itxJmiO9B5qz_0gw0b1,3:00x0x_77SGCKBhsoqz_0gw0b1,3:00n0n_f8qiSP5bcPUz_0gw0b1,3:00e0e_1u54UNeTw9Gz_0gw0b1,3:00505_hHXYubVs5fpz_0gw0b1,3:00K0K_7fAaLCIPoBrz_0gw0b1,3:00C0C_8V5XXmR3KEJz_0gw0b1,3:00C0C_94SBf69fHzFz_0gw0b1,3:00X0X_cmCKfPkWR7Oz_0gw0b1,3:00Q0Q_iUEJ9uSPj3Wz_0gw0b1,3:00O0O_3szJlkDF2Bvz_0gw0b1,3:00505_dQBHQBiaxmuz_0gw0b1,3:00q0q_7Fb2YpVxdONz_0gw0b1,3:00X0X_6TqkMHWPF9Vz_0gw0b1,3:00S0S_NcdrXLwYG3z_0gw0b1,3:00m0m_d1tyCMypdyIz_0gw0b1,3:00w0w_bKrDSd5EH6Wz_0gw0b1,3:01212_aQzt9AqTy8Az_0gw0b1,3:00N0N_1bck7x05Jmuz_0gw0b1,3:00c0c_3KE3lK0xng0z_0gw0b1">
-    //         <span class="result-price">$1,790X</span>
+    //         <span class="result-price">$1,790</span>
     //     </a>
 
     //     <div class="result-info">
@@ -201,55 +205,52 @@ module.exports = (`
     // </li>
 
 
+    
+    // <li class="result-row" data-pid="7380919325" data-repost-of="7201014611">
+    //     <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html"
+    //         class="result-image gallery"
+    //         data-ids="3:00V0V_7nfJAT8ej5Zz_04Q03d,3:00D0D_1rAgdiAkc8bz_04Q03d,3:00A0A_7KcFtwg90Ngz_04Q02c,3:00z0z_IFpB7jB9PRz_03D04Q,3:01010_fNgfkaGVd7xz_03D04Q,3:00u0u_3k1Y5SXOq7az_04Q03D,3:01515_c3ZjrJbkz68z_04Q03d,3:00S0S_5ZeGFgXeRssz_04Q03e,3:00N0N_6gd3JhR3Qz8z_03D04Q,3:00N0N_6gd3JhR3Qz8z_03D04Q,3:00F0F_iYJyINeRTjUz_03D04Q,3:00q0q_avTReal3l1qz_04Q03e,3:00l0l_cCceAGH55Ioz_03D04Q,3:00l0l_2kzKhiRCsSDz_02X04Q,3:00202_lruOhfktsvpz_03D04Q">
+    //         <span class="result-price">$1,650</span>
+    //     </a>
 
+    //     <div class="result-info">
+    //         <span class="icon icon-star" role="button">
+    //             <span class="screen-reader-text">favorite this post</span>
+    //         </span>
 
+    //         <time class="result-date" datetime="2021-09-15 17:38" title="Wed 15 Sep 05:38:39 PM">Sep
+    //             15</time>
 
+    //         <h3 class="result-heading">
+    //             <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html"
+    //                 data-id="7380919325" class="result-title hdrlnk" id="postid_7380919325">Spacious -
+    //                 STUDIO - WITH GREAT VIEWS</a>
+    //         </h3>
 
+    //         <span class="result-meta">
+    //             <span class="result-price">$1,650</span>
 
-//     <li class="result-row" data-pid="7380919325" data-repost-of="7201014611">
-//     <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html"
-//         class="result-image gallery"
-//         data-ids="3:00V0V_7nfJAT8ej5Zz_04Q03d,3:00D0D_1rAgdiAkc8bz_04Q03d,3:00A0A_7KcFtwg90Ngz_04Q02c,3:00z0z_IFpB7jB9PRz_03D04Q,3:01010_fNgfkaGVd7xz_03D04Q,3:00u0u_3k1Y5SXOq7az_04Q03D,3:01515_c3ZjrJbkz68z_04Q03d,3:00S0S_5ZeGFgXeRssz_04Q03e,3:00N0N_6gd3JhR3Qz8z_03D04Q,3:00N0N_6gd3JhR3Qz8z_03D04Q,3:00F0F_iYJyINeRTjUz_03D04Q,3:00q0q_avTReal3l1qz_04Q03e,3:00l0l_cCceAGH55Ioz_03D04Q,3:00l0l_2kzKhiRCsSDz_02X04Q,3:00202_lruOhfktsvpz_03D04Q">
-//         <span class="result-price">$1,650</span>
-//     </a>
+    //             <span class="housing">
+    //                 589ft<sup>2</sup> -
+    //             </span>
 
-//     <div class="result-info">
-//         <span class="icon icon-star" role="button">
-//             <span class="screen-reader-text">favorite this post</span>
-//         </span>
+    //             <span class="result-hood"> (Burnaby, Metrotown Area burnaby/newwest )</span>
 
-//         <time class="result-date" datetime="2021-09-15 17:38" title="Wed 15 Sep 05:38:39 PM">Sep
-//             15</time>
+    //             <span class="result-tags">
+    //                 <span class="pictag">pic</span>
+    //                 <span class="maptag">0.5km</span>
+    //             </span>
 
-//         <h3 class="result-heading">
-//             <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html"
-//                 data-id="7380919325" class="result-title hdrlnk" id="postid_7380919325">Spacious -
-//                 STUDIO - WITH GREAT VIEWS</a>
-//         </h3>
+    //             <span class="banish icon icon-trash" role="button">
+    //                 <span class="screen-reader-text">hide this posting</span>
+    //             </span>
 
-//         <span class="result-meta">
-//             <span class="result-price">$1,650</span>
+    //             <span class="unbanish icon icon-trash red" role="button" aria-hidden="true"></span>
+    //             <a href="#" class="restore-link">
+    //                 <span class="restore-narrow-text">restore</span>
+    //                 <span class="restore-wide-text">restore this posting</span>
+    //             </a>
+    //         </span>
+    //     </div>
+    // </li>
 
-//             <span class="housing">
-//                 589ft<sup>2</sup> -
-//             </span>
-
-//             <span class="result-hood"> (Burnaby, Metrotown Area burnaby/newwest )</span>
-
-//             <span class="result-tags">
-//                 <span class="pictag">pic</span>
-//                 <span class="maptag">0.5km</span>
-//             </span>
-
-//             <span class="banish icon icon-trash" role="button">
-//                 <span class="screen-reader-text">hide this posting</span>
-//             </span>
-
-//             <span class="unbanish icon icon-trash red" role="button" aria-hidden="true"></span>
-//             <a href="#" class="restore-link">
-//                 <span class="restore-narrow-text">restore</span>
-//                 <span class="restore-wide-text">restore this posting</span>
-//             </a>
-//         </span>
-//     </div>
-// </li>

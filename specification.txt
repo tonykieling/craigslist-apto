@@ -22,39 +22,28 @@
   2.4.2 sends email
 
 
-active: boolean
-changed: boolean
-
--db
-1 2 3
-
--cl
-1 3 4
- 1 changed
- 2 got deleted
- 3 same
- 4 new
-
 #database structure
  - items
-  id
-  cid (craigslist id)
+  _id
+  postId (craigslist id)
   description
   price
-  region (joyce, patterson, 29th and nanaimo)
+  (region (joyce, patterson, 29th and nanaimo))
   active - default true
   changed - default false
+  reactived - default false
 
 Xquery craigslist
 Xtransform html to data
 Xdefine the workflow and data strucutre to compare data from web vs data from DB
   algorithm and function are done
+  algorithm to compare dataFromDB vs dataFromWeb reviewed and added field 'reactivated'. It's working good
 Xfake a db to compare with output.js data
-develop db's real structure
-develop server side function to
+Xdevelop db's real structure
+Xdevelop server side function to
   insert new items
   update deleted and changed data
-run both to check the results
+Xrun both to check the results
 format a mail message to be sent
 set the environment to mail
 send real message
