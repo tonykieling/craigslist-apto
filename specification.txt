@@ -45,6 +45,8 @@ Xdevelop server side function to
   update deleted and changed data
 Xrun both to check the results
 format a mail message to be sent
+  1st version is done
+  1st version changed and seems to be working, missing more tests
 set the environment to mail
 send real message
 set github action

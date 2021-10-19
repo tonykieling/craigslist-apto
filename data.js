@@ -1,20 +1,21 @@
 // fake and temporario DB data
-module.exports = [
-  {
-    postId: '7389436000',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-bed-bath-condo-huge/7389436000.html',
-    description: 'Metrotown 1 Bed 1 Bath Condo w/ Huge 120sf Sundeck @ Maywood Park',
-    price: '$1,790',
-    active: false
-  },
-  {
-    postId: '7391409874',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-station-square-junior/7391409874.html',
-    description: 'Metrotown Station Square Junior 1 BR Condo w/Views, Avail November 1st',
-    price: '$1,680',
-    active: true
-  }
-];
+module.exports = [];
+// module.exports = [
+//   {
+//     postId: '7389436000',
+//     url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-bed-bath-condo-huge/7389436000.html',
+//     description: 'Metrotown 1 Bed 1 Bath Condo w/ Huge 120sf Sundeck @ Maywood Park',
+//     price: '$1,790',
+//     active: false
+//   },
+//   {
+//     postId: '7391409874',
+//     url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-station-square-junior/7391409874.html',
+//     description: 'Metrotown Station Square Junior 1 BR Condo w/Views, Avail November 1st',
+//     price: '$1,680',
+//     active: true
+//   }
+// ];
 
 // ,
 //   {

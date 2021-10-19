@@ -1,7 +1,9 @@
 require('dotenv').config();
 
-const mongoose = require("mongoose");
-// product schema
+const mongoose    = require("mongoose");
+const nodemailer  = require("nodemailer");
+
+// Apto schema
 const Apto = mongoose.model("Apto", mongoose.Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
@@ -36,7 +38,7 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
 
 // const fetch = require("node-fetch");
 const data = require("../output.js");
-// const dataFromDB = require("../data.js");
+const dataFromDB = require("../data.js");
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -129,7 +131,7 @@ const compareData = (fromDB, fromWeb) => {
             changed : true
           };
         }
-console.log(" 1111111 changed OBJ:", changedTemp);
+// console.log(" 1111111 changed OBJ:", changedTemp);
         if (!fromDB[iDB].active) {
           // console.log("   got a reactivation!!!!!!!!!!!", changedTemp || fromWeb[iWeb]);
           // const reactivated = checkProperty("reactivated", fromWeb[iWeb]);
@@ -140,7 +142,7 @@ console.log(" 1111111 changed OBJ:", changedTemp);
             ...(("changed" in changedTemp) ? changedTemp : fromWeb[iWeb]),
             reactivated: true
           };
-console.log("==================> temp", changedTemp);
+// console.log("==================> temp", changedTemp);
           // changed = checkProperty("reactivated", temp);
 
           // result = {
@@ -148,7 +150,7 @@ console.log("==================> temp", changedTemp);
           //   reactivated
           // };
         }
-console.log(" 22 changed OBJ:", changedTemp);
+// console.log(" 22 changed OBJ:", changedTemp);
 
         if (("changed" in changedTemp) || ("reactivated" in changedTemp)) {
           const changed = checkProperty("changed", changedTemp);
@@ -163,7 +165,7 @@ console.log(" 22 changed OBJ:", changedTemp);
       }
       
       if ((iDB === fromDB.length - 1) || (fromDB.length === 0)) {
-        console.log("   got a new item", fromWeb[iWeb]);
+        // console.log("   got a new item", fromWeb[iWeb]);
         // const newItems = result.hasOwnProperty("newItems") 
         //   ? [...result["newItems"], fromWeb[iWeb]]
         //   : [fromWeb[iWeb]];
@@ -202,18 +204,123 @@ console.log(" 22 changed OBJ:", changedTemp);
   return result;
 }
 
+
+
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.user,
+    pass: process.env.password
+  }
+});
+
+
+const generalSender = async (subject, html) => {
+  try {
+    await transporter.sendMail({
+      from  : process.env.TK_auto,
+      to   : process.env.TK,
+      subject,
+      html,
+    });
+
+    return true;
+  } catch(error) {
+    // this error is related to the email part, 
+    // console.trace(error.message || message);
+    return false;
+  }
+};
+
+
+
+const formatEmailMessage = data => {
+  console.log("==== data", data);
+  let result = "";
+  for (const obj in data) {
+    console.log("OBJJJJ", data[obj]);
+    // result += data[obj].map(e => addTable(e));
+    result += addTable(obj, data[obj]);
+  }
+  return result;
+};
+
+const addTable = (title, item) => {
+  console.log("item", item);
+  const header = `
+    <h2 style="color:${title === 'newItems' 
+      ? 'blue'
+      : title === 'changed'
+        ? 'green'
+        : title === 'deleted'
+          ? 'red'
+          : 'orange'}">
+      ${title === "newItems" 
+        ? "New postings"
+        : title === "changed"
+          ? "Posting changed"
+          : title === "deleted"
+            ? "Posting been deleted by the owner"
+            : "Posting been reactived"}
+    </h2>
+    <div style="display: table">
+      <div style="display:table-row; width:100%">
+        <span style="display:table-cell; width:1rem"> # </span>
+        <span style="display:table-cell; width:80%"> Description </span>
+        <span style="display:table-cell; width:2rem"> Price </span>
+      </div>
+  `;
+
+
+  const content = item.map((e, i) => {
+    // console.log("item::::", item);
+    return (`
+      <a style="display:table-row" href=${e.url} target="_blank">
+        <span style="display:table-cell"> ${i + 1} </span>
+        <span style="display:table-cell"> ${e.description} </span>
+        <span style="display:table-cell"> ${e.price} </span>
+      </a>
+    `);
+  });
+
+  const footer = `
+    <div style="margin-top:2rem">
+      Visit <a href="https://twwebdev.ca" target="_blank">https://tkwebdev.ca</a> for more information.
+    </div>
+  `;
+  
+  // return `<table> ${header} ${content.join("")} </table>`;
+  return `<div>${header} ${content.join("")} </div> ${footer}</div>`;
+};
+
+
+
+
+const sendEmail = async (message = "msg") => {
+  // it sends an email to the user confirming the procedure
+  
+  const today = new Date();
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const date = (monthNames[today.getMonth()+1])+'-'+today.getDate();
+  const time = today.getHours() + ":" + today.getMinutes();
+  const dateTime = date + ', ' + time;
+  const success = await generalSender(`new apartment's info - ${dateTime}`, message);
+  return (success ? true : false);
+};
+
 const f = async () => {
   try {
 
-    // it gets data from DB
-    await mongoose.connect(process.env.DB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true 
-    });
+    // // it gets data from DB
+    // await mongoose.connect(process.env.DB, {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true 
+    // });
 
-    const dataFromDB = await Apto.find();
-    // if (1) return 
-    console.log("dataFromDB", dataFromDB.length);
+    // const dataFromDB = await Apto.find();
+    // console.log("dataFromDB", dataFromDB.length);
+
 
     //   // it gets data from craigslist and transform it into text
     //   const req = await fetch(
@@ -240,73 +347,76 @@ const f = async () => {
     // console.log("dataFromDB", dataFromDB);
     // console.log("results", results, results.length);
       const newData = compareData(dataFromDB, dataDOM);
-      console.log("newData => ", Object.getOwnPropertyNames(newData).length, Object.getOwnPropertyNames(newData), newData);
+      // console.log("newData => ", Object.getOwnPropertyNames(newData).length, Object.getOwnPropertyNames(newData), newData);
 
-      // if (1) return;
 
-      // it formats email to be sent to admins
-      // it send the email
 
-      // it inserts new data coming from web
-      if (newData.newItems && (newData.newItems.length > 0)) {
-        for (const item of newData.newItems) {
-        // newData.newItems.forEach(async e => {
-          const toInsert = new Apto({
-            _id: new mongoose.Types.ObjectId(),
-            postId      : item.postId,
-            url         : item.url,
-            description : item.description,
-            price       : item.price
-          });
-          // console.log("   => tobeinsrted:", toInsert);
-          
-          await toInsert.save();
+      const message = formatEmailMessage(newData);
+      console.log("formatEmailMessage==>", message);
+      await sendEmail(message);
+      // const message = await sendEmail();
+      if (1) return;
+       console.log("done::", message);
+
+      // any changes happened
+      // 1- send email to the admins
+      // 2- record on DB
+      if (Object.getOwnPropertyNames(newData).length) {
+        // 1- email
+        // 1.1 format message
+        // const message = formatEmailMessage(newData);
+        // console.log("formatEmailMessage==>", message);
+
+        // 1.2 send email
+
+        // 2- record on DB
+        // it inserts new data coming from web
+        // if (newData.newItems && (newData.newItems.length > 0)) {
+        if (newData.newItems) {
+          for (const item of newData.newItems) {
+          // newData.newItems.forEach(async e => {
+            const toInsert = new Apto({
+              _id: new mongoose.Types.ObjectId(),
+              postId      : item.postId,
+              url         : item.url,
+              description : item.description,
+              price       : item.price
+            });
+            // console.log("   => tobeinsrted:", toInsert);
+            
+            await toInsert.save();
+          }
+        }
+
+        // it updates data coming from web about item changed
+        if (newData.changed) {
+          for (const item of newData.changed) {
+            await Apto
+              .updateOne(
+                { postId: item.postId },
+                {
+                  price     : item.changed ? item.price : undefined,
+                  changed   : item.changed ? true : undefined,
+                  reactivated : item.reactivated || undefined,
+                  active    : item.reactivated || undefined
+                }
+              );
+          }
+        }
+
+        // it updates deleted data
+        if (newData.deleted) {
+          for (const item of newData.deleted) {
+            await Apto
+              .updateOne(
+                { postId: item.postId },
+                {
+                  active : false
+                }
+              );
+          }
         }
       }
-
-      // it updates data coming from web about item changed
-      if (newData.changed && (newData.changed.length > 0)) {
-        for (const item of newData.changed) {
-          await Apto
-            .updateOne(
-              { postId: item.postId },
-              {
-                price     : item.changed ? item.price : undefined,
-                changed   : item.changed ? true : undefined,
-                reactivated : item.reactivated || undefined,
-                active    : item.reactivated || undefined
-              }
-            );
-        }
-      }
-
-      // it updates deleted data
-      if (newData.deleted && (newData.deleted.length > 0)) {
-        for (const item of newData.deleted) {
-          await Apto
-            .updateOne(
-              { postId: item.postId },
-              {
-                active : false
-              }
-            );
-        }
-      }
-
-      // // it ipdates reactivated items
-      // if (newData.reactivated && (newData.reactivated.length > 0)) {
-      //   for (const item of newData.reactivated) {
-      //     // if (item.reactivated)
-      //     await Apto
-      //       .updateOne(
-      //         { postId: item.postId },
-      //         {
-      //           active    : true,
-      //           reactivated : true
-      //         }
-      //       );
-      //   }
-      // }
 
   } catch (error) {
     console.log("XXXXXX, error", error.message);

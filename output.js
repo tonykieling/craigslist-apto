@@ -24,7 +24,7 @@ module.exports = (`
             </h3>
 
             <span class="result-meta">
-                <span class="result-price">$1,680 NEW PRICE</span>
+                <span class="result-price">$1,680</span>
 
                 <span class="housing">
                     551ft<sup>2</sup> -
