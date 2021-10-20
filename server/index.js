@@ -37,8 +37,8 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
 
 
 // const fetch = require("node-fetch");
-const data = require("../output.js");
-const dataFromDB = require("../data.js");
+const data = require("../input.js");
+// const dataFromDB = require("../data.js");
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -206,7 +206,7 @@ const compareData = (fromDB, fromWeb) => {
 
 
 
-
+// functions to send email (5 in total)
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -234,67 +234,85 @@ const generalSender = async (subject, html) => {
 };
 
 
-
 const formatEmailMessage = data => {
   console.log("==== data", data);
   let result = "";
-  for (const obj in data) {
-    console.log("OBJJJJ", data[obj]);
-    // result += data[obj].map(e => addTable(e));
-    result += addTable(obj, data[obj]);
+  // for (const obj in data)
+  //   result += addTable(obj, data[obj]);
+
+  // to get message to the desired flow
+  if (data.newItems)
+    result += addTable("newItems", data["newItems"], (data.newItems.length > 1 && true));
+  if (data.changed) {
+
+
+
+    console.log("data.changed", data.changed);
+    const flagReactivated = data.changed.filter(e => e.reactivated);
+    console.log("flagReactivated:::", flagReactivated);
+    result += addTable("changed", data["changed"], (data.changed.length > 1 && true), flagReactivated.length);
   }
+  if (data.deleted)
+    result += addTable("deleted", data["deleted"], (data.deleted.length > 1 && true));
+
+// console.log("message to be sent:::::", result);
   return result;
 };
 
-const addTable = (title, item) => {
-  console.log("item", item);
+
+const addTable = (title, item, multiples = false, hasReactivated = false) => {
   const header = `
-    <h2 style="color:${title === 'newItems' 
-      ? 'blue'
-      : title === 'changed'
-        ? 'green'
-        : title === 'deleted'
-          ? 'red'
-          : 'orange'}">
+    <h2 style="${title === "newItems" 
+      ? "color: blue"
+      : title === "changed"
+        ? "color: green; margin-top: 1rem"
+        : title === "deleted"
+          ? "color: red; margin-top: 1rem"
+          : "color: orange; margin-top: 1rem"}; margin-bottom: 0.5rem; margin-top: 2rem">
       ${title === "newItems" 
-        ? "New postings"
+        ? `New posting${multiples ? "s" : ""}`
         : title === "changed"
-          ? "Posting changed"
-          : title === "deleted"
-            ? "Posting been deleted by the owner"
-            : "Posting been reactived"}
+          ? `Changed Posting${multiples ? "s" : ""}`
+          : multiples ? "Deleted Postings by the owner" : "Deleted Postings by the owner"
+        }
     </h2>
-    <div style="display: table">
-      <div style="display:table-row; width:100%">
-        <span style="display:table-cell; width:1rem"> # </span>
-        <span style="display:table-cell; width:80%"> Description </span>
-        <span style="display:table-cell; width:2rem"> Price </span>
+    <div style="display: table; border-collapse: collapse; border: 2px solid black; width: 95%">
+      <div style="display:table-row; width:100%; border: 1px solid black">
+        <span style="display:table-cell; text-align: center; width:1rem; border: 1px solid black"><b> # </b> </span>
+        <span style="display:table-cell; text-align: center; width: 80%; border: 1px solid black"><b> Description </b> </span>
+        <span style="display:table-cell; text-align: center; width:2rem; border: 1px solid black"><b> Price </b> </span>
+        ${hasReactivated
+          && `<span style="display:table-cell; text-align: center; width:2rem; border: 1px solid black"><b> Reactv </b> </span>`
+        }
       </div>
   `;
 
 
   const content = item.map((e, i) => {
-    // console.log("item::::", item);
+    console.log("item::::", e);
     return (`
-      <a style="display:table-row" href=${e.url} target="_blank">
-        <span style="display:table-cell"> ${i + 1} </span>
-        <span style="display:table-cell"> ${e.description} </span>
-        <span style="display:table-cell"> ${e.price} </span>
+      <a 
+        style="display:table-row; border: 1px solid black; text-align: center; text-decoration: none ${e.reactivated ? "color: orange" : ""}" 
+        href=${e.url} 
+        target="_blank"
+      >
+        <span style="display:table-cell; border: 1px solid black; text-align: center; text-decoration: none; vertical-align: middle"> ${i + 1} </span>
+        <span style="display:table-cell; border: 1px solid black; text-decoration: none; vertical-align: middle"> ${e.description} </span>
+        <span style="display:table-cell; border: 1px solid black; text-align: center; text-decoration: none; vertical-align: middle"> ${e.price} </span>
+        ${e.reactivated 
+          ? "<b>&#10003; </b>"
+          : ""
+        }
       </a>
     `);
   });
 
-  const footer = `
-    <div style="margin-top:2rem">
-      Visit <a href="https://twwebdev.ca" target="_blank">https://tkwebdev.ca</a> for more information.
-    </div>
-  `;
+
   
   // return `<table> ${header} ${content.join("")} </table>`;
-  return `<div>${header} ${content.join("")} </div> ${footer}</div>`;
+  // return `<div>${header} ${content.join("")} </div> ${footer}</div>`;
+  return (`${header} ${content.join("")} </div>`);
 };
-
-
 
 
 const sendEmail = async (message = "msg") => {
@@ -302,24 +320,35 @@ const sendEmail = async (message = "msg") => {
   
   const today = new Date();
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const date = (monthNames[today.getMonth()+1])+'-'+today.getDate();
-  const time = today.getHours() + ":" + today.getMinutes();
+  const date = (monthNames[today.getMonth()+1]) + '-' + today.getDate();
+  const hour = today.getHours();
+  const min = today.getMinutes();
+  const time = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min);
   const dateTime = date + ', ' + time;
-  const success = await generalSender(`new apartment's info - ${dateTime}`, message);
+
+  const footer = `
+    <div style="margin-top:2.5rem">
+      Visit <a href="https://twwebdev.ca" target="_blank">https://tkwebdev.ca</a> for more information.
+    </div>
+  `;
+  const success = await generalSender(`new apto's info - ${dateTime}`, `<div>${message} ${footer}</div>`);
   return (success ? true : false);
 };
+
+
 
 const f = async () => {
   try {
 
-    // // it gets data from DB
-    // await mongoose.connect(process.env.DB, {
-    //   useNewUrlParser: true,
-    //   useUnifiedTopology: true 
-    // });
+    // it gets data from DB
+    await mongoose.connect(process.env.DB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true 
+    });
 
-    // const dataFromDB = await Apto.find();
-    // console.log("dataFromDB", dataFromDB.length);
+    const dataFromDB = await Apto.find();
+    console.log("dataFromDB", dataFromDB.length);
+    // if (1) return;
 
 
     //   // it gets data from craigslist and transform it into text
@@ -347,16 +376,15 @@ const f = async () => {
     // console.log("dataFromDB", dataFromDB);
     // console.log("results", results, results.length);
       const newData = compareData(dataFromDB, dataDOM);
-      // console.log("newData => ", Object.getOwnPropertyNames(newData).length, Object.getOwnPropertyNames(newData), newData);
+      console.log("newData => ", Object.getOwnPropertyNames(newData).length, Object.getOwnPropertyNames(newData), newData);
 
 
 
-      const message = formatEmailMessage(newData);
-      console.log("formatEmailMessage==>", message);
-      await sendEmail(message);
-      // const message = await sendEmail();
-      if (1) return;
-       console.log("done::", message);
+      // const message = formatEmailMessage(newData);
+      // console.log("formatEmailMessage==>", message);
+      // await sendEmail(message);
+      // if (1) return;
+      //  console.log("done::", message);
 
       // any changes happened
       // 1- send email to the admins
@@ -364,8 +392,10 @@ const f = async () => {
       if (Object.getOwnPropertyNames(newData).length) {
         // 1- email
         // 1.1 format message
-        // const message = formatEmailMessage(newData);
+        const message = formatEmailMessage(newData);
         // console.log("formatEmailMessage==>", message);
+        await sendEmail(message);
+        if (1) return;
 
         // 1.2 send email
 
@@ -395,10 +425,10 @@ const f = async () => {
               .updateOne(
                 { postId: item.postId },
                 {
-                  price     : item.changed ? item.price : undefined,
-                  changed   : item.changed ? true : undefined,
-                  reactivated : item.reactivated || undefined,
-                  active    : item.reactivated || undefined
+                  price       : item.changed ? item.price : undefined,
+                  changed     : item.changed ? true : undefined,
+                  active      : item.reactivated || undefined,
+                  reactivated : item.reactivated || undefined
                 }
               );
           }
