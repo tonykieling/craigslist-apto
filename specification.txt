@@ -47,7 +47,13 @@ Xrun both to check the results
 format a mail message to be sent
   1st version is done
   1st version changed and seems to be working, missing more tests
+  system is working fine, integratiing DB's query + Craigslist's query + comparing data + formatting message + sending message
+set real craigslist query
 set the environment to mail
-send real message
+  on vercel
+    pull from github
+    set project and variables
+    set vercel route
 set github action
+  .github/workflows
 deploy to vercel

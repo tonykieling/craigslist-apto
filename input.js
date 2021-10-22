@@ -126,7 +126,7 @@ module.exports = (`
             </h3>
 
             <span class="result-meta">
-                <span class="result-price">$NEW</span>
+                <span class="result-price">$5555</span>
 
                 <span class="housing">
                     1br -
@@ -202,52 +202,52 @@ module.exports = (`
         </div>
     </li>
 
-
-        <li class="result-row" data-pid="7380919502" data-repost-of="6823460804">
-            <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html"
-                class="result-image gallery empty"></a>
-    
-            <div class="result-info">
-                <span class="icon icon-star" role="button">
-                    <span class="screen-reader-text">favorite this post</span>
-                </span>
-    
-                <time class="result-date" datetime="2021-09-15 17:39" title="Wed 15 Sep 05:39:10 PM">Sep
-                    15</time>
-    
-                <h3 class="result-heading">
-                    <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html"
-                        data-id="7380919502" class="result-title hdrlnk" id="postid_7380919502">Spacious 1br
-                        with Balcony in Metrotown area</a>
-                </h3>
-    
-                <span class="result-meta">
-                    <span class="result-price">$77777</span>
-    
-                    <span class="housing">
-                        1br -
-                        665ft<sup>2</sup> -
+            <li class="result-row" data-pid="7380919502" data-repost-of="6823460804">
+                <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html"
+                    class="result-image gallery empty"></a>
+        
+                <div class="result-info">
+                    <span class="icon icon-star" role="button">
+                        <span class="screen-reader-text">favorite this post</span>
                     </span>
-    
-                    <span class="result-hood"> (Burnaby, Near Patterson Skytrain burnaby/newwest )</span>
-    
-                    <span class="result-tags">
-                        <span class="maptag">0.7km</span>
+        
+                    <time class="result-date" datetime="2021-09-15 17:39" title="Wed 15 Sep 05:39:10 PM">Sep
+                        15</time>
+        
+                    <h3 class="result-heading">
+                        <a href="https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html"
+                            data-id="7380919502" class="result-title hdrlnk" id="postid_7380919502">Spacious 1br
+                            with Balcony in Metrotown area</a>
+                    </h3>
+        
+                    <span class="result-meta">
+                        <span class="result-price">$222</span>
+        
+                        <span class="housing">
+                            1br -
+                            665ft<sup>2</sup> -
+                        </span>
+        
+                        <span class="result-hood"> (Burnaby, Near Patterson Skytrain burnaby/newwest )</span>
+        
+                        <span class="result-tags">
+                            <span class="maptag">0.7km</span>
+                        </span>
+        
+                        <span class="banish icon icon-trash" role="button">
+                            <span class="screen-reader-text">hide this posting</span>
+                        </span>
+        
+                        <span class="unbanish icon icon-trash red" role="button" aria-hidden="true"></span>
+                        <a href="#" class="restore-link">
+                            <span class="restore-narrow-text">restore</span>
+                            <span class="restore-wide-text">restore this posting</span>
+                        </a>
                     </span>
-    
-                    <span class="banish icon icon-trash" role="button">
-                        <span class="screen-reader-text">hide this posting</span>
-                    </span>
-    
-                    <span class="unbanish icon icon-trash red" role="button" aria-hidden="true"></span>
-                    <a href="#" class="restore-link">
-                        <span class="restore-narrow-text">restore</span>
-                        <span class="restore-wide-text">restore this posting</span>
-                    </a>
-                </span>
-            </div>
-        </li>
+                </div>
+            </li>
     </ul>`);
+    
     
     
     
