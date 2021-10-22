@@ -369,10 +369,10 @@ module.exports = async(req, res) => {
           // console.log("req.headers.authorization===>", req.headers.authorization);
 
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
-            throw({message: `diff passwords, github=${req.headers.authorization.split(" ")[1]}`});
-            // break;
+            // throw({message: `diff passwords, github=${req.headers.authorization.split(" ")[1]}`});
+            break;
             //make it 'break', instead of 'throw'
-            
+
 // console.log("nooooooooooooooooooooooooooooooo############");
 // throw({message: "YEAHHHHHHHH"});
           const jsdom = require("jsdom");
