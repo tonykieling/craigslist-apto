@@ -57,3 +57,7 @@ set the environment to mail
 set github action
   .github/workflows
 deploy to vercel
+
+convert hour to be at Vancouver time
+set send email to Si
+still checking github functionallity

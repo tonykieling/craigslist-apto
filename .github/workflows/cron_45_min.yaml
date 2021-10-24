@@ -1,10 +1,10 @@
 # this script has to be runned on github actions
-# it runs every 30 minutes, every day, between 7 until 22 hours
+# it runs every 45 minutes, every day, between 7 until 22 hours
 
-name: 30-min-cron
+name: 45-min-cron
 on:
   schedule:
-    - cron: "*/45 7-22 * * *"
+    - cron: "/45 7-22 * * *"
 jobs:
   cron:
     runs-on: ubuntu-latest

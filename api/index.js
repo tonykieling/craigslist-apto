@@ -35,9 +35,6 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
   })
 );
 
-
-// const data = require("../input.js");
-// const dataFromDB = require("../data.js");
 const fetch = require("node-fetch");
 
 
@@ -75,15 +72,11 @@ result: {
   changed: [
       {
         postId,
-        price 
+        price,
+        reactived
       }  
     ],
   deleted: [
-      {
-        postId
-      }
-    ],
-  reactivated: [
       {
         postId
       }
@@ -194,15 +187,16 @@ const transporter = nodemailer.createTransport({
 });
 
 
-const generalSender = async (subject, html) => {
+const generalSender = async (subject, html, siki = false) => {
   try {
-    const k = await transporter.sendMail({
+    await transporter.sendMail({
       from  : process.env.TK_auto,
       to    : process.env.TK,
-      // cc    : process.env.Si,
+      cc    : siki ? process.env.Si : null,
       subject,
       html,
     });
+
     return true;
   } catch(error) {
     // this error is related to the email part, 
@@ -321,12 +315,13 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
 };
 
 
-const sendEmail = async (message = "<div>default msg</div>") => {
+const sendEmail = async (message = "<div>default msg</div>", updateInfo = false, siki = false) => {
   // it sends an email to the user confirming the procedure
   
-  const today = new Date();
+  const today = new Date(new Date().toLocaleString("en-US", { timeZone: "Canada/Pacific"}));
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const date = (monthNames[today.getMonth()+1]) + '-' + today.getDate();
+  const date = (monthNames[today.getMonth()]) + '-' + today.getDate();
+  
   const hour = today.getHours();
   const min = today.getMinutes();
   const time = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min);
@@ -337,7 +332,7 @@ const sendEmail = async (message = "<div>default msg</div>") => {
       Visit <a href="https://cl-aptos.tkwebdev.ca" target="_blank">https://cl-aptos.tkwebdev.ca</a> for more information.
     </div>
   `;
-  const success = await generalSender(`new apto's info - ${dateTime}`, `<div>${message} ${footer}</div>`);
+  const success = await generalSender(`${updateInfo ? "Apto's update" : "New apto"} - ${dateTime}`, `<div>${message} ${footer}</div>`, siki);
   return (success ? true : false);
 };
 
@@ -354,9 +349,7 @@ module.exports = async(req, res) => {
     });
 
     const dataFromDB = await Apto.find();
-    // console.log("dataFromDB", dataFromDB.length);
-    // if (1) return;
-// console.log("req", req.method);
+
     const { method } = req;
 
     switch(method) {
@@ -364,17 +357,11 @@ module.exports = async(req, res) => {
       // case for receiving request to execute the queries
       case "POST":
         {
-          // console.log("process.env.app_password===>", process.env.app_password);
-          // console.log("req.headers.authorization.split(' ')[1]===>", req.headers.authorization.split(" ")[1]);
-          // console.log("req.headers.authorization===>", req.headers.authorization);
-
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             // throw({message: `diff passwords, github=${req.headers.authorization.split(" ")[1]}`});
             break;
             //make it 'break', instead of 'throw'
 
-// console.log("nooooooooooooooooooooooooooooooo############");
-// throw({message: "YEAHHHHHHHH"});
           const jsdom = require("jsdom");
           const { JSDOM } = jsdom;
 
@@ -383,13 +370,12 @@ module.exports = async(req, res) => {
             // it gets data from craigslist and transform it into text
             const req = await fetch(
               // "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22828177157375&lon=-123.01000749085641&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.9",
-              "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.4",
+              "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.5",
               {
                 method: "GET"
               }
             );
             data = await req.text();
-          // // console.log(data, data);
           } catch(error) {
             throw (error.message || error);
           }
@@ -402,42 +388,23 @@ module.exports = async(req, res) => {
           const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
         
           const dataDOM = domElements.map(e => getDataFromDOM(e.querySelector(".result-info")));
-          // console.log("results =>", results);
-          // console.log("results.length =>", results.length);
         
-        
-        // console.log("dataFromDB", dataFromDB);
-        // console.log("results", results, results.length);
           const newData = compareData(dataFromDB, dataDOM);
-          // console.log("newData => ", Object.getOwnPropertyNames(newData).length, Object.getOwnPropertyNames(newData), newData);
-
-
-
-          // const message = formatEmailMessage(newData);
-          // console.log("formatEmailMessage==>", message);
-          // await sendEmail(message);
-          // if (1) return;
-          //  console.log("done::", message);
-
-          // any changes happened
+        
+          // any changes detected
           // 1- send email to the admins
           // 2- record on DB
           if (Object.getOwnPropertyNames(newData).length) {
             // 1- email
             // 1.1 format message
             const message = formatEmailMessage(newData);
-            // console.log("formatEmailMessage==>", message);
-            await sendEmail(message);
-            // if (1) return;
-
             // 1.2 send email
+            await sendEmail(message, updateInfo = ((newData.changed || newData.deleted) && true), siki = true);
 
             // 2- record on DB
             // it inserts new data coming from web
-            // if (newData.newItems && (newData.newItems.length > 0)) {
             if (newData.newItems) {
               for (const item of newData.newItems) {
-              // newData.newItems.forEach(async e => {
                 const toInsert = new Apto({
                   _id: new mongoose.Types.ObjectId(),
                   postId      : item.postId,
@@ -480,10 +447,10 @@ module.exports = async(req, res) => {
             }
           }
 
-          throw({message: "OK, it is not an error"});
+          throw({message: "OK, just checking"});
         }
 
-        // it is gonna update data about some record
+        // it is gonna update data regarding a specific record
         case "PATCH": {
 
         }
@@ -492,14 +459,11 @@ module.exports = async(req, res) => {
           console.log("does not apply");
       }
   } catch (error) {
-    // console.log("XXXXXX, error::", error.message);
+    // it is temporary until understand how github actions works
     await sendEmail(`<div>${error.message || error}</div>`);
     res.json({message: "done"});
 
   } finally {
-    // sendEmail();
-    // console.log("leaving the API with no email");
-    // res.json({message: "done"});
     mongoose.disconnect();
   }
 
