@@ -20,6 +20,9 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
     price: {
       type: String
     },
+    location: {
+      type: String
+    },
     active: {
       type    : Boolean,
       default : true
@@ -45,13 +48,14 @@ const removeXspaces = str => {
 }
 
 // it gets the result-info div, extracts and returns the important data
-const getDataFromDOM = item => {
+const getDataFromDOM = (item, location) => {
   return (
     {
       postId: item.querySelector("a.result-title").getAttribute("data-id") ,
       url: item.querySelector("a.result-title").getAttribute("href"),
       description: removeXspaces(item.querySelector("a.result-title").textContent),
-      price: item.querySelector("span.result-price").textContent
+      price: item.querySelector("span.result-price").textContent,
+      location
     }
   );
 };
@@ -66,14 +70,16 @@ result: {
         postId,
         url,
         description,
-        price
+        price,
+        location
       }
     ],
   changed: [
       {
         postId,
         price,
-        reactived
+        reactived,
+        location
       }  
     ],
   deleted: [
@@ -253,7 +259,9 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
     <div style="display: table; border-collapse: collapse; border: 2px solid black; width: 95%">
       <div style="display:table-row; width:100%; border: 1px solid black">
         <span style="display:table-cell; text-align: center; width:1rem; border: 1px solid black"><b> # </b> </span>
-        <span style="display:table-cell; text-align: center; width: 80%; border: 1px solid black"><b> Description </b> </span>
+        <span style="display:table-cell; text-align: center; width: 75%; border: 1px solid black"><b> Description </b> </span>
+        <span style="display:table-cell; text-align: center; width: 2rem; border: 1px solid black"><b> Place </b> </span>
+
         ${priceChanged
           ? 
             `<span style="display:table-cell; text-align: center; width: 2rem; border: 1px solid black"><b> $ old </b> </span>
@@ -270,7 +278,6 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
 
 
   const content = item.map((e, i) => {
-    // console.log("item::::", e);
     return (`
       <a 
         style="display:table-row; border: 1px solid black; text-align: center; text-decoration: none; ${e.reactivated ? "color: orange" : ""}" 
@@ -281,6 +288,8 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
           ${i + 1} 
         </span>
         <span style="display:table-cell; border: 1px solid black; vertical-align: middle"> ${e.description} </span>
+        <span style="display:table-cell; border: 1px solid black; vertical-align: middle"> ${e.location} </span>
+
         ${ e.priceNow
             ? 
               `<span style="display:table-cell; border: 1px solid black; text-align: center; vertical-align: middle"> 
@@ -290,7 +299,8 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
                 ${e.priceNow}
               </span>`
             :
-              `<span style="display:table-cell; border: 1px solid black; text-align: center; vertical-align: middle"> 
+              `<span style="display:table-cell; border: 1px solid black;"></span>
+              <span style="display:table-cell; border: 1px solid black; text-align: center; vertical-align: middle"> 
                 ${e.price}
               </span>`
         }
@@ -341,7 +351,6 @@ const sendEmail = async (message = "<div>default msg</div>", updateInfo = false,
 // const f = async () => {
 module.exports = async(req, res) => {
   try {
-
     // it gets data from DB
     await mongoose.connect(process.env.DB, {
       useNewUrlParser: true,
@@ -357,39 +366,102 @@ module.exports = async(req, res) => {
       // case for receiving request to execute the queries
       case "POST":
         {
+          /*
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
-            // throw({message: `diff passwords, github=${req.headers.authorization.split(" ")[1]}`});
             break;
-            //make it 'break', instead of 'throw'
+*/
 
-          const jsdom = require("jsdom");
-          const { JSDOM } = jsdom;
 
-          let data;
+          const queries = [
+            {
+              location: "Patterson",
+              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.7"
+            },
+            {
+              location: "Joyce",
+              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.237509680216846&lon=-123.02994489669801&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.4"
+            },
+            {
+              location: "29th",
+              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24460894085901&lon=-123.04670348335357&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
+            },
+            {
+              location: "Nanaimo",
+              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24855720299385&lon=-123.0563888765191&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.2"
+            }
+          ];
+          
+          let dataFromWeb = [];
           try {
             // it gets data from craigslist and transform it into text
+            /*
             const req = await fetch(
-              // "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22828177157375&lon=-123.01000749085641&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.9",
-              "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.5",
+              "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.7",
               {
                 method: "GET"
               }
             );
             data = await req.text();
+          */
+
+
+
+            const jsdom = require("jsdom");
+            const { JSDOM } = jsdom;
+
+
+            for (let i = 0; i < queries.length; i++) {
+              let addItem = {};
+              const response = await fetch(queries[i]["url"]);
+              const html = await response.text();
+// console.log("******************************************************************html", html);
+              const dom = new JSDOM(html);
+              const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
+              
+              addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
+
+              dataFromWeb = [...dataFromWeb, ...addItem];
+            }
+
           } catch(error) {
             throw (error.message || error);
           }
-        
-          // using jsdom
-          // it converts the data into a tex format to a dom structure
-          const dom = new JSDOM(data);
-        
-          // gets only the result to be handled
-          const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-        
-          const dataDOM = domElements.map(e => getDataFromDOM(e.querySelector(".result-info")));
-        
-          const newData = compareData(dataFromDB, dataDOM);
+
+// const dataFromDB = [];
+const newData = compareData(dataFromDB, dataFromWeb);
+// console.log("newData--------------", newData);
+
+// if (1) return res.json({message: newData});
+          
+
+
+
+
+
+
+//           // using jsdom
+//           /*
+//           const jsdom = require("jsdom");
+//           const { JSDOM } = jsdom;
+//           */
+//           // it converts the data into a tex format to a dom structure
+//           const dom = new JSDOM(data);
+          
+//           // gets only the result to be handled
+//           const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
+          
+//           const dataDOM = domElements.map(e => getDataFromDOM(e.querySelector(".result-info")));
+// console.log("dataDOM", dataDOM);
+// // const dataFromDB = [];
+//           // const newData = compareData(dataFromDB, dataDOM);
+// if (1) return res.json({newData});
+
+
+
+
+
+
+
         
           // any changes detected
           // 1- send email to the admins
@@ -410,7 +482,8 @@ module.exports = async(req, res) => {
                   postId      : item.postId,
                   url         : item.url,
                   description : item.description,
-                  price       : item.price
+                  price       : item.price,
+                  location    : item.location
                 });
                 
                 await toInsert.save();
@@ -447,7 +520,7 @@ module.exports = async(req, res) => {
             }
           }
 
-          throw({message: "OK, just checking"});
+          throw({message: "OK, just checking, all good ;)"});
         }
 
         // it is gonna update data regarding a specific record
@@ -461,7 +534,9 @@ module.exports = async(req, res) => {
   } catch (error) {
     // it is temporary until understand how github actions works
     await sendEmail(`<div>${error.message || error}</div>`);
-    res.json({message: "done"});
+
+    res.json({message: error.message || error});
+
 
   } finally {
     mongoose.disconnect();
