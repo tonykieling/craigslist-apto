@@ -65,3 +65,5 @@ still checking github functionallity
 algorithm refactored to have an array of queries to make (more than one place) + html msg adjusted + time zone for cron adjusted (7 = 14 & 21 = 4)
 
 fixing cron schedule file (needed to has 2 files because time zone thing)
+
+starting FE (spent much time fixing npm vulnerabilities) + tweakes on cron
