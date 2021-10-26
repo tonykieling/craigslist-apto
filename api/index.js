@@ -523,6 +523,12 @@ const newData = compareData(dataFromDB, dataFromWeb);
           throw({message: "OK, just checking, all good ;)"});
         }
 
+
+        case "GET": {
+          console.log("dataFromDB:::", dataFromDB.length);
+          return res.json({apartments: dataFromDB});
+        }
+
         // it is gonna update data regarding a specific record
         case "PATCH": {
 

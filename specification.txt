@@ -67,3 +67,9 @@ algorithm refactored to have an array of queries to make (more than one place) +
 fixing cron schedule file (needed to has 2 files because time zone thing)
 
 starting FE (spent much time fixing npm vulnerabilities) + tweakes on cron
+
+set TK's icon and site's info on index.html
+set table to show current aptos, with changes (if so), and deleted ones
+set about page
+set index.js to return and close http connection before sending the mail (it's another process)
+fix email table
