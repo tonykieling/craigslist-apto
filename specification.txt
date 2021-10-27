@@ -73,3 +73,5 @@ set table to show current aptos, with changes (if so), and deleted ones
 set about page
 set index.js to return and close http connection before sending the mail (it's another process)
 fix email table
+
+changed BE so it can handle change on record, price and priceOld

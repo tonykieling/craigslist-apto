@@ -20,6 +20,10 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
     price: {
       type: String
     },
+    oldPrice: {
+      type: String,
+      default: "0"
+    },
     location: {
       type: String
     },
@@ -34,6 +38,13 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
     reactivated: {
       type    : Boolean,
       default : false
+    },
+    removedByAdmin: {
+      type    : Boolean,
+      default : false,
+    },
+    reasonRemovedFromAdmin: {
+      type    : String
     }
   })
 );
@@ -125,7 +136,7 @@ const compareData = (fromDB, fromWeb) => {
           changedTemp = {
             ...fromWeb[iWeb],
             // price   : fromWeb[iWeb].price,
-            priceNow: fromWeb[iWeb].price,
+            price   : fromWeb[iWeb].price,
             priceOld: fromDB[iDB].price,
             changed : true
           };
@@ -198,7 +209,7 @@ const generalSender = async (subject, html, siki = false) => {
     await transporter.sendMail({
       from  : process.env.TK_auto,
       to    : process.env.TK,
-      cc    : siki ? process.env.Si : null,
+      // cc    : siki ? process.env.Si : null,
       subject,
       html,
     });
@@ -290,13 +301,13 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
         <span style="display:table-cell; border: 1px solid black; vertical-align: middle"> ${e.description} </span>
         <span style="display:table-cell; border: 1px solid black; vertical-align: middle"> ${e.location} </span>
 
-        ${ e.priceNow
+        ${ e.priceOld
             ? 
               `<span style="display:table-cell; border: 1px solid black; text-align: center; vertical-align: middle"> 
                   ${e.priceOld}
               </span>
               <span style="display:table-cell; border: 1px solid black; text-align: center; vertical-align: middle"> 
-                ${e.priceNow}
+                ${e.price}
               </span>`
             :
               `<span style="display:table-cell; border: 1px solid black;"></span>
@@ -351,14 +362,17 @@ const sendEmail = async (message = "<div>default msg</div>", updateInfo = false,
 // const f = async () => {
 module.exports = async(req, res) => {
   try {
-    // it gets data from DB
-    await mongoose.connect(process.env.DB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true 
-    });
+console.log("-----------------");
 
+  // it gets data from DB
+  await mongoose.connect(process.env.DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
+  });
+
+// await res.json({message: "yeahhhhhhhhhh"});
     const dataFromDB = await Apto.find();
-
+console.log("dataFromDB.length:::", dataFromDB.length);
     const { method } = req;
 
     switch(method) {
@@ -417,7 +431,7 @@ module.exports = async(req, res) => {
 // console.log("******************************************************************html", html);
               const dom = new JSDOM(html);
               const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-              
+console.log("domElements.length:::", domElements.length);
               addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
 
               dataFromWeb = [...dataFromWeb, ...addItem];
@@ -429,7 +443,7 @@ module.exports = async(req, res) => {
 
 // const dataFromDB = [];
 const newData = compareData(dataFromDB, dataFromWeb);
-// console.log("newData--------------", newData);
+console.log("newData--------------", newData);
 
 // if (1) return res.json({message: newData});
           
@@ -497,7 +511,8 @@ const newData = compareData(dataFromDB, dataFromWeb);
                   .updateOne(
                     { postId: item.postId },
                     {
-                      price       : item.changed ? item.price : undefined,
+                      price       : item.price,
+                      oldPrice    : item.changed ? item.priceOld : undefined,
                       changed     : item.changed ? true : undefined,
                       active      : item.reactivated || undefined,
                       reactivated : item.reactivated || undefined
@@ -519,7 +534,6 @@ const newData = compareData(dataFromDB, dataFromWeb);
               }
             }
           }
-
           throw({message: "OK, just checking, all good ;)"});
         }
 
@@ -529,7 +543,8 @@ const newData = compareData(dataFromDB, dataFromWeb);
           return res.json({apartments: dataFromDB});
         }
 
-        // it is gonna update data regarding a specific record
+        // it is gonna update data - only when admin is removing a specific record, given specific reason
+        // it has to be triggered by the front-end
         case "PATCH": {
 
         }
@@ -539,7 +554,21 @@ const newData = compareData(dataFromDB, dataFromWeb);
       }
   } catch (error) {
     // it is temporary until understand how github actions works
-    await sendEmail(`<div>${error.message || error}</div>`);
+    
+
+
+
+    const t = new Date();
+    const nowHours = t.getHours();
+    const nowMinutes = t.getMinutes();
+    console.log("nowHours", nowHours, "nowMinutes", nowMinutes);
+    // it will send a ping email only at 8 and 19, first half hour, regardless the minute
+    if  (
+              ((nowHours == 15 ) && (nowMinutes <= 30))
+          ||  ((nowHours == 2) && (nowMinutes <= 30))
+          ||  ((nowHours == 13) && (nowMinutes >= 30))
+        )
+      await sendEmail(`<div>${"(error.message || error)" + "yepppppppppppppppppppppp"}</div>`);
 
     res.json({message: error.message || error});
 
