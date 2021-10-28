@@ -75,3 +75,6 @@ set index.js to return and close http connection before sending the mail (it's a
 fix email table
 
 changed BE so it can handle change on record, price and priceOld
+BE procedure to remove record by admin is done, missing more tests and FE
+  @@@@@@@@@@@@@@@@@@@@@@@@@@ do not forget to change .env file before uploading 
+      vercel is done with removePass

@@ -126,6 +126,8 @@ const compareData = (fromDB, fromWeb) => {
     }
 
     for (let iDB = 0; iDB < fromDB.length; iDB++) {
+      if (fromDB[iDB].removedByAdmin) continue;
+
       if (fromWeb[iWeb].postId === fromDB[iDB].postId) {
         //it is gonna check only price changing
 
@@ -174,7 +176,9 @@ const compareData = (fromDB, fromWeb) => {
 
   // it checks the data from db against data from web to see whether there are deleted ones
   for(let iDB = 0; iDB < fromDB.length; iDB++) {
+    if (fromDB[iDB].removedByAdmin) continue;
     if (!fromDB[iDB].active) continue;
+
     for (let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
       if (fromDB[iDB].postId === fromWeb[iWeb].postId)
         break;
@@ -209,7 +213,7 @@ const generalSender = async (subject, html, siki = false) => {
     await transporter.sendMail({
       from  : process.env.TK_auto,
       to    : process.env.TK,
-      // cc    : siki ? process.env.Si : null,
+      cc    : siki ? process.env.Si : null,
       subject,
       html,
     });
@@ -362,18 +366,20 @@ const sendEmail = async (message = "<div>default msg</div>", updateInfo = false,
 // const f = async () => {
 module.exports = async(req, res) => {
   try {
-console.log("-----------------");
 
-  // it gets data from DB
-  await mongoose.connect(process.env.DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true 
-  });
+    // it gets data from DB
+    await mongoose.connect(process.env.DB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true 
+    });
 
-// await res.json({message: "yeahhhhhhhhhh"});
-    const dataFromDB = await Apto.find();
-console.log("dataFromDB.length:::", dataFromDB.length);
+
     const { method } = req;
+    let dataFromDB;
+
+    if (method !== "PATCH")
+      dataFromDB = await Apto.find();
+
 
     switch(method) {
 
@@ -431,7 +437,7 @@ console.log("dataFromDB.length:::", dataFromDB.length);
 // console.log("******************************************************************html", html);
               const dom = new JSDOM(html);
               const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-console.log("domElements.length:::", domElements.length);
+// console.log("domElements.length:::", domElements.length);
               addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
 
               dataFromWeb = [...dataFromWeb, ...addItem];
@@ -443,7 +449,7 @@ console.log("domElements.length:::", domElements.length);
 
 // const dataFromDB = [];
 const newData = compareData(dataFromDB, dataFromWeb);
-console.log("newData--------------", newData);
+// console.log("newData--------------", newData);
 
 // if (1) return res.json({message: newData});
           
@@ -545,30 +551,47 @@ console.log("newData--------------", newData);
 
         // it is gonna update data - only when admin is removing a specific record, given specific reason
         // it has to be triggered by the front-end
+        // it receives postId, the reason for removing the item and a password
         case "PATCH": {
+          const { postId, reason, removePass } = req.body;
 
+          if (process.env.removePass !== removePass)
+            return res.json({error: "forbiden"});
+
+          if (!postId || !reason) return res.json({error: "Missing info"});
+
+          try {
+            await Apto
+              .updateOne(
+                { postId },
+                {
+                  removedByAdmin          : true,
+                  reasonRemovedFromAdmin  : reason,
+                  active                  : false
+                }
+              );
+
+            return res.json({message: "OK"});
+
+          } catch(error){
+            return res.json({error: error.message || error});
+          }
         }
 
         default:
           console.log("does not apply");
       }
-  } catch (error) {
-    // it is temporary until understand how github actions works
-    
 
-
-
+    } catch (error) {
     const t = new Date();
     const nowHours = t.getHours();
     const nowMinutes = t.getMinutes();
-    console.log("nowHours", nowHours, "nowMinutes", nowMinutes);
     // it will send a ping email only at 8 and 19, first half hour, regardless the minute
     if  (
               ((nowHours == 15 ) && (nowMinutes <= 30))
           ||  ((nowHours == 2) && (nowMinutes <= 30))
-          ||  ((nowHours == 13) && (nowMinutes >= 30))
         )
-      await sendEmail(`<div>${"(error.message || error)" + "yepppppppppppppppppppppp"}</div>`);
+      await sendEmail(`<div>${(error.message || error)}</div>`);
 
     res.json({message: error.message || error});
 
