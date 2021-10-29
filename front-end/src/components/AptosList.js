@@ -1,10 +1,38 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+
+
+const tempDB =  [
+  {
+    postId: '7388747820',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
+    description: '1 Bedroom on 26th floor in Station Square',
+    price: '$1,780',
+    active: true,
+    location: "Joyce",
+    reactived: true
+  },
+  {
+    postId: '7380919502',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html',
+    description: 'Spacious 1br with Balcony in Metrotown area',
+    price: '$1,765',
+    active: true,
+    location: "Patterson"
+  },
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce"
+  }
+];
 
 const Head = (
   <thead id = "color-head">
-    <tr style={{align:"center"}} >
+    <tr style={{align:"center"}} key="head">
       <th rowSpan="2" className = "num-head"> # </th>
       <th rowSpan="10" className = "name-head" > Description </th>
       <th rowSpan="3" className = "others-head" > $ Now </th>
@@ -15,52 +43,101 @@ const Head = (
   </thead>
 );
 
-// const currentAvailableBody = (
-
-// );
 
 function AptosList() {
-  const [allApartments, setAllApartments] = useState(null);
-  const [available, setAvailable] = useState(null);
-  const [deleted, setDeleted] = useState(null);
+  // const [allApartments, setAllApartments] = useState(null);
+  const [availables, setAvailables] = useState(null);
+  const [removedByOwnwer, setRemovedByOwner] = useState(null);
+  const [removedByAdmin, setRemovedByAdmin] = useState(null);
 
   const [tableAvailables, setTableAvailables] = useState(null);
-  const [tableDeleteds, setDeleteds] = useState(null);
+  const [tableRemovedByOwners, setTableRemovedByOwners] = useState(null);
+  const [tableRemovedByAdmins, setTableRemovedByAdmins] = useState(null);
 
-  const chargeData = (aptos) => {
-    const tempAvailables = aptos.filter(e => e.active);
-    // console.log("tempAvailables", tempAvailables);
-    setAvailable(tempAvailables);
-    const tempNotAvailables = aptos.filter(e => !e.active);
-    // console.log("tempNotAvailables:", tempNotAvailables);
-    setDeleted(tempNotAvailables);
-    renderDataTable(tempAvailables, tempNotAvailables);
+
+  const sortAnswer = aptos => {
+    setAvailables([...aptos.filter(e => e.active)]);
+
+    setRemovedByOwner([...aptos.filter(e => !e.active && !e.removedByAdmin)]);
+
+    setRemovedByAdmin([...aptos.filter(e => e.removedByAdmin)]);
   };
 
 
-  const renderDataTable = (currents, deleteds) => {
-    const tableCurrent = currents.map((current, index) => {
-      const {description, location, price, url, reactived} = current;
+
+  const renderDataTable = (data, flag) => {
+    const tableCurrent = data.map((current, index) => {
+      const {description, location, price, oldPrice, url, active, reactived} = current;
       const tempTableCurrent = (
         <tr key={index} >
-          <td>{index + 1}</td>
-          <td
-            onClick = {() => <Redirect to = {url} />}
-          >{description}</td>
-          <td>{location}</td>
-          <td>{price}</td>
-          <td>{reactived}</td>
-          <td>{"Old$"}</td>
+          <td>
+            {active
+              ?
+                <a href = {url} target="_blank" rel = "noreferrer">
+                  {index + 1}
+                </a>
+              : index + 1
+            }
+          </td>
+          <td>
+            {active
+              ?
+                <a href = {url} target="_blank" rel = "noreferrer">
+                  {description}
+                </a>
+              : description
+            }
+          </td>
+          <td>
+            {active
+              ?
+                <a href = {url} target="_blank" rel = "noreferrer">
+                  {price}
+                </a>
+              : price
+            }
+          </td>
+          <td>
+            {active
+              ?
+                <a href = {url} target="_blank" rel = "noreferrer">
+                  {(oldPrice || "")}
+                </a>
+              : oldPrice
+            }
+          </td>
+          <td>
+            {active
+              ?
+                <a href = {url} target="_blank" rel = "noreferrer">
+                  {location}
+                </a>
+              : location
+            }
+          </td>
+          <td>
+            {active
+              ?
+                <a href = {url} target="_blank" rel = "noreferrer">
+                  {reactived ? <span>&#10003;</span> : ""}
+                </a>
+              : reactived ? <span>&#10003;</span> : ""
+            }
+          </td>
         </tr>
       );
-      return tempTableCurrent;
+      return (tempTableCurrent);
     });
 
-    setTableAvailables(tableCurrent);
+    (flag === "av") && (setTableAvailables(tableCurrent));
+    (flag === "rbo") && (setTableRemovedByOwners(tableCurrent));
+    (flag === "rba") && (setTableRemovedByAdmins(tableCurrent));
   };
 
 
   useEffect(() => {
+
+    // const url = "http://localhost:3000/api"
     const url = "/api";
     // setDataTable(processing);
 
@@ -74,11 +151,18 @@ function AptosList() {
               "Content-Type": "application/json"
             }
         });
-console.log(getData)
+
+        // ///////////////////tempDB
+        // let getData = {};
+        // getData = {
+        //   data: {
+        //     apartments: [...tempDB]
+        //   }
+        // };
+        
         if (getData.data.apartments) {
-          console.log("answer:::", getData.data.apartments);
-          setAllApartments(getData.data.apartments);
-          chargeData(getData.data.apartments);
+          console.log("answer::::::::::::", getData.data.apartments);
+          sortAnswer(getData.data.apartments);
 
         } else
           throw new Error();
@@ -98,7 +182,22 @@ console.log(getData)
     //   setProductToEdit("");
     // };
     //eslint-disable-next-line
-  }, [])
+  }, []);
+
+
+  useEffect(() => {
+    // console.log("AVAILABLES=", availables);
+    (availables) && renderDataTable(availables, "av");
+
+    (removedByOwnwer) && renderDataTable(removedByOwnwer, "rbo");
+
+    (removedByAdmin) && renderDataTable(removedByAdmin, "rba");
+    
+    return () => {
+      // cleanup
+    }
+    // eslint-disable-next-line
+  }, [availables, removedByOwnwer, removedByAdmin])
 
   return (
     <div className="app-body">
@@ -107,52 +206,31 @@ console.log(getData)
       <h2>Current available</h2>
       <table>
         { Head }
-        { tableAvailables }
-      </table>
-
-      <h2>Removed ones</h2>
-
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <h1>asd</h1>
-      <table>
-        <thead>
-          <tr>
-            <th style={{width: "3rem"}}>#</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Location</th>
-          </tr>
-        </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Nice apartment test text</td>
-            <td>$1500</td>
-            <td>Joyce</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Description number 2</td>
-            <td>$1400</td>
-            <td>Patterson</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Nice apartment test text apartment 3</td>
-            <td>$1300</td>
-            <td>Joyce</td>
-          </tr>
+          { tableAvailables }
         </tbody>
       </table>
 
-      <p style={{paddingBottom: "5rem"}}>qwe</p>
+      <h2>Removed by Owners</h2>
+      <table>
+        { Head }
+        {/* {console.log("tableRemovedByOWN", tableRemovedByOwners)} */}
+
+        <tbody>
+          { tableRemovedByOwners }
+        </tbody>
+      </table>
+
+      <h2>Removed by Admins</h2>
+      <table>
+        { Head }
+        <tbody>
+          { tableRemovedByAdmins && tableRemovedByAdmins.length ? tableRemovedByAdmins : <tr><td>none for NOW</td></tr> }
+        </tbody>
+      </table>
+
+
+      <p style={{paddingBottom: "5rem"}}></p>
     </div>
   );
 }

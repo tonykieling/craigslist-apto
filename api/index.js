@@ -386,10 +386,8 @@ module.exports = async(req, res) => {
       // case for receiving request to execute the queries
       case "POST":
         {
-          /*
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
-*/
 
 
           const queries = [
@@ -586,10 +584,11 @@ const newData = compareData(dataFromDB, dataFromWeb);
     const t = new Date();
     const nowHours = t.getHours();
     const nowMinutes = t.getMinutes();
-    // it will send a ping email only at 8 and 19, first half hour, regardless the minute
+    // it will send a ping email only at 8 and 19, first half hour
     if  (
               ((nowHours == 15 ) && (nowMinutes <= 30))
           ||  ((nowHours == 2) && (nowMinutes <= 30))
+          || ((nowHours > 18) && (nowHours < 21))
         )
       await sendEmail(`<div>${(error.message || error)}</div>`);
 

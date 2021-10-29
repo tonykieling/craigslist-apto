@@ -78,3 +78,9 @@ changed BE so it can handle change on record, price and priceOld
 BE procedure to remove record by admin is done, missing more tests and FE
   @@@@@@@@@@@@@@@@@@@@@@@@@@ do not forget to change .env file before uploading 
       vercel is done with removePass
+
+FE 1st version is done, 
+  missing styling
+  messages
+  action to removebyowners
+  mobile
