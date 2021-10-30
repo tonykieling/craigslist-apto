@@ -5,9 +5,8 @@ const Header = () => {
   return (
     <div className="main-header">
       <div className="header-1">
-        <Link 
+        <a href = "https://tkwebdev.ca" target = "_blank" rel = "noreferrer"
           className = "logo"
-          to = "/"
         >
           <img
             src   = { Logo }
@@ -16,7 +15,8 @@ const Header = () => {
             width = "100%"
             // className = "logo"
           />
-        </Link>
+        </a>
+        {/* </Link> */}
 
         <Link 
           className = "item"

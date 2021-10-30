@@ -1,8 +1,27 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 
 const tempDB =  [
+  {
+    postId: '7388747820',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
+    description: '1 Bedroom on 26th floor in Station Square',
+    price: '$1,780',
+    active: true,
+    location: "Joyce",
+    reactived: true
+  },
+  {
+    postId: '7388747820',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
+    description: '1 Bedroom on 26th floor in Station Square',
+    price: '$1,780',
+    active: true,
+    location: "Joyce",
+    reactived: true
+  },
   {
     postId: '7388747820',
     url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
@@ -32,12 +51,27 @@ const tempDB =  [
 
 const Head = (
   <thead id = "color-head">
-    <tr style={{align:"center"}} key="head">
-      <th rowSpan="2" className = "num-head"> # </th>
-      <th rowSpan="10" className = "name-head" > Description </th>
-      <th rowSpan="3" className = "others-head" > $ Now </th>
-      <th rowSpan="3" className = "others-head" > $ Old </th>
-      <th rowSpan="4" > Location </th>
+    <tr 
+      className = "tr-first"
+      key="head"
+    >
+      <th 
+        // style = {{width: "1.5rem"}}
+        className = "table-index"
+        // className = "num-head"
+      > # </th>
+      <th 
+        style = {{}}
+        className = "name-head" > Description </th>
+      <th 
+        style = {{}}
+        className = "others-head" > $ Now </th>
+      <th 
+        style = {{}}
+        className = "others-head" > $ Old </th>
+      <th 
+        style = {{}}
+        > Location </th>
       <th rowSpan="1" > Reactived</th>
     </tr>
   </thead>
@@ -45,7 +79,6 @@ const Head = (
 
 
 function AptosList() {
-  // const [allApartments, setAllApartments] = useState(null);
   const [availables, setAvailables] = useState(null);
   const [removedByOwnwer, setRemovedByOwner] = useState(null);
   const [removedByAdmin, setRemovedByAdmin] = useState(null);
@@ -53,6 +86,7 @@ function AptosList() {
   const [tableAvailables, setTableAvailables] = useState(null);
   const [tableRemovedByOwners, setTableRemovedByOwners] = useState(null);
   const [tableRemovedByAdmins, setTableRemovedByAdmins] = useState(null);
+
 
 
   const sortAnswer = aptos => {
@@ -64,65 +98,89 @@ function AptosList() {
   };
 
 
+  // const LinkTo = () => {
+  //   console.log("linkkkkkkkkkkkkkkkkkkkkkkkkkk");
+  //   return <Redirect to = "https://tkwebdev.ca" target = "_blank" />
+  // }
 
   const renderDataTable = (data, flag) => {
     const tableCurrent = data.map((current, index) => {
       const {description, location, price, oldPrice, url, active, reactived} = current;
       const tempTableCurrent = (
-        <tr key={index} >
-          <td>
-            {active
+        <tr 
+          key={index} 
+          className = { active ? "tr-table tr-hover" : "tr-table" }
+          onClick={()=> active && window.open(url, "_blank")}
+        >
+          <td
+            className = "table-index"
+          >
+            {/* {active
               ?
                 <a href = {url} target="_blank" rel = "noreferrer">
                   {index + 1}
                 </a>
               : index + 1
-            }
+            } */}
+            { index + 1 }
           </td>
           <td>
-            {active
+            {/* {active
               ?
                 <a href = {url} target="_blank" rel = "noreferrer">
                   {description}
                 </a>
               : description
-            }
+            } */}
+            { description }
           </td>
-          <td>
-            {active
+          <td
+            className = "table-price"
+          >
+            {/* {active
               ?
                 <a href = {url} target="_blank" rel = "noreferrer">
                   {price}
                 </a>
               : price
-            }
+            } */}
+            { price }
           </td>
-          <td>
-            {active
+          <td
+            className = "table-price"
+          >
+            {/* {active
               ?
                 <a href = {url} target="_blank" rel = "noreferrer">
                   {(oldPrice || "")}
                 </a>
               : oldPrice
-            }
+            } */}
+            { oldPrice }
           </td>
-          <td>
-            {active
+          <td
+            className = "table-location"
+          >
+            {/* {active
               ?
                 <a href = {url} target="_blank" rel = "noreferrer">
                   {location}
                 </a>
               : location
-            }
+            } */}
+            { location }
           </td>
-          <td>
-            {active
+          <td
+            className = "table-reactivated"
+          >
+            {/* {active
               ?
                 <a href = {url} target="_blank" rel = "noreferrer">
                   {reactived ? <span>&#10003;</span> : ""}
                 </a>
               : reactived ? <span>&#10003;</span> : ""
-            }
+            } */}
+            { reactived }
           </td>
         </tr>
       );
@@ -139,29 +197,34 @@ function AptosList() {
 
     // const url = "http://localhost:3000/api"
     const url = "/api";
-    // setDataTable(processing);
 
     const fetchData = async() => {
   
       try {
-        const getData = await axios.get( 
-          url,
-          {  
-            headers: { 
-              "Content-Type": "application/json"
-            }
-        });
+        // temp commented for dev purposes
+        // const getData = await axios.get( 
+        //   url,
+        //   {  
+        //     headers: { 
+        //       "Content-Type": "application/json"
+        //     }
+        // });
 
-        // ///////////////////tempDB
-        // let getData = {};
-        // getData = {
-        //   data: {
-        //     apartments: [...tempDB]
-        //   }
-        // };
-        
+        ///////////////////tempDB with delay
+        // console.log("querying getData...")
+        const getData = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve({
+              data: {
+                apartments: [...tempDB]
+              }}
+            );
+          }, 2300);
+        });
+        // console.log("getData", getData);
+
         if (getData.data.apartments) {
-          console.log("answer::::::::::::", getData.data.apartments);
+          // console.log("answer::::::::::::", getData.data.apartments);
           sortAnswer(getData.data.apartments);
 
         } else
@@ -199,33 +262,70 @@ function AptosList() {
     // eslint-disable-next-line
   }, [availables, removedByOwnwer, removedByAdmin])
 
+  const processingMessage = (
+    <tr>
+      <td
+        className = "processing"
+        colSpan = "6"
+      >
+        ...Processing
+      </td>
+    </tr>
+  );
+
+  const emptyForNow = (
+    <tr>
+      <td 
+        // style={{textAlign: "center", backgroundColor: ""}}
+        className = "tr-empty"
+        colSpan = "6"
+      >
+        Empty for now. ;)
+      </td>
+    </tr>
+  );
+
+
   return (
     <div className="app-body">
       <h1>List of apartments</h1>
 
-      <h2>Current available</h2>
-      <table>
+      <h2 className = "table-section-title av">Current available</h2>
+      <table
+        // style = { tableStyle }
+      >
         { Head }
         <tbody>
-          { tableAvailables }
+        {tableAvailables
+            ? tableAvailables.length ? tableAvailables : emptyForNow
+            : processingMessage
+          }
         </tbody>
       </table>
 
-      <h2>Removed by Owners</h2>
-      <table>
+      <h2 className = "table-section-title rbo">Removed by Owners</h2>
+      <table
+        // style = { tableStyle }
+      >
         { Head }
-        {/* {console.log("tableRemovedByOWN", tableRemovedByOwners)} */}
-
         <tbody>
-          { tableRemovedByOwners }
+        {tableRemovedByOwners
+            ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
+            : processingMessage
+          }
         </tbody>
       </table>
 
-      <h2>Removed by Admins</h2>
-      <table>
+      <h2 className = "table-section-title rba">Removed by Admins</h2>
+      <table
+        // style = { tableStyle }
+      >
         { Head }
         <tbody>
-          { tableRemovedByAdmins && tableRemovedByAdmins.length ? tableRemovedByAdmins : <tr><td>none for NOW</td></tr> }
+          {tableRemovedByAdmins
+            ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
+            : processingMessage
+          }
         </tbody>
       </table>
 

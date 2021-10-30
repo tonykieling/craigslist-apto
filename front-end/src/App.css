@@ -6,6 +6,8 @@
   height: 4rem;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .main-header .header-1 {
@@ -78,6 +80,69 @@ body {
 h1 {
   text-align: center;
   margin-top: 0rem;
+}
+
+
+.processing {
+  color: seagreen;
+  text-align: center;
+}
+
+.table-section-title {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.table-section-title.av {
+  color: blue;
+}
+.table-section-title.rbo {
+  color: red;
+}
+.table-section-title.rba {
+  color: orangered;
+}
+
+
+/* table settings */
+table { 
+  min-width: 60%;
+  margin: auto;
+  border: 2px solid green;
+  /* border-collapse: collapse; */
+}
+.tr-table:nth-child(odd){background-color: whitesmoke;}
+.tr-table:nth-child(even){background-color: lightgrey;}
+.tr-table:hover {background-color: salmon;}
+.tr-first {
+  background-color: lightseagreen;
+  color: darkblue;
+}
+
+.tr-hover:hover {
+  cursor: pointer;
+}
+
+.table-index {
+  width: 1.5rem;
+  text-align: center;
+}
+.table-price {
+  width: 4rem;
+  text-align: center;
+}
+.table-location {
+  width: 5rem;
+  text-align: center;
+}
+.table-reactivated {
+  width: 6rem;
+  text-align: center;
+}
+.tr-empty {
+  text-align: center;
+  background-color: lightsteelblue;
 }
 
 
