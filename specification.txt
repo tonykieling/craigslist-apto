@@ -82,6 +82,6 @@ BE procedure to remove record by admin is done, missing more tests and FE
 FE 1st version is done, 
   Xmissing styling
   Xmessages
-  action to removebyowners - add button + confirm + BE + message
+  Xaction to removebyowners - add button + confirm + BE + message
   mobile
-  index.html - description and icon
+  Xindex.html - description and icon

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { FaTrash } from "react-icons/fa";
+
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 
 const tempDB =  [
@@ -45,34 +47,43 @@ const tempDB =  [
     description: 'Spacious - STUDIO - WITH GREAT VIEWS',
     price: '$1,650',
     active: false,
-    location: "Joyce"
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test"
   }
 ];
 
-const Head = (
+const Head = props => (
   <thead id = "color-head">
     <tr 
       className = "tr-first"
       key="head"
     >
       <th 
-        // style = {{width: "1.5rem"}}
         className = "table-index"
-        // className = "num-head"
       > # </th>
+      <th
+        className = "table-description"
+      > Description </th>
       <th 
-        style = {{}}
-        className = "name-head" > Description </th>
+        className = "table-price" 
+      > $ Now </th>
       <th 
-        style = {{}}
-        className = "others-head" > $ Now </th>
+        // style = {{}}
+        className = "table-price" 
+      > $ Old </th>
       <th 
-        style = {{}}
-        className = "others-head" > $ Old </th>
-      <th 
-        style = {{}}
-        > Location </th>
-      <th rowSpan="1" > Reactived</th>
+        // style = {{}}
+        className = "table-location"
+      > Location </th>
+      <th
+        className = "table-reactivated"
+      > Reactived</th>
+      {props &&
+        <th
+          className = "table-remove"
+        > </th>
+      }
     </tr>
   </thead>
 );
@@ -86,6 +97,7 @@ function AptosList() {
   const [tableAvailables, setTableAvailables] = useState(null);
   const [tableRemovedByOwners, setTableRemovedByOwners] = useState(null);
   const [tableRemovedByAdmins, setTableRemovedByAdmins] = useState(null);
+  const [tableNoMouse, setTableNoMouse] = useState(true);
 
 
 
@@ -98,90 +110,63 @@ function AptosList() {
   };
 
 
-  // const LinkTo = () => {
-  //   console.log("linkkkkkkkkkkkkkkkkkkkkkkkkkk");
-  //   return <Redirect to = "https://tkwebdev.ca" target = "_blank" />
-  // }
-
   const renderDataTable = (data, flag) => {
     const tableCurrent = data.map((current, index) => {
-      const {description, location, price, oldPrice, url, active, reactived} = current;
+      console.log("current", current);
+      const {description, location, price, oldPrice, url, active, reactived, reasonRemovedFromAdmin} = current;
       const tempTableCurrent = (
         <tr 
           key={index} 
           className = { active ? "tr-table tr-hover" : "tr-table" }
-          onClick={()=> active && window.open(url, "_blank")}
+          // onClick={()=> active && window.open(url, "_blank")}
+          onClick={()=> active 
+                          ? window.open(url, "_blank") 
+                          : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
+          // { reason
+          //   ? onClick={()=> active && window.open(url, "_blank")}
+          //   : onClick={()=> active && window.open(url, "_blank")}
         >
           <td
             className = "table-index"
           >
-            {/* {active
-              ?
-                <a href = {url} target="_blank" rel = "noreferrer">
-                  {index + 1}
-                </a>
-              : index + 1
-            } */}
             { index + 1 }
           </td>
-          <td>
-            {/* {active
-              ?
-                <a href = {url} target="_blank" rel = "noreferrer">
-                  {description}
-                </a>
-              : description
-            } */}
+          <td
+            // onClick={()=> active && window.open(url, "_blank")}
+          >
             { description }
           </td>
           <td
             className = "table-price"
           >
-            {/* {active
-              ?
-                <a href = {url} target="_blank" rel = "noreferrer">
-                  {price}
-                </a>
-              : price
-            } */}
             { price }
           </td>
           <td
             className = "table-price"
           >
-            {/* {active
-              ?
-                <a href = {url} target="_blank" rel = "noreferrer">
-                  {(oldPrice || "")}
-                </a>
-              : oldPrice
-            } */}
             { oldPrice }
           </td>
           <td
             className = "table-location"
           >
-            {/* {active
-              ?
-                <a href = {url} target="_blank" rel = "noreferrer">
-                  {location}
-                </a>
-              : location
-            } */}
             { location }
           </td>
           <td
             className = "table-reactivated"
           >
-            {/* {active
-              ?
-                <a href = {url} target="_blank" rel = "noreferrer">
-                  {reactived ? <span>&#10003;</span> : ""}
-                </a>
-              : reactived ? <span>&#10003;</span> : ""
-            } */}
-            { reactived }
+            { reactived && <b> &#10003; </b> }
           </td>
+          {active &&
+            <td 
+              className = "table-remove"
+              onClick = {e => removeItem(e, current)}
+            >
+              <FaTrash 
+                color = "red" 
+                className="table-trash"
+              />
+            </td>
+          }
         </tr>
       );
       return (tempTableCurrent);
@@ -201,7 +186,8 @@ function AptosList() {
     const fetchData = async() => {
   
       try {
-        // temp commented for dev purposes
+        setTableNoMouse(true);
+        // // temp commented for dev purposes
         // const getData = await axios.get( 
         //   url,
         //   {  
@@ -211,7 +197,7 @@ function AptosList() {
         // });
 
         ///////////////////tempDB with delay
-        // console.log("querying getData...")
+        console.log("querying getData...")
         const getData = await new Promise((resolve, reject) => {
           setTimeout(() => {
             resolve({
@@ -233,6 +219,8 @@ function AptosList() {
         } catch (error) {
           console.log("### error post", error.message);
           // setDataTable(null);
+        } finally {
+          setTableNoMouse(false);
         }
     }
 
@@ -249,12 +237,14 @@ function AptosList() {
 
 
   useEffect(() => {
-    // console.log("AVAILABLES=", availables);
+    console.log("changingggggggggggggggg", availables, removedByAdmin);
     (availables) && renderDataTable(availables, "av");
 
     (removedByOwnwer) && renderDataTable(removedByOwnwer, "rbo");
 
     (removedByAdmin) && renderDataTable(removedByAdmin, "rba");
+
+    // setTableNoMouse(false);
     
     return () => {
       // cleanup
@@ -276,7 +266,6 @@ function AptosList() {
   const emptyForNow = (
     <tr>
       <td 
-        // style={{textAlign: "center", backgroundColor: ""}}
         className = "tr-empty"
         colSpan = "6"
       >
@@ -285,30 +274,101 @@ function AptosList() {
     </tr>
   );
 
+  const removeItem = async (e, item) => {
+    e.stopPropagation()
+    const removePass = window.prompt("\nPlease confirm remove action with password");
+    console.log("confirmDeletion", removePass, "item:", item);
+    if (!removePass) return;
+
+    let reason = "";
+    while (!reason)
+      reason = window.prompt("\n Short reason, please ;)");
+    
+      const url = "/api";
+      try {
+          setTableNoMouse(true);
+          const remove = await axios
+            .patch(
+                url,
+                {
+                    removePass,
+                     reason,
+                    _id: item._id
+                  }
+                );
+//           console.log("remove=>", remove);
+// console.log("remove:::::::::", remove);
+          if (!remove.data.message) {
+            console.log("---error", remove.data.error);
+            throw(remove.data.error);
+          }
+          
+          // updateAvailables
+          setAvailables([...availables.filter(e => item._id !== e._id)]);
+          
+          // updateRemovedByAdmins
+          const newItemToRemovedByAdmin = {
+            postId    : item.postId,
+            url       : item.url,
+            price     : item.price,
+            oldPrice  : item.oldPrice,
+            active    : false,
+            description : item.description,
+            location    : item.location,
+            reasonRemovedFromAdmin: reason
+          }
+          setRemovedByAdmin([...removedByAdmin, newItemToRemovedByAdmin]);
+
+
+    } catch(error) {
+      console.log("errorrrr", error);
+      window.alert(`\nError: ${error}\n\nTry again ;)`);
+      // return;
+    } finally {
+      setTableNoMouse(false);
+    }
+
+  };
+
 
   return (
     <div className="app-body">
       <h1>List of apartments</h1>
 
-      <h2 className = "table-section-title av">Current available</h2>
-      <table
-        // style = { tableStyle }
-      >
-        { Head }
-        <tbody>
-        {tableAvailables
-            ? tableAvailables.length ? tableAvailables : emptyForNow
-            : processingMessage
-          }
-        </tbody>
-      </table>
+      <h2
+       className = "table-section-title av"
+      //  onClick = {() => {
+      //    setTableNoMouse(!tableNoMouse);
+      //    console.log("tableNoMouse", tableNoMouse);
+      //   //  setTimeout(() => {
+      //   //    setTableNoMouse(false);
+      //   //  }, 3000);
+      //  }}
+      >Current available</h2>
+        <table
+        ////////////////////////
+          className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+        >
+          { Head(true) }
+          <tbody
+            className = { tableNoMouse ? "table-no-mouse-events" : ""}
+          >
+          {tableAvailables
+              ? tableAvailables.length ? tableAvailables : emptyForNow
+              : processingMessage
+            }
+          </tbody>
+        </table>
+
 
       <h2 className = "table-section-title rbo">Removed by Owners</h2>
       <table
-        // style = { tableStyle }
+        className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
       >
-        { Head }
-        <tbody>
+        { Head() }
+        <tbody
+          className = { tableNoMouse ? "table-no-mouse-events" : ""}
+        >
         {tableRemovedByOwners
             ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
             : processingMessage
@@ -316,12 +376,15 @@ function AptosList() {
         </tbody>
       </table>
 
+
       <h2 className = "table-section-title rba">Removed by Admins</h2>
       <table
-        // style = { tableStyle }
+        className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
       >
-        { Head }
-        <tbody>
+        { Head() }
+        <tbody
+          className = { tableNoMouse ? "table-no-mouse-events" : ""}
+        >
           {tableRemovedByAdmins
             ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
             : processingMessage

@@ -112,6 +112,12 @@ table {
   border: 2px solid green;
   /* border-collapse: collapse; */
 }
+.table-no-mouse-cursor {
+  cursor: wait;
+}
+.table-no-mouse-events {
+  pointer-events: none;
+}
 .tr-table:nth-child(odd){background-color: whitesmoke;}
 .tr-table:nth-child(even){background-color: lightgrey;}
 .tr-table:hover {background-color: salmon;}
@@ -128,17 +134,30 @@ table {
   width: 1.5rem;
   text-align: center;
 }
+.table-description {
+  width: 50%;
+}
 .table-price {
-  width: 4rem;
+  width: 4.5rem;
   text-align: center;
 }
 .table-location {
-  width: 5rem;
+  width: 4rem;
   text-align: center;
 }
 .table-reactivated {
-  width: 6rem;
+  width: 5.5rem;
   text-align: center;
+}
+.table-remove {
+  width: 2rem;
+  text-align: center;
+  /* display: block;
+  margin: auto; */
+}
+.table-trash {
+  display: block;
+  margin: auto;
 }
 .tr-empty {
   text-align: center;

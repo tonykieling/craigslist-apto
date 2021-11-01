@@ -551,24 +551,27 @@ const newData = compareData(dataFromDB, dataFromWeb);
         // it has to be triggered by the front-end
         // it receives postId, the reason for removing the item and a password
         case "PATCH": {
-          const { postId, reason, removePass } = req.body;
+          const { _id, reason, removePass } = req.body;
+          console.log("req.body", req.body);
 
           if (process.env.removePass !== removePass)
             return res.json({error: "forbiden"});
 
-          if (!postId || !reason) return res.json({error: "Missing info"});
-
+          if (!_id || !reason) return res.json({error: "Missing info"});
+console.log("going...");
           try {
             await Apto
               .updateOne(
-                { postId },
+                { _id },
                 {
                   removedByAdmin          : true,
                   reasonRemovedFromAdmin  : reason,
                   active                  : false
                 }
               );
+console.log("OKKKKKKKKKKKKKK");
 
+            // const new
             return res.json({message: "OK"});
 
           } catch(error){
