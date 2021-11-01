@@ -542,23 +542,28 @@ const newData = compareData(dataFromDB, dataFromWeb);
         }
 
 
+        
+
         case "GET": {
           console.log("dataFromDB:::", dataFromDB.length);
           return res.json({apartments: dataFromDB});
         }
+
+
+
+
 
         // it is gonna update data - only when admin is removing a specific record, given specific reason
         // it has to be triggered by the front-end
         // it receives postId, the reason for removing the item and a password
         case "PATCH": {
           const { _id, reason, removePass } = req.body;
-          console.log("req.body", req.body);
 
           if (process.env.removePass !== removePass)
             return res.json({error: "forbiden"});
 
           if (!_id || !reason) return res.json({error: "Missing info"});
-console.log("going...");
+
           try {
             await Apto
               .updateOne(
@@ -569,9 +574,7 @@ console.log("going...");
                   active                  : false
                 }
               );
-console.log("OKKKKKKKKKKKKKK");
 
-            // const new
             return res.json({message: "OK"});
 
           } catch(error){
@@ -591,7 +594,7 @@ console.log("OKKKKKKKKKKKKKK");
     if  (
               ((nowHours == 15 ) && (nowMinutes <= 30))
           ||  ((nowHours == 2) && (nowMinutes <= 30))
-          || ((nowHours > 18) && (nowHours < 21))
+          // || ((nowHours > 18) && (nowHours < 21))
         )
       await sendEmail(`<div>${(error.message || error)}</div>`);
 

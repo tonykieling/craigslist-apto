@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 
 import axios from "axios";
-// import { Redirect } from "react-router-dom";
 
 
 const tempDB =  [
@@ -118,13 +117,9 @@ function AptosList() {
         <tr 
           key={index} 
           className = { active ? "tr-table tr-hover" : "tr-table" }
-          // onClick={()=> active && window.open(url, "_blank")}
           onClick={()=> active 
                           ? window.open(url, "_blank") 
                           : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
-          // { reason
-          //   ? onClick={()=> active && window.open(url, "_blank")}
-          //   : onClick={()=> active && window.open(url, "_blank")}
         >
           <td
             className = "table-index"
@@ -132,7 +127,6 @@ function AptosList() {
             { index + 1 }
           </td>
           <td
-            // onClick={()=> active && window.open(url, "_blank")}
           >
             { description }
           </td>
@@ -187,30 +181,29 @@ function AptosList() {
   
       try {
         setTableNoMouse(true);
-        // // temp commented for dev purposes
-        // const getData = await axios.get( 
-        //   url,
-        //   {  
-        //     headers: { 
-        //       "Content-Type": "application/json"
-        //     }
-        // });
-
-        ///////////////////tempDB with delay
-        console.log("querying getData...")
-        const getData = await new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve({
-              data: {
-                apartments: [...tempDB]
-              }}
-            );
-          }, 2300);
+        // temp commented for dev purposes
+        const getData = await axios.get( 
+          url,
+          {  
+            headers: { 
+              "Content-Type": "application/json"
+            }
         });
-        // console.log("getData", getData);
+
+        // ///////////////////tempDB with delay
+        // console.log("querying getData...")
+        // const getData = await new Promise((resolve, reject) => {
+        //   setTimeout(() => {
+        //     resolve({
+        //       data: {
+        //         apartments: [...tempDB]
+        //       }}
+        //     );
+        //   }, 2300);
+        // });
+        // // console.log("getData", getData);
 
         if (getData.data.apartments) {
-          // console.log("answer::::::::::::", getData.data.apartments);
           sortAnswer(getData.data.apartments);
 
         } else
@@ -218,7 +211,6 @@ function AptosList() {
           
         } catch (error) {
           console.log("### error post", error.message);
-          // setDataTable(null);
         } finally {
           setTableNoMouse(false);
         }
@@ -237,14 +229,11 @@ function AptosList() {
 
 
   useEffect(() => {
-    console.log("changingggggggggggggggg", availables, removedByAdmin);
     (availables) && renderDataTable(availables, "av");
 
     (removedByOwnwer) && renderDataTable(removedByOwnwer, "rbo");
 
     (removedByAdmin) && renderDataTable(removedByAdmin, "rba");
-
-    // setTableNoMouse(false);
     
     return () => {
       // cleanup
@@ -277,7 +266,7 @@ function AptosList() {
   const removeItem = async (e, item) => {
     e.stopPropagation()
     const removePass = window.prompt("\nPlease confirm remove action with password");
-    console.log("confirmDeletion", removePass, "item:", item);
+
     if (!removePass) return;
 
     let reason = "";
@@ -296,10 +285,8 @@ function AptosList() {
                     _id: item._id
                   }
                 );
-//           console.log("remove=>", remove);
-// console.log("remove:::::::::", remove);
+                
           if (!remove.data.message) {
-            console.log("---error", remove.data.error);
             throw(remove.data.error);
           }
           
@@ -321,9 +308,7 @@ function AptosList() {
 
 
     } catch(error) {
-      console.log("errorrrr", error);
       window.alert(`\nError: ${error}\n\nTry again ;)`);
-      // return;
     } finally {
       setTableNoMouse(false);
     }
@@ -337,16 +322,11 @@ function AptosList() {
 
       <h2
        className = "table-section-title av"
-      //  onClick = {() => {
-      //    setTableNoMouse(!tableNoMouse);
-      //    console.log("tableNoMouse", tableNoMouse);
-      //   //  setTimeout(() => {
-      //   //    setTableNoMouse(false);
-      //   //  }, 3000);
-      //  }}
+
       >Current available</h2>
+      {/* here's a trick to get no mouse events and be able to set the cursor, 
+          which is wrapping the cursor first and after setting the event's mouse */}
         <table
-        ////////////////////////
           className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
         >
           { Head(true) }
