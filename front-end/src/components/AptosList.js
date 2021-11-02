@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
-
+import TableMobile from "./TableMobile.js";
 import axios from "axios";
 
 
@@ -52,7 +52,11 @@ const tempDB =  [
   }
 ];
 
-const Head = props => (
+
+const mobile = window.innerWidth < 768 ? true : false;
+console.log("window.innerWidth", window.innerWidth);
+
+const Head = showRemoveButton => (
   <thead id = "color-head">
     <tr 
       className = "tr-first"
@@ -68,20 +72,18 @@ const Head = props => (
         className = "table-price" 
       > $ Now </th>
       <th 
-        // style = {{}}
         className = "table-price" 
       > $ Old </th>
       <th 
-        // style = {{}}
         className = "table-location"
       > Location </th>
       <th
         className = "table-reactivated"
       > Reactived</th>
-      {props &&
+      {showRemoveButton &&
         <th
           className = "table-remove"
-        > </th>
+        ></th>
       }
     </tr>
   </thead>
@@ -111,7 +113,7 @@ function AptosList() {
 
   const renderDataTable = (data, flag) => {
     const tableCurrent = data.map((current, index) => {
-      console.log("current", current);
+      // console.log("current", current);
       const {description, location, price, oldPrice, url, active, reactived, reasonRemovedFromAdmin} = current;
       const tempTableCurrent = (
         <tr 
@@ -181,27 +183,27 @@ function AptosList() {
   
       try {
         setTableNoMouse(true);
-        // temp commented for dev purposes
-        const getData = await axios.get( 
-          url,
-          {  
-            headers: { 
-              "Content-Type": "application/json"
-            }
-        });
-
-        // ///////////////////tempDB with delay
-        // console.log("querying getData...")
-        // const getData = await new Promise((resolve, reject) => {
-        //   setTimeout(() => {
-        //     resolve({
-        //       data: {
-        //         apartments: [...tempDB]
-        //       }}
-        //     );
-        //   }, 2300);
+        // // temp commented for dev purposes
+        // const getData = await axios.get( 
+        //   url,
+        //   {  
+        //     headers: { 
+        //       "Content-Type": "application/json"
+        //     }
         // });
-        // // console.log("getData", getData);
+
+        ///////////////////tempDB with delay
+        console.log("querying getData...")
+        const getData = await new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve({
+              data: {
+                apartments: [...tempDB]
+              }}
+            );
+          }, 2300);
+        });
+        // console.log("getData", getData);
 
         if (getData.data.apartments) {
           sortAnswer(getData.data.apartments);
@@ -326,54 +328,67 @@ function AptosList() {
       >Current available</h2>
       {/* here's a trick to get no mouse events and be able to set the cursor, 
           which is wrapping the cursor first and after setting the event's mouse */}
-        <table
-          className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
-        >
-          { Head(true) }
-          <tbody
-            className = { tableNoMouse ? "table-no-mouse-events" : ""}
-          >
-          {tableAvailables
-              ? tableAvailables.length ? tableAvailables : emptyForNow
-              : processingMessage
-            }
-          </tbody>
-        </table>
-
+        { mobile
+          ?
+            availables && availables.length && <TableMobile data = { availables } type = "a" />
+          :  
+            <table
+              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+            >
+              { Head(true) }
+              <tbody
+                className = { tableNoMouse ? "table-no-mouse-events" : ""}
+              >
+              {tableAvailables
+                  ? tableAvailables.length ? tableAvailables : emptyForNow
+                  : processingMessage
+                }
+              </tbody>
+            </table>
+        }
+        
 
       <h2 className = "table-section-title rbo">Removed by Owners</h2>
-      <table
-        className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
-      >
-        { Head() }
-        <tbody
-          className = { tableNoMouse ? "table-no-mouse-events" : ""}
-        >
-        {tableRemovedByOwners
-            ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
-            : processingMessage
-          }
-        </tbody>
-      </table>
-
+      { mobile
+          ?
+            removedByOwnwer && <TableMobile data = { removedByOwnwer } type = "rbo" />
+          :  
+            <table
+              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+            >
+              { Head() }
+              <tbody
+                className = { tableNoMouse ? "table-no-mouse-events" : ""}
+              >
+              {tableRemovedByOwners
+                  ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
+                  : processingMessage
+                }
+              </tbody>
+            </table>
+      }
 
       <h2 className = "table-section-title rba">Removed by Admins</h2>
-      <table
-        className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
-      >
-        { Head() }
-        <tbody
-          className = { tableNoMouse ? "table-no-mouse-events" : ""}
-        >
-          {tableRemovedByAdmins
-            ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
-            : processingMessage
-          }
-        </tbody>
-      </table>
+      { mobile
+          ?
+            removedByAdmin && removedByAdmin.length && <TableMobile data = { removedByAdmin } type = "rba" />
+          :  
+            <table
+              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+            >
+              { Head() }
+              <tbody
+                className = { tableNoMouse ? "table-no-mouse-events" : ""}
+              >
+                {tableRemovedByAdmins
+                  ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
+                  : processingMessage
+                }
+              </tbody>
+            </table>
+        }
 
-
-      <p style={{paddingBottom: "5rem"}}></p>
+      <p style={{paddingBottom: "2rem"}}></p>
     </div>
   );
 }

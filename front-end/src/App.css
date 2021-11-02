@@ -11,7 +11,7 @@
 }
 
 .main-header .header-1 {
-  width: 50%;
+  width: 60%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 50%;
+  width: 40%;
   height: 100%
 }
 
@@ -73,6 +73,8 @@ body {
   border-radius: 10px;
   padding: 2rem;
 }
+
+
 
 
 
@@ -159,9 +161,39 @@ table {
   display: block;
   margin: auto;
 }
+.table-edit {
+  display: block;
+  margin: auto;
+}
+.table-more {
+  width: 2.5rem;
+}
 .tr-empty {
   text-align: center;
   background-color: lightsteelblue;
+}
+/* 
+.table-mobile {
+  min-width: 90%;
+  margin: auto;
+  border: 2px solid blue;
+} */
+
+@media (max-width: 768px) {
+  .app-body {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    /* border: 3px solid red; */
+  }
+  table {
+    min-width: 95%;
+  }
+  .table-index {
+    width: 1rem;
+  } 
+  .table-price {
+    width: 1.5rem;
+  }
 }
 
 

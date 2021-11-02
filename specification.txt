@@ -85,3 +85,13 @@ FE 1st version is done,
   Xaction to removebyowners - add button + confirm + BE + message
   mobile
   Xindex.html - description and icon
+
+  doing mobile, table style is ok but started rethinking the UI structure
+  missing modal to:
+    show more info, and
+    show option to remove by Admin
+
+    need to rethink the UI table structure
+    AptosList has <table> <thead> (mobile or web) <tbody> (mobile or web)
+    4 diff components: TheadMobile, TheadWeb, TbodyMobile and TbodyWeb
+    modal for removeByAdmin and for TbdodyMobile

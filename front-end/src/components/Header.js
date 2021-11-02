@@ -13,10 +13,8 @@ const Header = () => {
             alt   = "temps"
             title = "Homes"
             width = "100%"
-            // className = "logo"
           />
         </a>
-        {/* </Link> */}
 
         <Link 
           className = "item"
