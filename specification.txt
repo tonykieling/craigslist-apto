@@ -95,3 +95,5 @@ FE 1st version is done,
     AptosList has <table> <thead> (mobile or web) <tbody> (mobile or web)
     4 diff components: TheadMobile, TheadWeb, TbodyMobile and TbodyWeb
     modal for removeByAdmin and for TbdodyMobile
+    modal is working for availables, missing style and copy for the other types (rbo and rba)
+      implement slowly collapse for rbo and rba

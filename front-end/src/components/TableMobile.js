@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaEdit } from "react-icons/fa";
+import AppsModal from "./AppsModal";
 
 const processingMessage = (
   <tr>
@@ -24,20 +25,20 @@ const emptyForNow = (
 );
 
 const TableMobile = props => {
-  // console.log("propsssssssss", props);
   const [ dataTable, setDataTable ] = useState(null);
 
+  const [ callAppsModal, setCallApsModal ] = useState(null);
+  const [ dataToModal, setDataToModal ] = useState(null);
+
   useEffect(() => {
-    // console.log("this props", props);
-    // data && data.length && 
-    setDataTable(renderDataTable());
+    props.data && setDataTable(renderDataTable());
 
     return () => {
-      renderDataTable();
+      props.data && renderDataTable();
     }
 
     //eslint-disable-next-line
-  }, [props]);
+  }, [props.data]);
 
 
   const HeadMobile = props => (
@@ -66,26 +67,27 @@ const TableMobile = props => {
     if (!props.data.length)
       return(emptyForNow);
 
-    const newTable = props.data.map((e, i) => {
-      const { description, active, location, price, oldPrice, url, reactivated, reasonRemovedFromAdmin } = e;
-      let shortDescription = description;
-      if (shortDescription.length > 22)
-        shortDescription = `${shortDescription.substring(0, 19)}..`;
+    const newTable = props.data.map((element, i) => {
+      const { description, active, location, price, oldPrice, url, reactivated, reasonRemovedFromAdmin } = element;
 
       return (
         <tr
           className = "tr-table"
           key={i}
-          onClick={()=> active 
+          onClick = {() => active 
                           ? window.open(url, "_blank") 
                           : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
         >
           <td className = "table-index"> {i + 1} </td>
-          <td className = "table-description"> { shortDescription } </td>
+          <td className = "table-description"> { description.length > 20 ? description.substring(0, 19) : description} </td>
           <td className = "table-price"> { price } </td>
           <td 
             className = "table-remove"
-            onClick = {e => console.log("test removing")}
+            onClick = {e => {
+              e.stopPropagation();
+              setDataToModal(element)
+              setCallApsModal(true);
+            }}
           >
             <FaEdit 
               color = "blue" 
@@ -101,14 +103,29 @@ const TableMobile = props => {
   };
 
   return(
-    <table
-    >
-      { HeadMobile() }
-      <tbody>
-        {/* { console.log("dataTable", dataTable)} */}
-        { dataTable }
-      </tbody>
-    </table>
+    <>
+      {callAppsModal &&
+        <AppsModal
+          openModal   = { callAppsModal }
+          closeModal  = { () => setCallApsModal(false) }
+          info        = { dataToModal }
+          // remove      = {}
+          // @Ch3ckMyself
+        />
+      }
+      <table
+      >
+        { HeadMobile() }
+        <tbody>
+          {/* { console.log("dataTable", dataTable)} */}
+          { dataTable
+            ? dataTable.length ? dataTable : emptyForNow
+            : processingMessage
+
+          }
+        </tbody>
+      </table>
+    </>
   );
 };
 

@@ -130,7 +130,7 @@ function AptosList() {
           </td>
           <td
           >
-            { description }
+            { description.length > 60 ? description.substring(0, 59) : description}
           </td>
           <td
             className = "table-price"
@@ -201,7 +201,7 @@ function AptosList() {
                 apartments: [...tempDB]
               }}
             );
-          }, 2300);
+          }, 300);
         });
         // console.log("getData", getData);
 
@@ -330,7 +330,7 @@ function AptosList() {
           which is wrapping the cursor first and after setting the event's mouse */}
         { mobile
           ?
-            availables && availables.length && <TableMobile data = { availables } type = "a" />
+            <TableMobile data = { availables } type = "a" />
           :  
             <table
               className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
@@ -346,7 +346,24 @@ function AptosList() {
               </tbody>
             </table>
         }
-        
+        {/* { availables && availables.length && 
+          mobile
+            ? <TableMobile data = { availables } type = "a" />
+          :  
+            <table
+              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+            >
+              { Head(true) }
+              <tbody
+                className = { tableNoMouse ? "table-no-mouse-events" : ""}
+              >
+              {tableAvailables
+                  ? tableAvailables.length ? tableAvailables : emptyForNow
+                  : processingMessage
+                }
+              </tbody>
+            </table>
+        } */}
 
       <h2 className = "table-section-title rbo">Removed by Owners</h2>
       { mobile
