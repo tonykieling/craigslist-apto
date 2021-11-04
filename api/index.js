@@ -558,7 +558,8 @@ const newData = compareData(dataFromDB, dataFromWeb);
         // it receives postId, the reason for removing the item and a password
         case "PATCH": {
           const { _id, reason, removePass } = req.body;
-
+console.log("req.body", req.body);
+// if (1) return res.json({message: true});
           if (process.env.removePass !== removePass)
             return res.json({error: "forbiden"});
 

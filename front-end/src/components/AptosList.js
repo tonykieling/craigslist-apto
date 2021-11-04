@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import TableMobile from "./TableMobile.js";
-import axios from "axios";
-
+import removeItem from "./helpers/removeItem.js";
+import getItems from "./helpers/getItems.js";
 
 const tempDB =  [
   {
@@ -12,7 +12,8 @@ const tempDB =  [
     price: '$1,780',
     active: true,
     location: "Joyce",
-    reactived: true
+    reactived: true,
+    _id: 1
   },
   {
     postId: '7388747820',
@@ -21,7 +22,8 @@ const tempDB =  [
     price: '$1,780',
     active: true,
     location: "Joyce",
-    reactived: true
+    reactived: true,
+    _id: 2
   },
   {
     postId: '7388747820',
@@ -30,7 +32,8 @@ const tempDB =  [
     price: '$1,780',
     active: true,
     location: "Joyce",
-    reactived: true
+    reactived: true,
+    _id: 3
   },
   {
     postId: '7380919502',
@@ -38,7 +41,8 @@ const tempDB =  [
     description: 'Spacious 1br with Balcony in Metrotown area',
     price: '$1,765',
     active: true,
-    location: "Patterson"
+    location: "Patterson",
+    _id: 4
   },
   {
     postId: '7380919325',
@@ -48,13 +52,13 @@ const tempDB =  [
     active: false,
     location: "Joyce",
     removedByAdmin: true,
-    reasonRemovedFromAdmin: "test"
+    reasonRemovedFromAdmin: "test",
+    _id: 5
   }
 ];
 
 
 const mobile = window.innerWidth < 768 ? true : false;
-console.log("window.innerWidth", window.innerWidth);
 
 const Head = showRemoveButton => (
   <thead id = "color-head">
@@ -100,6 +104,7 @@ function AptosList() {
   const [tableRemovedByAdmins, setTableRemovedByAdmins] = useState(null);
   const [tableNoMouse, setTableNoMouse] = useState(true);
 
+  const [ closeModal, setCloseModal ] = useState(false);
 
 
   const sortAnswer = aptos => {
@@ -113,7 +118,6 @@ function AptosList() {
 
   const renderDataTable = (data, flag) => {
     const tableCurrent = data.map((current, index) => {
-      // console.log("current", current);
       const {description, location, price, oldPrice, url, active, reactived, reasonRemovedFromAdmin} = current;
       const tempTableCurrent = (
         <tr 
@@ -155,7 +159,7 @@ function AptosList() {
           {active &&
             <td 
               className = "table-remove"
-              onClick = {e => removeItem(e, current)}
+              onClick = {e => callRemoveItem(e, current)}
             >
               <FaTrash 
                 color = "red" 
@@ -176,40 +180,18 @@ function AptosList() {
 
   useEffect(() => {
 
-    // const url = "http://localhost:3000/api"
-    const url = "/api";
-
     const fetchData = async() => {
   
       try {
         setTableNoMouse(true);
-        // // temp commented for dev purposes
-        // const getData = await axios.get( 
-        //   url,
-        //   {  
-        //     headers: { 
-        //       "Content-Type": "application/json"
-        //     }
-        // });
 
-        ///////////////////tempDB with delay
-        console.log("querying getData...")
-        const getData = await new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve({
-              data: {
-                apartments: [...tempDB]
-              }}
-            );
-          }, 300);
-        });
-        // console.log("getData", getData);
-
-        if (getData.data.apartments) {
-          sortAnswer(getData.data.apartments);
+        const getData = await getItems();
+        console.log("getDataaaaaaaaaa", getData);
+        if (getData.message) {
+          sortAnswer(getData.message);
 
         } else
-          throw new Error();
+          throw new Error(getData.error);
           
         } catch (error) {
           console.log("### error post", error.message);
@@ -265,7 +247,9 @@ function AptosList() {
     </tr>
   );
 
-  const removeItem = async (e, item) => {
+
+  const callRemoveItem = async (e, item, receivingFromModal) => {
+    console.log("YEAHHHHHH")
     e.stopPropagation()
     const removePass = window.prompt("\nPlease confirm remove action with password");
 
@@ -275,38 +259,43 @@ function AptosList() {
     while (!reason)
       reason = window.prompt("\n Short reason, please ;)");
     
-      const url = "/api";
-      try {
-          setTableNoMouse(true);
-          const remove = await axios
-            .patch(
-                url,
-                {
-                    removePass,
-                     reason,
-                    _id: item._id
-                  }
-                );
+      
+    const url = "/api";
+    try {
+      setTableNoMouse(true);
+      const removeItemByAdmin = await removeItem(item._id, removePass, reason);
+          // const remove = await axios
+          //   .patch(
+          //       url,
+          //       {
+          //           removePass,
+          //            reason,
+          //           _id: item._id
+          //         }
+          //       );
                 
-          if (!remove.data.message) {
-            throw(remove.data.error);
-          }
+      if (removeItemByAdmin.error) {
+        throw(removeItemByAdmin.error);
+      }
           
-          // updateAvailables
-          setAvailables([...availables.filter(e => item._id !== e._id)]);
+      // updateAvailables
+      setAvailables([...availables.filter(e => item._id !== e._id)]);
           
-          // updateRemovedByAdmins
-          const newItemToRemovedByAdmin = {
-            postId    : item.postId,
-            url       : item.url,
-            price     : item.price,
-            oldPrice  : item.oldPrice,
-            active    : false,
-            description : item.description,
-            location    : item.location,
-            reasonRemovedFromAdmin: reason
-          }
-          setRemovedByAdmin([...removedByAdmin, newItemToRemovedByAdmin]);
+      // updateRemovedByAdmins
+      const newItemToRemovedByAdmin = {
+        postId    : item.postId,
+        url       : item.url,
+        price     : item.price,
+        oldPrice  : item.oldPrice,
+        active    : false,
+        description : item.description,
+        location    : item.location,
+        reasonRemovedFromAdmin: reason
+      }
+      setRemovedByAdmin([...removedByAdmin, newItemToRemovedByAdmin]);
+
+      if (receivingFromModal)
+        setCloseModal(true);
 
 
     } catch(error) {
@@ -316,6 +305,7 @@ function AptosList() {
     }
 
   };
+
 
 
   return (
@@ -330,7 +320,11 @@ function AptosList() {
           which is wrapping the cursor first and after setting the event's mouse */}
         { mobile
           ?
-            <TableMobile data = { availables } type = "a" />
+            <TableMobile 
+              data = { availables } type = "a"
+              callRemoveItem = { callRemoveItem }
+              closeModal = { closeModal }
+            />
           :  
             <table
               className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
@@ -346,24 +340,6 @@ function AptosList() {
               </tbody>
             </table>
         }
-        {/* { availables && availables.length && 
-          mobile
-            ? <TableMobile data = { availables } type = "a" />
-          :  
-            <table
-              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
-            >
-              { Head(true) }
-              <tbody
-                className = { tableNoMouse ? "table-no-mouse-events" : ""}
-              >
-              {tableAvailables
-                  ? tableAvailables.length ? tableAvailables : emptyForNow
-                  : processingMessage
-                }
-              </tbody>
-            </table>
-        } */}
 
       <h2 className = "table-section-title rbo">Removed by Owners</h2>
       { mobile

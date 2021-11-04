@@ -97,3 +97,4 @@ FE 1st version is done,
     modal for removeByAdmin and for TbdodyMobile
     modal is working for availables, missing style and copy for the other types (rbo and rba)
       implement slowly collapse for rbo and rba
+  axios functions refactored plus tried modal for everything, but, turns out, it is gonna be only for mobile. It is working but missing style.

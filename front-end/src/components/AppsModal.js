@@ -15,7 +15,7 @@ const customStyle = {
 };
 
 const AppsModal = props => {
-  console.log("props on modal:", props);
+  // console.log("props on modalXXX:", props);
   const { description, location, price, oldPrice, reactivated } = props.info;
 
   return(
@@ -40,6 +40,12 @@ const AppsModal = props => {
 
       <button onClick = { () => props.closeModal()}>
         Close
+      </button>
+
+      <button
+        onClick = { e => props.callRemoveItem(e, props.info, true) }
+      >
+        Remove Item
       </button>
     </ReactModal>
   );

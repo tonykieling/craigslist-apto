@@ -27,7 +27,7 @@ const emptyForNow = (
 const TableMobile = props => {
   const [ dataTable, setDataTable ] = useState(null);
 
-  const [ callAppsModal, setCallApsModal ] = useState(null);
+  const [ callAppsModal, setCallAppsModal ] = useState(null);
   const [ dataToModal, setDataToModal ] = useState(null);
 
   useEffect(() => {
@@ -63,6 +63,11 @@ const TableMobile = props => {
     </thead>
   );
 
+  useEffect(() => {
+    setCallAppsModal(false);
+    //eslint-disable-next-line
+  }, [props.closeModal]);
+
   const renderDataTable = () => {
     if (!props.data.length)
       return(emptyForNow);
@@ -79,14 +84,14 @@ const TableMobile = props => {
                           : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
         >
           <td className = "table-index"> {i + 1} </td>
-          <td className = "table-description"> { description.length > 20 ? description.substring(0, 19) : description} </td>
+          <td className = "table-description"> { description.length > 20 ? `${description.substring(0, 19)}..` : description} </td>
           <td className = "table-price"> { price } </td>
           <td 
             className = "table-remove"
             onClick = {e => {
               e.stopPropagation();
               setDataToModal(element)
-              setCallApsModal(true);
+              setCallAppsModal(true);
             }}
           >
             <FaEdit 
@@ -98,7 +103,6 @@ const TableMobile = props => {
       );
     });
 
-    // console.log("newTable", newTable);
     return newTable;
   };
 
@@ -107,17 +111,15 @@ const TableMobile = props => {
       {callAppsModal &&
         <AppsModal
           openModal   = { callAppsModal }
-          closeModal  = { () => setCallApsModal(false) }
+          closeModal  = { () => setCallAppsModal(false) }
           info        = { dataToModal }
-          // remove      = {}
-          // @Ch3ckMyself
+          callRemoveItem = { props.callRemoveItem }
         />
       }
       <table
       >
         { HeadMobile() }
         <tbody>
-          {/* { console.log("dataTable", dataTable)} */}
           { dataTable
             ? dataTable.length ? dataTable : emptyForNow
             : processingMessage
