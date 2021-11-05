@@ -25,28 +25,36 @@ const AppsModal = props => {
       style   = { customStyle}
     >
       <h2>Posting details</h2>
-      <div> { description, description }</div>
-      <div className = "items-modal"> Location </div>
-      <div> { location }</div>
-      <div className = "items-modal"> Price </div>
-      <div> { price }</div>
+      <div> { description }</div>
+      <div>
+        <spam className = "items-modal">@ <b>{ location }</b> </spam>
+      </div>
+      <div>
+        <spam> <b>{ price }</b></spam>
+      </div>
       {reactivated
         &&
           <>
-            <div className = "items-modal"> $ before </div>
-            <div> { oldPrice }</div>
+            <div className = "items-modal">
+              <spam> $ before was <b>{ oldPrice } </b></spam>
+            </div>
           </>
       }
 
-      <button onClick = { () => props.closeModal()}>
-        Close
-      </button>
+      <div className = "buttons-modal">
+        <button 
+          className = "button-close"
+          onClick = { () => props.closeModal()}>
+          Close
+        </button>
 
-      <button
-        onClick = { e => props.callRemoveItem(e, props.info, true) }
-      >
-        Remove Item
-      </button>
+        <button
+          className = "button-remove"
+          onClick = { e => props.callRemoveItem(e, props.info, true) }
+        >
+          Remove Item
+        </button>
+      </div>
     </ReactModal>
   );
 };

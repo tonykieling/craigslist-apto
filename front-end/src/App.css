@@ -172,6 +172,9 @@ table {
   text-align: center;
   background-color: lightsteelblue;
 }
+.tr-orange {
+  color: orange;
+}
 /* 
 .table-mobile {
   min-width: 90%;
@@ -198,7 +201,26 @@ table {
 
 
 /* Modals settings */
-.ok-message {
+h2 {
+  text-align: center;
+}
+
+.buttons-modal {
+  margin-top: 3rem;
+  display: flex;
+
+}
+.button-close {
+  width: 50%;
+  background-color: darkcyan;
+  color: maroon;
+}
+.button-remove {
+  width: 50%;
+  color: darkblue;
+  background-color: indianred
+}
+/* .ok-message {
   color: blue;
   text-align: center;
 }
@@ -209,7 +231,7 @@ table {
 .processing-message {
   color: green;
   text-align: center;
-}
+} */
 
 /* Footer components style */
 @import url("https://fonts.googleapis.com/css2?family=Oregano&display=swap");

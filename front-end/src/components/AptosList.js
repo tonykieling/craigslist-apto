@@ -4,59 +4,6 @@ import TableMobile from "./TableMobile.js";
 import removeItem from "./helpers/removeItem.js";
 import getItems from "./helpers/getItems.js";
 
-const tempDB =  [
-  {
-    postId: '7388747820',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
-    description: '1 Bedroom on 26th floor in Station Square',
-    price: '$1,780',
-    active: true,
-    location: "Joyce",
-    reactived: true,
-    _id: 1
-  },
-  {
-    postId: '7388747820',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
-    description: '1 Bedroom on 26th floor in Station Square',
-    price: '$1,780',
-    active: true,
-    location: "Joyce",
-    reactived: true,
-    _id: 2
-  },
-  {
-    postId: '7388747820',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
-    description: '1 Bedroom on 26th floor in Station Square',
-    price: '$1,780',
-    active: true,
-    location: "Joyce",
-    reactived: true,
-    _id: 3
-  },
-  {
-    postId: '7380919502',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html',
-    description: 'Spacious 1br with Balcony in Metrotown area',
-    price: '$1,765',
-    active: true,
-    location: "Patterson",
-    _id: 4
-  },
-  {
-    postId: '7380919325',
-    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
-    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
-    price: '$1,650',
-    active: false,
-    location: "Joyce",
-    removedByAdmin: true,
-    reasonRemovedFromAdmin: "test",
-    _id: 5
-  }
-];
-
 
 const mobile = window.innerWidth < 768 ? true : false;
 
@@ -118,7 +65,7 @@ function AptosList() {
 
   const renderDataTable = (data, flag) => {
     const tableCurrent = data.map((current, index) => {
-      const {description, location, price, oldPrice, url, active, reactived, reasonRemovedFromAdmin} = current;
+      const {description, location, price, oldPrice, url, active, reactivated, reasonRemovedFromAdmin} = current;
       const tempTableCurrent = (
         <tr 
           key={index} 
@@ -133,6 +80,7 @@ function AptosList() {
             { index + 1 }
           </td>
           <td
+            className = {`table-description ${ reactivated ? "tr-orange" : "asd"}`}
           >
             { description.length > 60 ? description.substring(0, 59) : description}
           </td>
@@ -154,7 +102,7 @@ function AptosList() {
           <td
             className = "table-reactivated"
           >
-            { reactived && <b> &#10003; </b> }
+            { reactivated && <b> &#10003; </b> }
           </td>
           {active &&
             <td 
@@ -259,20 +207,9 @@ function AptosList() {
     while (!reason)
       reason = window.prompt("\n Short reason, please ;)");
     
-      
-    const url = "/api";
     try {
       setTableNoMouse(true);
       const removeItemByAdmin = await removeItem(item._id, removePass, reason);
-          // const remove = await axios
-          //   .patch(
-          //       url,
-          //       {
-          //           removePass,
-          //            reason,
-          //           _id: item._id
-          //         }
-          //       );
                 
       if (removeItemByAdmin.error) {
         throw(removeItemByAdmin.error);

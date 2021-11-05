@@ -73,7 +73,10 @@ const TableMobile = props => {
       return(emptyForNow);
 
     const newTable = props.data.map((element, i) => {
-      const { description, active, location, price, oldPrice, url, reactivated, reasonRemovedFromAdmin } = element;
+      const { description, active, 
+        // location, 
+        // oldPrice, 
+        price, url, reactivated, reasonRemovedFromAdmin } = element;
 
       return (
         <tr
@@ -84,7 +87,11 @@ const TableMobile = props => {
                           : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
         >
           <td className = "table-index"> {i + 1} </td>
-          <td className = "table-description"> { description.length > 20 ? `${description.substring(0, 19)}..` : description} </td>
+          <td 
+            className = {`table-description ${ reactivated ? "tr-orange" : "asd"}`}
+          > 
+            { description.length > 20 ? `${description.substring(0, 19)}..` : description} 
+          </td>
           <td className = "table-price"> { price } </td>
           <td 
             className = "table-remove"
