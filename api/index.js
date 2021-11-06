@@ -443,7 +443,7 @@ module.exports = async(req, res) => {
 
             // 2- record on DB
             // it inserts new data coming from web
-            if (newData.newItems.length) {
+            if (newData.newItems && newData.newItems.length) {
               for (const item of newData.newItems) {
                 const toInsert = new Apto({
                   _id: new mongoose.Types.ObjectId(),
@@ -459,7 +459,7 @@ module.exports = async(req, res) => {
             }
 
             // it updates data coming from web about item changed
-            if (newData.changed.length) {
+            if (newData.changed && newData.changed.length) {
               for (const item of newData.changed) {
                 await Apto
                   .updateOne(
@@ -476,7 +476,7 @@ module.exports = async(req, res) => {
             }
 
             // it updates deleted data
-            if (newData.deleted.length) {
+            if (newData.deleted && newData.deleted.length) {
               for (const item of newData.deleted) {
                 await Apto
                   .updateOne(
