@@ -25,6 +25,7 @@ const emptyForNow = (
 );
 
 const TableMobile = props => {
+  console.log("props on tablemobile", props);
   const [ dataTable, setDataTable ] = useState(null);
 
   const [ callAppsModal, setCallAppsModal ] = useState(null);
@@ -76,7 +77,7 @@ const TableMobile = props => {
       const { description, active, 
         // location, 
         // oldPrice, 
-        price, url, reactivated, reasonRemovedFromAdmin } = element;
+        price, url, reactivated, reasonRemovedFromAdmin, changed } = element;
 
       return (
         <tr
@@ -88,7 +89,7 @@ const TableMobile = props => {
         >
           <td className = "table-index"> {i + 1} </td>
           <td 
-            className = {`table-description ${ reactivated ? "tr-orange" : "asd"}`}
+            className = {`table-description ${ reactivated || changed ? "tr-orange" : "asd"}`}
           > 
             { description.length > 20 ? `${description.substring(0, 19)}..` : description} 
           </td>
@@ -121,6 +122,7 @@ const TableMobile = props => {
           closeModal  = { () => setCallAppsModal(false) }
           info        = { dataToModal }
           callRemoveItem = { props.callRemoveItem }
+          showRemoveButton = { props.type === "a" ? true : false}
         />
       }
       <table

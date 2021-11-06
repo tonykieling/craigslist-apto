@@ -25,7 +25,7 @@ const removeItem = async (id, removePass, reason) => {
               _id: id
             }
           );
- console.log("removeeeeeeeeeeeee", remove);
+//  console.log("removeeeeeeeeeeeee", remove);
       if (!remove.data.message) {
         throw(remove.data.error);
       }

@@ -65,7 +65,7 @@ function AptosList() {
 
   const renderDataTable = (data, flag) => {
     const tableCurrent = data.map((current, index) => {
-      const {description, location, price, oldPrice, url, active, reactivated, reasonRemovedFromAdmin} = current;
+      const {description, location, price, oldPrice, url, active, reactivated, reasonRemovedFromAdmin, changed} = current;
       const tempTableCurrent = (
         <tr 
           key={index} 
@@ -80,7 +80,7 @@ function AptosList() {
             { index + 1 }
           </td>
           <td
-            className = {`table-description ${ reactivated ? "tr-orange" : "asd"}`}
+            className = {`table-description ${ reactivated || changed ? "tr-orange" : "asd"}`}
           >
             { description.length > 60 ? description.substring(0, 59) : description}
           </td>
@@ -197,7 +197,7 @@ function AptosList() {
 
 
   const callRemoveItem = async (e, item, receivingFromModal) => {
-    console.log("YEAHHHHHH")
+    // console.log("YEAHHHHHH")
     e.stopPropagation()
     const removePass = window.prompt("\nPlease confirm remove action with password");
 
@@ -233,6 +233,8 @@ function AptosList() {
 
       if (receivingFromModal)
         setCloseModal(true);
+
+      window.alert("Item removed by Admin successfully. :)");
 
 
     } catch(error) {
@@ -281,41 +283,49 @@ function AptosList() {
       <h2 className = "table-section-title rbo">Removed by Owners</h2>
       { mobile
           ?
-            removedByOwnwer && <TableMobile data = { removedByOwnwer } type = "rbo" />
-          :  
-            <table
-              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+          <TableMobile 
+            data = { removedByOwnwer } type = "rbo"
+            callRemoveItem = { callRemoveItem }
+            closeModal = { closeModal }
+          />
+        :  
+          <table
+            className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+          >
+            { Head() }
+            <tbody
+              className = { tableNoMouse ? "table-no-mouse-events" : ""}
             >
-              { Head() }
-              <tbody
-                className = { tableNoMouse ? "table-no-mouse-events" : ""}
-              >
-              {tableRemovedByOwners
-                  ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
-                  : processingMessage
-                }
-              </tbody>
-            </table>
+            {tableRemovedByOwners
+                ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
+                : processingMessage
+              }
+            </tbody>
+          </table>
       }
 
       <h2 className = "table-section-title rba">Removed by Admins</h2>
       { mobile
-          ?
-            removedByAdmin && removedByAdmin.length && <TableMobile data = { removedByAdmin } type = "rba" />
+        ?
+          <TableMobile 
+            data = { removedByAdmin } type = "rba"
+            callRemoveItem = { callRemoveItem }
+            closeModal = { closeModal }
+          />
           :  
-            <table
-              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+          <table
+            className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+          >
+            { Head() }
+            <tbody
+              className = { tableNoMouse ? "table-no-mouse-events" : ""}
             >
-              { Head() }
-              <tbody
-                className = { tableNoMouse ? "table-no-mouse-events" : ""}
-              >
-                {tableRemovedByAdmins
-                  ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
-                  : processingMessage
-                }
-              </tbody>
-            </table>
+            {tableRemovedByAdmins
+                ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
+                : processingMessage
+              }
+            </tbody>
+          </table>
         }
 
       <p style={{paddingBottom: "2rem"}}></p>

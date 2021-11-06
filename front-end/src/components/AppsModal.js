@@ -8,7 +8,7 @@ const customStyle = {
     right            : 'auto',
     marginRight      : '-50%',
     transform        : 'translate(-50%, -50%)',
-    backgroundColor  : "lightcyan",
+    backgroundColor  : "lightblue",
     height           : "15rem",
     width            : "80%"
   }
@@ -16,7 +16,7 @@ const customStyle = {
 
 const AppsModal = props => {
   // console.log("props on modalXXX:", props);
-  const { description, location, price, oldPrice, reactivated } = props.info;
+  const { description, location, price, oldPrice, reactivated, changed } = props.info;
 
   return(
     <ReactModal
@@ -32,7 +32,7 @@ const AppsModal = props => {
       <div>
         <spam> <b>{ price }</b></spam>
       </div>
-      {reactivated
+      {changed
         &&
           <>
             <div className = "items-modal">
@@ -40,20 +40,39 @@ const AppsModal = props => {
             </div>
           </>
       }
+      {
+        reactivated &&
+          <>
+            <div className = "items-modal">
+              <spam> Item <u>reactivated by its owner</u></spam>
+            </div>
+          </>
+      }
 
       <div className = "buttons-modal">
-        <button 
-          className = "button-close"
-          onClick = { () => props.closeModal()}>
-          Close
-        </button>
+        {props.showRemoveButton
+          ?
+            <>
+              <button 
+                className = "button-close"
+                onClick = { () => props.closeModal()}>
+                Close
+              </button>
 
-        <button
-          className = "button-remove"
-          onClick = { e => props.callRemoveItem(e, props.info, true) }
-        >
-          Remove Item
-        </button>
+              <button
+                className = "button-remove"
+                onClick = { e => props.callRemoveItem(e, props.info, true) }
+              >
+                Remove Item
+              </button>
+            </>
+          :
+            <button
+              className = "button-close-whole"
+              onClick = { () => props.closeModal()}>
+              Close
+            </button>
+        }
       </div>
     </ReactModal>
   );

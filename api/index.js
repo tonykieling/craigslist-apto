@@ -118,26 +118,25 @@ const compareData = (fromDB, fromWeb) => {
   // to see whether there are new or changed items
   for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
     if (fromDB.length === 0) {
-      const newItems = checkProperty("newItems", fromWeb[iWeb]);
+      const newItem = checkProperty("newItems", fromWeb[iWeb]);
       result = {
         ...result,
-        newItems
+        newItem
       };
     }
+    if(fromDB[fromWeb[iWeb].postId] && fromDB[fromWeb[iWeb].postId].removedByAdmin) continue;
 
     for (let iDB = 0; iDB < fromDB.length; iDB++) {
-      if (fromDB[iDB].removedByAdmin) continue;
 
       if (fromWeb[iWeb].postId === fromDB[iDB].postId) {
+        if (fromDB[iDB].removedByAdmin) break;
         //it is gonna check only price changing
-
 
         let changedTemp = {};
         if  (fromWeb[iWeb].price !== fromDB[iDB].price) {
 
           changedTemp = {
             ...fromWeb[iWeb],
-            // price   : fromWeb[iWeb].price,
             price   : fromWeb[iWeb].price,
             priceOld: fromDB[iDB].price,
             changed : true
@@ -149,7 +148,6 @@ const compareData = (fromDB, fromWeb) => {
             ...(("changed" in changedTemp) ? changedTemp : fromWeb[iWeb]),
             reactivated: true
           };
-
         }
 
         if (("changed" in changedTemp) || ("reactivated" in changedTemp)) {
@@ -159,12 +157,10 @@ const compareData = (fromDB, fromWeb) => {
             changed
           };
         }
-
-
         break;
       }
-      
-      if ((iDB === fromDB.length - 1) || (fromDB.length === 0)) {
+
+      if (iDB === fromDB.length - 1) {
         const newItems = checkProperty("newItems", fromWeb[iWeb]);
         result = {
           ...result,
@@ -178,12 +174,11 @@ const compareData = (fromDB, fromWeb) => {
   for(let iDB = 0; iDB < fromDB.length; iDB++) {
     if (fromDB[iDB].removedByAdmin) continue;
     if (!fromDB[iDB].active) continue;
-
     for (let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
       if (fromDB[iDB].postId === fromWeb[iWeb].postId)
         break;
 
-      if (iWeb === fromWeb.length - 1) {
+      if (iWeb === (fromWeb.length - 1)) {
         const deleted = checkProperty("deleted", fromDB[iDB]);
         result = {
           ...result,
@@ -373,7 +368,6 @@ module.exports = async(req, res) => {
       useUnifiedTopology: true 
     });
 
-
     const { method } = req;
     let dataFromDB;
 
@@ -388,7 +382,6 @@ module.exports = async(req, res) => {
         {
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
-
 
           const queries = [
             {
@@ -410,20 +403,9 @@ module.exports = async(req, res) => {
           ];
           
           let dataFromWeb = [];
+
           try {
             // it gets data from craigslist and transform it into text
-            /*
-            const req = await fetch(
-              "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.7",
-              {
-                method: "GET"
-              }
-            );
-            data = await req.text();
-          */
-
-
-
             const jsdom = require("jsdom");
             const { JSDOM } = jsdom;
 
@@ -432,10 +414,10 @@ module.exports = async(req, res) => {
               let addItem = {};
               const response = await fetch(queries[i]["url"]);
               const html = await response.text();
-// console.log("******************************************************************html", html);
+              
               const dom = new JSDOM(html);
               const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-// console.log("domElements.length:::", domElements.length);
+
               addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
 
               dataFromWeb = [...dataFromWeb, ...addItem];
@@ -445,40 +427,7 @@ module.exports = async(req, res) => {
             throw (error.message || error);
           }
 
-// const dataFromDB = [];
-const newData = compareData(dataFromDB, dataFromWeb);
-// console.log("newData--------------", newData);
-
-// if (1) return res.json({message: newData});
-          
-
-
-
-
-
-
-//           // using jsdom
-//           /*
-//           const jsdom = require("jsdom");
-//           const { JSDOM } = jsdom;
-//           */
-//           // it converts the data into a tex format to a dom structure
-//           const dom = new JSDOM(data);
-          
-//           // gets only the result to be handled
-//           const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-          
-//           const dataDOM = domElements.map(e => getDataFromDOM(e.querySelector(".result-info")));
-// console.log("dataDOM", dataDOM);
-// // const dataFromDB = [];
-//           // const newData = compareData(dataFromDB, dataDOM);
-// if (1) return res.json({newData});
-
-
-
-
-
-
+          const newData = compareData(dataFromDB, dataFromWeb);
 
         
           // any changes detected
@@ -487,13 +436,14 @@ const newData = compareData(dataFromDB, dataFromWeb);
           if (Object.getOwnPropertyNames(newData).length) {
             // 1- email
             // 1.1 format message
+
             const message = formatEmailMessage(newData);
             // 1.2 send email
-            await sendEmail(message, updateInfo = ((newData.changed || newData.deleted) && true), siki = true);
+            await sendEmail(message, updateInfo = ((newData.changed || newData.deleted) && true), siki = false);
 
             // 2- record on DB
             // it inserts new data coming from web
-            if (newData.newItems) {
+            if (newData.newItems.length) {
               for (const item of newData.newItems) {
                 const toInsert = new Apto({
                   _id: new mongoose.Types.ObjectId(),
@@ -509,7 +459,7 @@ const newData = compareData(dataFromDB, dataFromWeb);
             }
 
             // it updates data coming from web about item changed
-            if (newData.changed) {
+            if (newData.changed.length) {
               for (const item of newData.changed) {
                 await Apto
                   .updateOne(
@@ -526,7 +476,7 @@ const newData = compareData(dataFromDB, dataFromWeb);
             }
 
             // it updates deleted data
-            if (newData.deleted) {
+            if (newData.deleted.length) {
               for (const item of newData.deleted) {
                 await Apto
                   .updateOne(
@@ -550,15 +500,12 @@ const newData = compareData(dataFromDB, dataFromWeb);
         }
 
 
-
-
-
         // it is gonna update data - only when admin is removing a specific record, given specific reason
         // it has to be triggered by the front-end
         // it receives postId, the reason for removing the item and a password
         case "PATCH": {
           const { _id, reason, removePass } = req.body;
-console.log("req.body", req.body);
+// console.log("req.body", req.body);
 // if (1) return res.json({message: true});
           if (process.env.removePass !== removePass)
             return res.json({error: "forbiden"});
