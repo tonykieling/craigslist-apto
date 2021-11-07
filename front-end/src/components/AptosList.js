@@ -4,6 +4,8 @@ import TableMobile from "./TableMobile.js";
 import removeItem from "./helpers/removeItem.js";
 import getItems from "./helpers/getItems.js";
 
+import { BiCollapse } from "react-icons/bi";
+import { BiExpand } from "react-icons/bi";
 
 const mobile = window.innerWidth < 768 ? true : false;
 
@@ -134,7 +136,7 @@ function AptosList() {
         setTableNoMouse(true);
 
         const getData = await getItems();
-        console.log("getDataaaaaaaaaa", getData);
+        // console.log("getDataaaaaaaaaa", getData);
         if (getData.message) {
           sortAnswer(getData.message);
 
@@ -246,15 +248,23 @@ function AptosList() {
   };
 
 
+  const [ showRBOTable, setShowRBOTable ] = useState(false);
+  const [ showRBATable, setShowRBATable ] = useState(false);
+
+
 
   return (
     <div className="app-body">
       <h1>List of apartments</h1>
 
-      <h2
-       className = "table-section-title av"
 
-      >Current available</h2>
+
+      {/* Availables table title */}
+      <div 
+        className = "table-section-title av"
+      >
+        Availables
+      </div>
       {/* here's a trick to get no mouse events and be able to set the cursor, 
           which is wrapping the cursor first and after setting the event's mouse */}
         { mobile
@@ -280,55 +290,98 @@ function AptosList() {
             </table>
         }
 
-      <h2 className = "table-section-title rbo">Removed by Owners</h2>
-      { mobile
-          ?
-          <TableMobile 
-            data = { removedByOwnwer } type = "rbo"
-            // callRemoveItem = { callRemoveItem }
-            closeModal = { closeModal }
-          />
-        :  
-          <table
-            className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
-          >
-            { Head() }
-            <tbody
-              className = { tableNoMouse ? "table-no-mouse-events" : ""}
+
+
+      {/* Removed by Owners table title */}
+      <div 
+        className = "table-section-title rbo"
+      >
+        Removed by Owners
+        { showRBOTable
+          ? <BiCollapse
+              className = "table-ExpCol expCol-blue"
+              onClick = {() => setShowRBOTable(false)}
+            />
+          : <BiExpand
+              className = "table-ExpCol expCol-green"
+              onClick = {() => setShowRBOTable(true)}
+            />
+        }
+      </div>
+
+      { showRBOTable
+        ?
+          mobile
+            ?
+            <TableMobile 
+              data = { removedByOwnwer } type = "rbo"
+              // callRemoveItem = { callRemoveItem }
+              closeModal = { closeModal }
+            />
+          :  
+            <table
+              className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
             >
-            {tableRemovedByOwners
-                ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
-                : processingMessage
-              }
-            </tbody>
-          </table>
+              { Head() }
+              <tbody
+                className = { tableNoMouse ? "table-no-mouse-events" : ""}
+              >
+              {tableRemovedByOwners
+                  ? tableRemovedByOwners.length ? tableRemovedByOwners : emptyForNow
+                  : processingMessage
+                }
+              </tbody>
+            </table>
+        : <table></table>
       }
 
-      <h2 className = "table-section-title rba">Removed by Admins</h2>
-      { mobile
-        ?
-          <TableMobile 
-            data = { removedByAdmin } type = "rba"
-            // callRemoveItem = { callRemoveItem }
-            closeModal = { closeModal }
-          />
-          :  
-          <table
-            className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
-          >
-            { Head() }
-            <tbody
-              className = { tableNoMouse ? "table-no-mouse-events" : ""}
-            >
-            {tableRemovedByAdmins
-                ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
-                : processingMessage
-              }
-            </tbody>
-          </table>
-        }
 
-      <p style={{paddingBottom: "2rem"}}></p>
+
+      {/* Removed by Admins table title */}
+      <div 
+        className = "table-section-title rba"
+      >
+        Removed by Admins
+        { showRBATable
+          ? <BiCollapse 
+              className = "table-ExpCol expCol-blue"
+              onClick = {() => setShowRBATable(false)}
+            />
+          : <BiExpand 
+              className = "table-ExpCol expCol-green" 
+              onClick = {() => setShowRBATable(true)}
+            />
+        }
+      </div>
+
+      { showRBATable
+        ?
+          mobile
+            ?
+              <TableMobile 
+                data = { removedByAdmin } type = "rba"
+                // callRemoveItem = { callRemoveItem }
+                closeModal = { closeModal }
+              />
+              :  
+              <table
+                className = { tableNoMouse ? "table-no-mouse-cursor" : ""}
+              >
+                { Head() }
+                <tbody
+                  className = { tableNoMouse ? "table-no-mouse-events" : ""}
+                >
+                {tableRemovedByAdmins
+                    ? tableRemovedByAdmins.length ? tableRemovedByAdmins : emptyForNow
+                    : processingMessage
+                  }
+                </tbody>
+              </table>
+        :
+          <table></table>
+      }
+
+      {/* <p style={{paddingBottom: "2rem"}}></p> */}
     </div>
   );
 }

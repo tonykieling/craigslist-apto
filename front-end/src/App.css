@@ -91,9 +91,17 @@ h1 {
 }
 
 .table-section-title {
-  text-align: center;
+  /* text-align: center; */
   margin-top: 3rem;
-  margin-bottom: 0.8rem;
+  /* margin-bottom: 0.8rem; */
+
+  font-size: 1.5rem;
+  font-weight: bolder;
+  height: 3rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
 }
 
 .table-section-title.av {
@@ -154,8 +162,6 @@ table {
 .table-remove {
   width: 2rem;
   text-align: center;
-  /* display: block;
-  margin: auto; */
 }
 .table-trash {
   display: block;
@@ -175,12 +181,18 @@ table {
 .tr-orange {
   color: orange;
 }
-/* 
-.table-mobile {
-  min-width: 90%;
-  margin: auto;
-  border: 2px solid blue;
-} */
+.table-ExpCol {
+  /* display: block; */
+  /* margin: auto; */
+  margin-left: 0.5rem;
+  font-size: x-large;
+}
+.expCol-blue {
+  color: blue;
+}
+.expCol-green {
+  color: green;
+}
 
 @media (max-width: 768px) {
   .app-body {
@@ -195,7 +207,10 @@ table {
     width: 1rem;
   } 
   .table-price {
-    width: 1.5rem;
+    width: 0rem;
+  }
+  .table-more {
+    width: 0;
   }
 }
 

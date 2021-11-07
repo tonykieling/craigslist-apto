@@ -102,3 +102,4 @@ FE 1st version is done,
 
 compare algorithm small fix plus table tweeks
 send message fixed, + db inconsistency + added lastUpdate field to BE and Modal, missing to update screen and large screen
+UI improvements + expand/collapse for tables rmo and rba

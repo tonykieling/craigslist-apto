@@ -27,19 +27,19 @@ const AppsModal = props => {
       <h2>Posting details</h2>
       <div> { description }</div>
       <div>
-        <spam className = "items-modal">@ <b>{ location }</b> </spam>
+        <span className = "items-modal">@ <b>{ location }</b> </span>
       </div>
       <div>
-        <spam> <b>{ price }</b></spam>
+        <span> <b>{ price }</b></span>
       </div>
       <div>
-        <spam> Lat Update at <b>{ lastUpdate ? <b> { lastUpdate } </b> : "(no info at this time)" }</b></spam>
+        <span> Lat Update at <b>{ lastUpdate ? <b> { lastUpdate } </b> : "(no info at this time)" }</b></span>
       </div>
       {changed
         &&
           <>
             <div className = "items-modal">
-              <spam> $ before was <b>{ oldPrice } </b></spam>
+              <span> $ before was <b>{ oldPrice } </b></span>
             </div>
           </>
       }
@@ -47,7 +47,7 @@ const AppsModal = props => {
         reactivated &&
           <>
             <div className = "items-modal">
-              <spam> Item <u>reactivated by its owner</u></spam>
+              <span> Item <u>reactivated by its owner</u></span>
             </div>
           </>
       }

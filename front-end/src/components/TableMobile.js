@@ -25,7 +25,7 @@ const emptyForNow = (
 );
 
 const TableMobile = props => {
-  console.log("props on tablemobile", props);
+  console.log("porps table mobile", props);
   const [ dataTable, setDataTable ] = useState(null);
 
   const [ callAppsModal, setCallAppsModal ] = useState(null);
@@ -42,7 +42,7 @@ const TableMobile = props => {
   }, [props.data]);
 
 
-  const HeadMobile = props => (
+  const HeadMobile = () => (
     <thead id = "color-head">
       <tr 
         className = "tr-first"
@@ -56,10 +56,12 @@ const TableMobile = props => {
         > Description </th>
         <th 
           className = "table-price" 
-        > $ Price </th>
-        <th 
-          className = "table-more" 
-        > More </th>
+        >$</th>
+        { props.type === "a" &&
+            <th 
+              className = "table-more" 
+            >  </th>
+        }
       </tr>
     </thead>
   );
@@ -77,7 +79,13 @@ const TableMobile = props => {
       const { description, active, 
         // location, 
         // oldPrice, 
-        price, url, reactivated, reasonRemovedFromAdmin, changed } = element;
+        reasonRemovedFromAdmin, 
+        price, url, reactivated, changed } = element;
+
+      const openModal = () => {
+        setDataToModal(element);
+        setCallAppsModal(true);        
+      };
 
       return (
         <tr
@@ -85,7 +93,10 @@ const TableMobile = props => {
           key={i}
           onClick = {() => active 
                           ? window.open(url, "_blank") 
-                          : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
+                          // : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
+                          : openModal()
+                    }
+                            
         >
           <td className = "table-index"> {i + 1} </td>
           <td 
@@ -93,20 +104,24 @@ const TableMobile = props => {
           > 
             { description.length > 20 ? `${description.substring(0, 19)}..` : description} 
           </td>
-          <td className = "table-price"> { price } </td>
-          <td 
-            className = "table-remove"
-            onClick = {e => {
-              e.stopPropagation();
-              setDataToModal(element)
-              setCallAppsModal(true);
-            }}
-          >
-            <FaEdit 
-              color = "blue" 
-              className="table-trash"
-            />
-          </td>
+          <td className = "table-price">{price.substring(1, 8)}</td>
+          {/* <td className = "table-price">{price}</td> */}
+
+          { props.type === "a" &&
+              <td 
+                className = "table-remove"
+                onClick = {e => {
+                  e.stopPropagation();
+                  setDataToModal(element)
+                  setCallAppsModal(true);
+                }}
+              >
+                <FaEdit 
+                  color = "blue" 
+                  className="table-trash"
+                />
+              </td>
+          }
         </tr>
       );
     });

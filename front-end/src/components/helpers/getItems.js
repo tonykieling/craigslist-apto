@@ -40,6 +40,15 @@ import axios from "axios";
 //     _id: 4
 //   },
 //   {
+//     postId: '7380919503',
+//     url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-1br-with-balcony-in/7380919502.html',
+//     description: 'Spacious 1br with Balcony in Metrotown area',
+//     price: '$1,765',
+//     active: false,
+//     location: "Patterson",
+//     _id: 5
+//   },
+//   {
 //     postId: '7380919325',
 //     url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
 //     description: 'Spacious - STUDIO - WITH GREAT VIEWS',
@@ -48,7 +57,7 @@ import axios from "axios";
 //     location: "Joyce",
 //     removedByAdmin: true,
 //     reasonRemovedFromAdmin: "test",
-//     _id: 5
+//     _id: 6
 //   }
 // ];
 
