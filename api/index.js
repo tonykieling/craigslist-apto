@@ -45,6 +45,9 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
     },
     reasonRemovedFromAdmin: {
       type    : String
+    },
+    lastUpdate: {
+      type  : String
     }
   })
 );
@@ -225,16 +228,13 @@ const generalSender = async (subject, html, siki = false) => {
 const formatEmailMessage = data => {
   // console.log("==== data", data);
   let result = "";
-  // for (const obj in data)
-  //   result += addTable(obj, data[obj]);
 
   // to get message to the desired flow
-  if (data.newItems)
+  if (data.newItems && data.newItems.length)
     result += addTable("newItems", data["newItems"], (data.newItems.length > 1 && true));
-  if (data.changed) {
 
 
-
+  if (data.changed && data.changed.length) {
     // console.log("data.changed", data.changed);
     const flagPriceChanged = data.changed.filter(e => e.priceOld);
     const flagReactivated = data.changed.filter(e => e.reactivated);
@@ -242,7 +242,8 @@ const formatEmailMessage = data => {
     // console.log("flagReactivated:::", flagReactivated);
     result += addTable("changed", data["changed"], (data.changed.length > 1 && true), flagReactivated.length, flagPriceChanged);
   }
-  if (data.deleted)
+
+  if (data.deleted && data.deleted.length)
     result += addTable("deleted", data["deleted"], (data.deleted.length > 1 && true));
 
 // console.log("message to be sent:::::", result);
@@ -335,18 +336,8 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
 };
 
 
-const sendEmail = async (message = "<div>default msg</div>", updateInfo = false, siki = false) => {
+const sendEmail = async (message = "<div>default msg</div>", updateInfo = false, siki = true, dateTime = "now") => {
   // it sends an email to the user confirming the procedure
-  
-  const today = new Date(new Date().toLocaleString("en-US", { timeZone: "Canada/Pacific"}));
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const date = (monthNames[today.getMonth()]) + '-' + today.getDate();
-  
-  const hour = today.getHours();
-  const min = today.getMinutes();
-  const time = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min);
-  const dateTime = date + ', ' + time;
-
   const footer = `
     <div style="margin-top:2.5rem">
       Visit <a href="https://cl-aptos.tkwebdev.ca" target="_blank">https://cl-aptos.tkwebdev.ca</a> for more information.
@@ -356,6 +347,19 @@ const sendEmail = async (message = "<div>default msg</div>", updateInfo = false,
   return (success ? true : false);
 };
 
+
+// format a string as date and time regarding Vancouver time
+const getDateTime = () => {
+  const today = new Date(new Date().toLocaleString("en-US", { timeZone: "Canada/Pacific"}));
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const date = (monthNames[today.getMonth()]) + '-' + today.getDate();
+  
+  const hour = today.getHours();
+  const min = today.getMinutes();
+  const time = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min);
+  const dateTime = date + ', ' + time;
+  return dateTime;
+};
 
 
 // const f = async () => {
@@ -439,7 +443,8 @@ module.exports = async(req, res) => {
 
             const message = formatEmailMessage(newData);
             // 1.2 send email
-            await sendEmail(message, updateInfo = ((newData.changed || newData.deleted) && true), siki = false);
+            const dateTime = getDateTime();
+            await sendEmail(message, updateInfo = ((newData.changed || newData.deleted) && true), siki = true, dateTime);
 
             // 2- record on DB
             // it inserts new data coming from web
@@ -451,7 +456,8 @@ module.exports = async(req, res) => {
                   url         : item.url,
                   description : item.description,
                   price       : item.price,
-                  location    : item.location
+                  location    : item.location,
+                  lastUpdate  : dateTime
                 });
                 
                 await toInsert.save();
@@ -469,7 +475,8 @@ module.exports = async(req, res) => {
                       oldPrice    : item.changed ? item.priceOld : undefined,
                       changed     : item.changed ? true : undefined,
                       active      : item.reactivated || undefined,
-                      reactivated : item.reactivated || undefined
+                      reactivated : item.reactivated || undefined,
+                      lastUpdate  : dateTime
                     }
                   );
               }
@@ -482,12 +489,14 @@ module.exports = async(req, res) => {
                   .updateOne(
                     { postId: item.postId },
                     {
-                      active : false
+                      active    : false,
+                      lastUpdate: dateTime
                     }
                   );
               }
             }
           }
+
           throw({message: "OK, just checking, all good ;)"});
         }
 
@@ -495,7 +504,7 @@ module.exports = async(req, res) => {
         
 
         case "GET": {
-          console.log("dataFromDB:::", dataFromDB.length);
+          // console.log("====dataFromDB:::", dataFromDB.length);
           return res.json({apartments: dataFromDB});
         }
 
@@ -513,13 +522,15 @@ module.exports = async(req, res) => {
           if (!_id || !reason) return res.json({error: "Missing info"});
 
           try {
+            const dateTime = getDateTime();
             await Apto
               .updateOne(
                 { _id },
                 {
                   removedByAdmin          : true,
                   reasonRemovedFromAdmin  : reason,
-                  active                  : false
+                  active                  : false,
+                  lastUpdate              : dateTime 
                 }
               );
 

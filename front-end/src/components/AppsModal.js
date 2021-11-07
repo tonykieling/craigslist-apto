@@ -16,7 +16,7 @@ const customStyle = {
 
 const AppsModal = props => {
   // console.log("props on modalXXX:", props);
-  const { description, location, price, oldPrice, reactivated, changed } = props.info;
+  const { description, location, price, oldPrice, reactivated, changed, lastUpdate } = props.info;
 
   return(
     <ReactModal
@@ -31,6 +31,9 @@ const AppsModal = props => {
       </div>
       <div>
         <spam> <b>{ price }</b></spam>
+      </div>
+      <div>
+        <spam> Lat Update at <b>{ lastUpdate ? <b> { lastUpdate } </b> : "(no info at this time)" }</b></spam>
       </div>
       {changed
         &&

@@ -285,7 +285,7 @@ function AptosList() {
           ?
           <TableMobile 
             data = { removedByOwnwer } type = "rbo"
-            callRemoveItem = { callRemoveItem }
+            // callRemoveItem = { callRemoveItem }
             closeModal = { closeModal }
           />
         :  
@@ -309,7 +309,7 @@ function AptosList() {
         ?
           <TableMobile 
             data = { removedByAdmin } type = "rba"
-            callRemoveItem = { callRemoveItem }
+            // callRemoveItem = { callRemoveItem }
             closeModal = { closeModal }
           />
           :  

@@ -101,3 +101,4 @@ FE 1st version is done,
   basic css for modal and going to deploy first full version - BE + FE + mobile and web
 
 compare algorithm small fix plus table tweeks
+send message fixed, + db inconsistency + added lastUpdate field to BE and Modal, missing to update screen and large screen

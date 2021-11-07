@@ -122,7 +122,7 @@ const TableMobile = props => {
           closeModal  = { () => setCallAppsModal(false) }
           info        = { dataToModal }
           callRemoveItem = { props.callRemoveItem }
-          showRemoveButton = { props.type === "a" ? true : false}
+          showRemoveButton = { props.type === "a" ? true : false }
         />
       }
       <table
