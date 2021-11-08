@@ -336,7 +336,7 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
 };
 
 
-const sendEmail = async (message = "<div>default msg</div>", updateInfo = false, siki = true, dateTime = "now") => {
+const sendEmail = async (message = "<div>default msg</div>", updateInfo = false, siki = false, dateTime = "now") => {
   // it sends an email to the user confirming the procedure
   const footer = `
     <div style="margin-top:2.5rem">
@@ -376,7 +376,16 @@ module.exports = async(req, res) => {
     let dataFromDB;
 
     if (method !== "PATCH")
-      dataFromDB = await Apto.find();
+      // dataFromDB = await Apto.find();
+      dataFromDB = await Apto.find().sort({ lastUpdate: -1});
+      // sorting by lastUpdate
+      // as not all register has it, it will go by _id
+      // it seems to be working the sroting by lastUpdate, even though it is a string, for instance "Nov-7, 20:49"
+
+    // const resurts = dataFromDB.map(e => e._id);
+    // console.log("dataFromDB", dataFromDB);
+    // if (1)
+    //   return res.json({message: dataFromDB});
 
 
     switch(method) {

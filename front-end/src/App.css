@@ -115,6 +115,7 @@ h1 {
 }
 
 
+
 /* table settings */
 table { 
   min-width: 60%;
@@ -239,6 +240,40 @@ h2 {
   width: 100%;
   background-color: #0275d8;
   color: black;
+}
+
+
+/* About page settings */
+.h3-about {
+  margin: 3rem 10rem 0;
+  /* margi */
+}
+.p-about{
+  margin: 0.5rem 10rem 0.5rem 11rem;
+}
+.position-img-about {
+  margin-top: 3rem;
+  text-align: center;
+}
+.img-about {
+  width: 50%;
+}
+.last-div-about {
+  margin: 4rem 0 2rem;
+}
+.last-p-about {
+  /* margin-top: 4rem;
+  margin-bottom: 2rem; */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .h3-about {
+    margin-top: 3rem;
+  }
+  .img-about {
+    width: 90%;
+  }
 }
 
 /* Footer components style */

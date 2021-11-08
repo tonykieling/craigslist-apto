@@ -378,7 +378,7 @@ function AptosList() {
                 </tbody>
               </table>
         :
-          <table></table>
+          <table style={{marginBottom: "3rem"}}></table>
       }
 
       {/* <p style={{paddingBottom: "2rem"}}></p> */}

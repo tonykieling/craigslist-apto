@@ -103,3 +103,14 @@ FE 1st version is done,
 compare algorithm small fix plus table tweeks
 send message fixed, + db inconsistency + added lastUpdate field to BE and Modal, missing to update screen and large screen
 UI improvements + expand/collapse for tables rmo and rba
+
+XmarginBottom for table rba with 3rem paddingBottom
+Xnot send email to Si
+Xtable order by lastupdate
+  seems to be working fine
+Xstarting about page
+starting about page + tweaks on table and main page + BE sorting items
+update rba table  after removing from available
+web modal has to have less width to large screens, currenty too large
+
+
