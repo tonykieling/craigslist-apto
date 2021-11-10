@@ -61,7 +61,7 @@ function About() {
         <p className = "last-p-about">Please, feel free to reach out in case any doubts or contribuitions. ;) </p>
         <p className = "last-p-about">
           Find this project on 
-          <a href = "https://github.com/tonykieling/craigslist-apto" target = "_blank" rel = "noreferrer">GitHub</a>
+          <a href = "https://github.com/tonykieling/craigslist-apto" target = "_blank" rel = "noreferrer"> GitHub</a>
         </p>
         <p className = "last-p-about">
           <a href = "https://tkwebdev.ca" target = "_blank" rel = "noreferrer">https://tkwebdev.ca</a>

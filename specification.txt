@@ -111,7 +111,12 @@ Xtable order by lastupdate
 Xstarting about page
 starting about page + tweaks on table and main page + BE sorting items
 
-update rba table  after removing from available
 web modal has to have less width to large screens, currenty too large
 update github's and dns's home seeker correct name
-
+XREADME.ms
+Xadd url for Metrotow and Royal Oak
+table structure redesigned, need
+  modal for large screen (rbo and rba)
+  table open smoothly
+  update rba table  after removing from available
+remove item is not right

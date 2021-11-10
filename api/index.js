@@ -412,6 +412,14 @@ module.exports = async(req, res) => {
             {
               location: "Nanaimo",
               url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24855720299385&lon=-123.0563888765191&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.2"
+            },
+            {
+              location: "Metrotown",
+              utl: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22645364213039&lon=-123.00554297401902&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3",
+            },
+            {
+              location: "Royal Oak",
+              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.219845624581566&lon=-122.98851849619629&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
             }
           ];
           
