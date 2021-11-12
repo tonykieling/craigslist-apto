@@ -1,7 +1,7 @@
 import tableHead from "./tableHead.js";
 import basicTableLine from "./basicTableLine";
 
-const tableAssembler = (isMobile, type, data) => {
+const TableAssembler = ({isMobile, type, data}) => {
   return (
     <table
       className = { data === "processing" ? "table-no-mouse-cursor" : ""}
@@ -19,4 +19,4 @@ const tableAssembler = (isMobile, type, data) => {
   );
 }
 
-export default tableAssembler;
+export default TableAssembler;

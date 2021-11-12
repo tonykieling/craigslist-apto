@@ -380,7 +380,7 @@ module.exports = async(req, res) => {
       dataFromDB = await Apto.find().sort({ lastUpdate: -1});
       // sorting by lastUpdate
       // as not all register has it, it will go by _id
-      // it seems to be working the sroting by lastUpdate, even though it is a string, for instance "Nov-7, 20:49"
+      // it seems to be working the sorting by lastUpdate, even though it is a string, for instance "Nov-7, 20:49"
 
     // const resurts = dataFromDB.map(e => e._id);
     // console.log("dataFromDB", dataFromDB);
@@ -405,14 +405,15 @@ module.exports = async(req, res) => {
               location: "Joyce",
               url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.237509680216846&lon=-123.02994489669801&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.4"
             },
-            {
-              location: "29th",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24460894085901&lon=-123.04670348335357&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
-            },
-            {
-              location: "Nanaimo",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24855720299385&lon=-123.0563888765191&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.2"
-            },
+            // not considering the below commented locations for now
+            // {
+            //   location: "29th",
+            //   url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24460894085901&lon=-123.04670348335357&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
+            // },
+            // {
+            //   location: "Nanaimo",
+            //   url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24855720299385&lon=-123.0563888765191&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.2"
+            // },
             {
               location: "Metrotown",
               url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22645364213039&lon=-123.00554297401902&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3",

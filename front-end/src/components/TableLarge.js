@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import AppsModal from "./AppsModal";
 import { FaTrash } from "react-icons/fa";
 
-import tableAssembler from "./tableHelpers/tableAssembler";
+import TableAssembler from "./tableHelpers/TableAssembler";
 
 
 const TableLarge = props => {
@@ -11,26 +11,26 @@ const TableLarge = props => {
   const [ dataToModal, setDataToModal ] = useState(null);
   const [ tableIsDone, setTableIsDone ] = useState(null);
 
-  useEffect(() => {
-    //  props.data can be null, 0, or greater than 0
-    if (!props.data) // it is processing
-      setTableIsDone(tableAssembler(false, props.type, "processing"));
+  // useEffect(() => {
+  //   //  props.data can be null, 0, or greater than 0
+  //   if (!props.data) // it is processing
+  //     setTableIsDone(tableAssembler(false, props.type, "processing"));
 
-    else if (props.data.length === 0) // i is empty
-      setTableIsDone(tableAssembler(false, props.type, "empty"));
+  //   else if (props.data.length === 0) // i is empty
+  //     setTableIsDone(tableAssembler(false, props.type, "empty"));
 
-    else if (props.data && props.data.length) { // has data
-      const temp = renderDataTable(props.data);    
-      const tempTable = tableAssembler(false, props.type, temp);
-      setTableIsDone(tempTable);
-    }
+  //   else if (props.data && props.data.length) { // has data
+  //     const temp = renderDataTable(props.data);    
+  //     const tempTable = tableAssembler(false, props.type, temp);
+  //     setTableIsDone(tempTable);
+  //   }
 
-    return () => {
-      props.data && renderDataTable();
-    }
+  //   return () => {
+  //     props.data && renderDataTable();
+  //   }
 
-    //eslint-disable-next-line
-  }, [props.data]);
+  //   //eslint-disable-next-line
+  // }, [props.data]);
 
 
 
@@ -124,7 +124,15 @@ const TableLarge = props => {
         />
       }
 
-      { tableIsDone }
+      {/* { tableIsDone } */}
+      { props.data
+        ?
+          props.data.length
+            ? <TableAssembler isMobile = { false } type = { props.type } data = { renderDataTable(props.data) }/>
+            : <TableAssembler isMobile = { false } type = { props.type } data = "empty"/>
+        : <TableAssembler isMobile = { false } type = { props.type } data = "processing"/>
+      }
+      {/* {console.log("props.data", props.data)} */}
     </>
   );
 };

@@ -59,23 +59,23 @@
 #root {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 body {
   background-color: lightgreen;
+  /* min-height: 100vh; */
 }
 
 .app-body {
   /* display: flex; */
-  min-height: calc(100vh - 4rem - 2.5rem - 1px);
+  /* min-height: calc(100vmin - (4rem + 2.5rem + 4px + 2rem + 5rem)); */
   margin: 1rem;
   margin-bottom: 3.5rem;
   border: 2px solid teal;
   border-radius: 10px;
   padding: 2rem;
+  min-height: calc(100vh - 4rem - 2.5rem - 4px - 6rem);
 }
-
-
-
 
 
 /* List of apartments components style */
@@ -199,7 +199,8 @@ table {
   .app-body {
     margin: 0.5rem;
     padding: 0.5rem;
-    /* border: 3px solid red; */
+    margin-bottom: 3rem;
+    min-height: calc(100vh - 4rem - 2.5rem - 4px - 2rem);
   }
   table {
     min-width: 95%;

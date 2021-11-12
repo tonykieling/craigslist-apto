@@ -121,4 +121,6 @@ table structure redesigned, need
   update rba table  after removing from available
 About css styling + fix typo on new url
 
+TableAssembler component instead of a function + app-body css + 2 query items commented on index.js + README.md tweakes
+
 removebyadmin seems not working

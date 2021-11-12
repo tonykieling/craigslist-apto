@@ -48,17 +48,72 @@ const tempDB =  [
     location: "Patterson",
     _id: 5
   },
-  // {
-  //   postId: '7380919325',
-  //   url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
-  //   description: 'Spacious - STUDIO - WITH GREAT VIEWS',
-  //   price: '$1,650',
-  //   active: false,
-  //   location: "Joyce",
-  //   removedByAdmin: true,
-  //   reasonRemovedFromAdmin: "test",
-  //   _id: 6
-  // }
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test",
+    _id: 6
+  },
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test",
+    _id: 6
+  },
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test",
+    _id: 6
+  },
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test",
+    _id: 6
+  },
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test",
+    _id: 6
+  },
+  {
+    postId: '7380919325',
+    url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html',
+    description: 'Spacious - STUDIO - WITH GREAT VIEWS',
+    price: '$1,650',
+    active: false,
+    location: "Joyce",
+    removedByAdmin: true,
+    reasonRemovedFromAdmin: "test",
+    _id: 6
+  }
 ];
 
 const getItems = async () => {

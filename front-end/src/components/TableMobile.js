@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaEdit } from "react-icons/fa";
 import AppsModal from "./AppsModal";
 
-import tableAssembler from "./tableHelpers/tableAssembler";
+import TableAssembler from "./tableHelpers/TableAssembler";
 
 
 const TableMobile = props => {
@@ -15,24 +15,25 @@ const TableMobile = props => {
   const [ tableIsDone, setTableIsDone ] = useState(null);
 
 
-  useEffect(() => {
-    //  props.data can be null, 0, or greater than 0
-    if (!props.data) { // it is processing
-      setTableIsDone(tableAssembler(true, props.type, "processing"));
-    } else if (props.data.length === 0) { // i is empty
-      setTableIsDone(tableAssembler(true, props.type, "empty"));
-    } else if (props.data && props.data.length) { // has data
-      const temp = renderDataTable(props.data);    
-      const tempTable = tableAssembler(true, props.type, temp);
-      setTableIsDone(tempTable);
-    }
+  // useEffect(() => {
+  //   //  props.data can be null, 0, or greater than 0
+  //   if (!props.data) { // it is processing
+  //     setTableIsDone(tableAssembler(true, props.type, "processing"));
+  //   } else if (props.data.length === 0) { // i is empty
+  //     setTableIsDone(tableAssembler(true, props.type, "empty"));
+  //   } else if (props.data && props.data.length) { // has data
+  //     const temp = renderDataTable(props.data);    
+  //     const tempTable = tableAssembler(true, props.type, temp);
 
-    return () => {
-      props.data && renderDataTable();
-    }
+  //     setTableIsDone(tempTable);
+  //   }
 
-    //eslint-disable-next-line
-  }, [props.data]);
+  //   return () => {
+  //     props.data && renderDataTable();
+  //   }
+
+  //   //eslint-disable-next-line
+  // }, [props.data]);
 
 
 
@@ -112,9 +113,27 @@ const TableMobile = props => {
         />
       }
 
-      { tableIsDone }
+      {/* { tableIsDone } */}
+      { props.data
+        ?
+          props.data.length
+            ? <TableAssembler isMobile = { true } type = { props.type } data = { renderDataTable(props.data) }/>
+            : <TableAssembler isMobile = { true } type = { props.type } data = "empty"/>
+        : <TableAssembler isMobile = { true } type = { props.type } data = "processing"/>
+      }
+      {console.log("props.data", props.data)}
     </>
   );
 };
 
 export default TableMobile;
+
+// if (!props.data) { // it is processing
+//   setTableIsDone(tableAssembler(true, props.type, "processing"));
+// } else if (props.data.length === 0) { // i is empty
+//   setTableIsDone(tableAssembler(true, props.type, "empty"));
+// } else if (props.data && props.data.length) { // has data
+//   const temp = renderDataTable(props.data);    
+//   const tempTable = tableAssembler(true, props.type, temp);
+
+
