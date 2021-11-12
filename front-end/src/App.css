@@ -237,9 +237,16 @@ h2 {
   background-color: #d9534f;
 }
 .button-close-whole {
-  width: 100%;
+  /* width: 100%; */
   background-color: #0275d8;
   color: black;
+  margin: auto;
+}
+.button-close-whole.large {
+  width: 50%;
+}
+.button-close-whole.mobile {
+  width: 80%;
 }
 
 
@@ -269,10 +276,19 @@ h2 {
 
 @media (max-width: 768px) {
   .h3-about {
-    margin-top: 3rem;
+    margin: 2rem 1rem 0.5rem 2rem;
+  }
+  .p-about {
+    margin: 0.5rem 1rem 1rem 2rem;
+    line-height: 25px;
   }
   .img-about {
     width: 90%;
+  }
+  .last-p-about {
+    width: 80%;
+    margin: 1rem auto;
+    line-height: 25px;
   }
 }
 

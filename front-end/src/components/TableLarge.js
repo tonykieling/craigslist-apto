@@ -42,8 +42,14 @@ const TableLarge = props => {
 
 
   const renderDataTable = () => {
-
+    
     const newTable = props.data.map((element, index) => {
+
+      const openModal = () => {
+        setDataToModal(element);
+        setCallAppsModal(true);        
+      };
+
       const {description, location, price, oldPrice, url, active, reactivated, reasonRemovedFromAdmin, changed} = element;
       const tempTableCurrent = (
         <tr 
@@ -51,7 +57,9 @@ const TableLarge = props => {
           className = { active ? "tr-table tr-hover" : "tr-table" }
           onClick={()=> active 
                           ? window.open(url, "_blank") 
-                          : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)}
+                          // : reasonRemovedFromAdmin && window.alert(`\nAdmin's Reason for removing is:\n\n${reasonRemovedFromAdmin}`)
+                          : openModal()
+                    }
         >
           <td
             className = "table-index"
@@ -112,6 +120,7 @@ const TableLarge = props => {
           info        = { dataToModal }
           callRemoveItem = { props.callRemoveItem }
           showRemoveButton = { props.type === "a" ? true : false }
+          isLarge     = { true }
         />
       }
 

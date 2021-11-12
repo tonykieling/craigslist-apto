@@ -1,20 +1,22 @@
 import ReactModal from "react-modal";
 
-const customStyle = {
-  content : {
-    top              : '40%',
-    bottom           : 'auto',
-    left             : '50%',
-    right            : 'auto',
-    marginRight      : '-50%',
-    transform        : 'translate(-50%, -50%)',
-    backgroundColor  : "lightblue",
-    height           : "15rem",
-    width            : "80%"
-  }
-};
 
 const AppsModal = props => {
+  console.log("props", props);
+  const customStyle = {
+    content : {
+      top              : '40%',
+      bottom           : 'auto',
+      left             : '50%',
+      right            : 'auto',
+      marginRight      : '-50%',
+      transform        : 'translate(-50%, -50%)',
+      backgroundColor  : "lightblue",
+      height           : "15rem",
+      width            : props.isLarge ? "40%" : "80%"
+    }
+  };
+
   // console.log("props on modalXXX:", props);
   const { description, location, price, oldPrice, reactivated, changed, lastUpdate } = props.info;
 
@@ -71,8 +73,10 @@ const AppsModal = props => {
             </>
           :
             <button
-              className = "button-close-whole"
-              onClick = { () => props.closeModal()}>
+              className = {`button-close-whole ${props.isLarge ? "large" : "mobile"}`}
+              onClick   = { () => props.closeModal()}
+              // width     = { props.isLarge ? "10%" : "50%"}
+            >
               Close
             </button>
         }

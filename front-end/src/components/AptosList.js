@@ -69,7 +69,6 @@ function AptosList() {
 
 
   const callRemoveItem = async (e, item, receivingFromModal) => {
-    console.log("=========", e, item, receivingFromModal);
     e.stopPropagation()
     const removePass = window.prompt("\nPlease confirm remove action with password");
 
