@@ -55,13 +55,13 @@ function About() {
 
 
       <h3 className = "h3-about">Tech stack</h3>
-      <p className = "p-about">Node.js, React, Atlas MongoDB, HTML, CSS, Axios, Node-fetch, React-icons, Node-Mailer, and React-Modal.</p>
+      <p className = "p-about">Node.js, React, Atlas MongoDB, HTML, CSS, Axios, Node-fetch, React-icons, Mongoose, Node-Mailer, and React-Modal.</p>
 
       <div className = "last-div-about">
         <p className = "last-p-about">Please, feel free to reach out in case any doubts or contribuitions. ;) </p>
         <p className = "last-p-about">
           Find this project on 
-          <a href = "https://github.com/tonykieling/craigslist-apto" target = "_blank" rel = "noreferrer"> GitHub</a>
+          <a href = "https://github.com/tonykieling/home-seeker" target = "_blank" rel = "noreferrer"> GitHub</a>
         </p>
         <p className = "last-p-about">
           <a href = "https://tkwebdev.ca" target = "_blank" rel = "noreferrer">https://tkwebdev.ca</a>

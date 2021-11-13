@@ -122,5 +122,6 @@ table structure redesigned, need
 About css styling + fix typo on new url
 
 TableAssembler component instead of a function + app-body css + 2 query items commented on index.js + README.md tweakes
+name migrated to home-seeker.tkwebdev.ca
 
 removebyadmin seems not working

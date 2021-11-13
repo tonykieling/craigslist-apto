@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const mongoose    = require("mongoose");
 const nodemailer  = require("nodemailer");
+const fetch       = require("node-fetch");
+
 
 // Apto schema
 const Apto = mongoose.model("Apto", mongoose.Schema(
@@ -51,9 +53,6 @@ const Apto = mongoose.model("Apto", mongoose.Schema(
     }
   })
 );
-
-const fetch = require("node-fetch");
-
 
 // it removes new lines and extar spaces in the description field
 const removeXspaces = str => {
@@ -340,7 +339,7 @@ const sendEmail = async (message = "<div>default msg</div>", updateInfo = false,
   // it sends an email to the user confirming the procedure
   const footer = `
     <div style="margin-top:2.5rem">
-      Visit <a href="https://cl-aptos.tkwebdev.ca" target="_blank">https://cl-aptos.tkwebdev.ca</a> for more information.
+      Visit <a href="https://home-seeker.tkwebdev.ca" target="_blank">https://home-seeker.tkwebdev.ca</a> for more information.
     </div>
   `;
   const success = await generalSender(`${updateInfo ? "Apto's update" : "New apto"} - ${dateTime}`, `<div>${message} ${footer}</div>`, siki);
@@ -365,7 +364,6 @@ const getDateTime = () => {
 // const f = async () => {
 module.exports = async(req, res) => {
   try {
-
     // it gets data from DB
     await mongoose.connect(process.env.DB, {
       useNewUrlParser: true,
@@ -522,7 +520,6 @@ module.exports = async(req, res) => {
         
 
         case "GET": {
-          // console.log("====dataFromDB:::", dataFromDB.length);
           return res.json({apartments: dataFromDB});
         }
 
@@ -532,8 +529,7 @@ module.exports = async(req, res) => {
         // it receives postId, the reason for removing the item and a password
         case "PATCH": {
           const { _id, reason, removePass } = req.body;
-// console.log("req.body", req.body);
-// if (1) return res.json({message: true});
+
           if (process.env.removePass !== removePass)
             return res.json({error: "forbiden"});
 

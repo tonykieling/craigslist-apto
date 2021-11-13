@@ -12,5 +12,5 @@ jobs:
       - name: Call my API
         run:  |
           curl --request POST \
-          --url "https://cl-aptos.tkwebdev.ca/api" \
+          --url "https://home-seeker.tkwebdev.ca/api" \
           --header "Authorization: Bearer ${{secrets.CL_APTOS_PASSWORD}}"
