@@ -335,14 +335,29 @@ const addTable = (title, item, multiples = false, hasReactivated = false, priceC
 };
 
 
-const sendEmail = async (message = "<div>default msg</div>", updateInfo = false, siki = false, dateTime = "now") => {
+const sendEmail = async (
+  title = "",
+  message = "<div>it is a default msg</div>",
+  siki = false
+) => {
+
+  const dateTime = getDateTime();
+  title = (
+          title === "update" 
+            ? "Apto's update" 
+            : title === "new" 
+              ? "New apto" 
+              : title
+          ) 
+            + ` - ${dateTime}`
+
   // it sends an email to the user confirming the procedure
   const footer = `
     <div style="margin-top:2.5rem">
       Visit <a href="https://home-seeker.tkwebdev.ca" target="_blank">https://home-seeker.tkwebdev.ca</a> for more information.
     </div>
   `;
-  const success = await generalSender(`${updateInfo ? "Apto's update" : "New apto"} - ${dateTime}`, `<div>${message} ${footer}</div>`, siki);
+  const success = await generalSender(title, `<div>${message} ${footer}</div>`, siki);
   return (success ? true : false);
 };
 
@@ -374,7 +389,6 @@ module.exports = async(req, res) => {
     let dataFromDB;
 
     if (method !== "PATCH")
-      // dataFromDB = await Apto.find();
       dataFromDB = await Apto.find().sort({ lastUpdate: -1});
       // sorting by lastUpdate
       // as not all register has it, it will go by _id
@@ -459,8 +473,9 @@ module.exports = async(req, res) => {
 
             const message = formatEmailMessage(newData);
             // 1.2 send email
-            const dateTime = getDateTime();
-            await sendEmail(message, updateInfo = ((newData.changed || newData.deleted) && true), siki = true, dateTime);
+
+            const title = ((newData.changed || newData.deleted) ? "update" : "new");
+            await sendEmail(title, message, siki = true);
 
             // 2- record on DB
             // it inserts new data coming from web
@@ -511,14 +526,16 @@ module.exports = async(req, res) => {
                   );
               }
             }
-          }
+          } else
+            await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
 
-          throw({message: "OK, just checking, all good ;)"});
+          return res.json({message: "OK, just checking, all good ;)"});
         }
 
 
         
-
+        // it is a function to return the FE query about all apartments, 
+        // then the UI will cort into availables, removed by owner or removed by admin
         case "GET": {
           return res.json({apartments: dataFromDB});
         }
@@ -560,16 +577,18 @@ module.exports = async(req, res) => {
       }
 
     } catch (error) {
-    const t = new Date();
-    const nowHours = t.getHours();
-    const nowMinutes = t.getMinutes();
-    // it will send a ping email only at 8 and 19, first half hour
-    if  (
-              ((nowHours == 15 ) && (nowMinutes <= 30))
-          ||  ((nowHours == 2) && (nowMinutes <= 30))
-          // || ((nowHours > 18) && (nowHours < 21))
-        )
-      await sendEmail(`<div>${(error.message || error)}</div>`);
+      // the code commented below is before we found the apt, since then, do not need it anymore 
+      // because the system will be trigged one a day
+    // const t = new Date();
+    // const nowHours = t.getHours();
+    // const nowMinutes = t.getMinutes();
+    // // it will send a ping email only at 8 and 19, first half hour
+    // if  (
+    //           ((nowHours == 15 ) && (nowMinutes <= 30))
+    //       ||  ((nowHours == 2) && (nowMinutes <= 30))
+    //       // || ((nowHours > 18) && (nowHours < 21))
+    //     )
+      await sendEmail("error :/", error.message || error);
 
     res.json({message: error.message || error});
 

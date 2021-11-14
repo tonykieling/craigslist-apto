@@ -1,0 +1,19 @@
+# this script runs on github actions
+# it will trigger the BE at 13:15 (Vancouver time) on every single day.
+  # UTC 21:15
+  # PST 13:15
+
+name: cron1
+on:
+  schedule:
+    - cron: "15 21 * * *"
+
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call my API
+        run:  |
+          curl --request POST \
+          --url "https://home-seeker.tkwebdev.ca/api" \
+          --header "Authorization: Bearer ${{secrets.CL_APTOS_PASSWORD}}"
