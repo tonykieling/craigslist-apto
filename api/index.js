@@ -342,6 +342,7 @@ const sendEmail = async (
 ) => {
 
   const dateTime = getDateTime();
+console.log("-------------dateTime", dateTime);
   title = (
           title === "update" 
             ? "Apto's update" 
@@ -476,6 +477,8 @@ module.exports = async(req, res) => {
 
             const title = ((newData.changed || newData.deleted) ? "update" : "new");
             await sendEmail(title, message, siki = true);
+
+            const dateTime = getDateTime();
 
             // 2- record on DB
             // it inserts new data coming from web
