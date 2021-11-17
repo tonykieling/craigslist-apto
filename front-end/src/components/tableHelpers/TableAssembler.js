@@ -1,15 +1,22 @@
-import tableHead from "./tableHead.js";
+import TableHead from "./TableHead.js";
 import basicTableLine from "./basicTableLine";
 
-const TableAssembler = ({isMobile, type, data}) => {
-  return (
+
+const TableAssembler = ({ isMobile, type, data, showTable = true, getDescW }) => {
+
+  return(
     <table
-      className = { data === "processing" ? "table-no-mouse-cursor" : ""}
+      className = { `${data === "processing" ? "table-no-mouse-cursor" : ""} ${showTable ? "" : "collapse-table"}` }
     >
-      { tableHead(isMobile, type) }
+      <TableHead
+        mobile = { isMobile } 
+        type = { type } 
+        showTable = { showTable }
+        getDescW = { getDescW }
+      />
       <tbody>
         { data === "processing"
-            ? basicTableLine(isMobile, "processing")
+            ? showTable && basicTableLine(isMobile, "processing")
             : (data === "empty")
               ? basicTableLine(isMobile, "emptyfornow")
               : data
@@ -17,6 +24,7 @@ const TableAssembler = ({isMobile, type, data}) => {
       </tbody>
     </table>
   );
+
 }
 
 export default TableAssembler;

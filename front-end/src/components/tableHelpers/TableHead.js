@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 
 /*
   It receives props to assembly the table head accordingly.
@@ -5,15 +6,26 @@
     - mobile
     - type: a || rbo || tba
   It returns a line to be inserted into a 
-*/
-export default function head(mobile = false, type = "a") {
+*/ 
+const Head = ({mobile = false, type = "a", showTable = false, getDescW}) => {
+  
+  const descriptionRef = useRef(null);
+
+  useEffect(() => {
+    if (descriptionRef.current)
+      getDescW(descriptionRef.current.offsetWidth);
+      
+    //eslint-disable-next-line
+  }, [descriptionRef]);
+
   return(
     <>
       <thead id = "color-head">
         <tr 
-          className = "tr-first"
+          className = {`tr-first ${showTable ? "" : "hide"}`}
           key="head"
         >
+
           <th 
             className = "table-index"
           > 
@@ -21,8 +33,9 @@ export default function head(mobile = false, type = "a") {
           </th>
           <th
             className = "table-description"
+            ref = { descriptionRef }
           > 
-            Description 
+            Description
           </th>
           <th
             className = "table-price"
@@ -60,3 +73,5 @@ export default function head(mobile = false, type = "a") {
     </>
   );
 }
+
+export default Head;

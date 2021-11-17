@@ -67,9 +67,10 @@ const TableLarge = props => {
             { index + 1 }
           </td>
           <td
-            className = {`table-description ${ reactivated || changed ? "tr-orange" : "asd"}`}
+            className = {`table-description ${ reactivated || changed ? "tr-orange" : ""}`}
           >
             { description.length > 60 ? `${description.substring(0, 59)}..` : description}
+            {/* { description } */}
           </td>
           <td
             className = "table-price"
@@ -124,15 +125,16 @@ const TableLarge = props => {
         />
       }
 
-      {/* { tableIsDone } */}
-      { props.data
-        ?
-          props.data.length
-            ? <TableAssembler isMobile = { false } type = { props.type } data = { renderDataTable(props.data) }/>
-            : <TableAssembler isMobile = { false } type = { props.type } data = "empty"/>
-        : <TableAssembler isMobile = { false } type = { props.type } data = "processing"/>
-      }
-      {/* {console.log("props.data", props.data)} */}
+      <TableAssembler 
+        isMobile  = { false }
+        type      = { props.type }
+        data      = { props.data
+                        ? props.data.length
+                          ? renderDataTable(props.data)
+                          : "empty"
+                        : "processing"
+                    }
+      />
     </>
   );
 };

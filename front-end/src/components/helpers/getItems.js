@@ -4,7 +4,7 @@ const tempDB =  [
   {
     postId: '7388747820',
     url: 'https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-on-26th-floor-in/7388747820.html',
-    description: '1 Bedroom on 26th floor in Station Square',
+    description: '1 Bedroom on 26th floor',
     price: '$1,780',
     active: true,
     location: "Joyce",
@@ -122,23 +122,23 @@ const getItems = async () => {
   const url = "/api";
   try {
 
-    // const getData = await new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve({
-    //       data: {
-    //         apartments: tempDB
-    //       }}
-    //     );
-    //   }, 1000);
-    // });
-
-    const getData = await axios.get( 
-      url,
-      {  
-        headers: { 
-          "Content-Type": "application/json"
-        }
+    const getData = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          data: {
+            apartments: tempDB
+          }}
+        );
+      }, 500);
     });
+
+    // const getData = await axios.get( 
+    //   url,
+    //   {  
+    //     headers: { 
+    //       "Content-Type": "application/json"
+    //     }
+    // });
 
 //  console.log("getDataaaaaaa", getData);
       if (!getData.data.apartments) {

@@ -120,7 +120,6 @@ function AptosList() {
   const [ showRBATable, setShowRBATable ] = useState(false);
 
 
-
   return (
     <div className="app-body">
       <h1>List of apartments</h1>
@@ -142,6 +141,7 @@ function AptosList() {
               type = "a"
               callRemoveItem = { callRemoveItem }
               closeModal = { closeModal }
+              showTable = { true }
             />
           :  
             <TableLarge
@@ -171,13 +171,16 @@ function AptosList() {
         }
       </div>
 
-      { showRBOTable
-        ?
+      { 
+      // showRBOTable
+      //   ?
           mobile
             ?
               <TableMobile 
-                data = { removedByOwnwer } type = "rbo"
-                closeModal = { closeModal }
+                data          = { removedByOwnwer } 
+                type          = "rbo"
+                closeModal    = { closeModal }
+                showTable  = { showRBOTable }
               />
             :  
               <TableLarge
@@ -185,8 +188,9 @@ function AptosList() {
                 type = "rbo"
                 closeModal = { closeModal }
               />
-        : <table></table>
+        // : <table></table>
       }
+
 
 
       {/* Removed by Admins table title */}
@@ -206,13 +210,14 @@ function AptosList() {
         }
       </div>
 
-      { showRBATable
-        ?
+        { 
           mobile
             ?
               <TableMobile 
-                data = { removedByAdmin } type = "rba"
-                closeModal = { closeModal }
+                data            = { removedByAdmin } 
+                type            = "rba"
+                closeModal      = { closeModal }
+                showTable    = { showRBATable }
               />
             :  
               <TableLarge
@@ -220,8 +225,7 @@ function AptosList() {
                 type = "rba"
                 closeModal = { closeModal }
               />
-        : <table></table>
-      }
+        }
 
       <div style={{marginBottom: "2rem"}}></div>
     </div>

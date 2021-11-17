@@ -143,10 +143,15 @@ table {
 
 .table-index {
   width: 1.5rem;
-  text-align: center;
+  text-align: right;
 }
 .table-description {
-  width: 50%;
+  /* max-width: 60%; */
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+          double check in largeMObile , but i think it can be removed and also on html/jsx file 
+  */ 
 }
 .table-price {
   width: 4.5rem;
@@ -161,8 +166,8 @@ table {
   text-align: center;
 }
 .table-remove {
-  width: 2rem;
-  text-align: center;
+  width: 4rem;
+  /* text-align: center; */
 }
 .table-trash {
   display: block;
@@ -173,7 +178,7 @@ table {
   margin: auto;
 }
 .table-more {
-  width: 2.5rem;
+  width: 5rem;
 }
 .tr-empty {
   text-align: center;
@@ -181,6 +186,7 @@ table {
 }
 .tr-orange {
   color: orange;
+  font-weight: bold;
 }
 .table-ExpCol {
   /* display: block; */
@@ -195,6 +201,41 @@ table {
   color: green;
 }
 
+
+
+/*///////////////////////////////////////////////////------------+++++++++++++++++++///////////////////////////////////*/
+
+td {
+  opacity: 1;
+  padding: 10px;
+  line-height: 5px;
+  transition: all 0.5s ease;
+}
+th {
+  opacity: 1;
+  padding: 10px;
+  line-height: 5px;
+  transition: all 0.5s ease;
+  /* transition: all 1s ease-in-out; */
+} 
+.hide td {
+  opacity: 0;
+  line-height: 0px;
+  padding: 0 10px;
+}
+.hide th {
+  opacity: 0;
+  line-height: 0px;
+  padding: 0 10px;
+}
+
+.collapse-table {
+  border-collapse: collapse;
+}
+
+
+
+
 @media (max-width: 768px) {
   .app-body {
     margin: 0.5rem;
@@ -202,19 +243,25 @@ table {
     margin-bottom: 3rem;
     min-height: calc(100vh - 4rem - 2.5rem - 4px - 2rem);
   }
+  td, th {
+    padding: 10px 0;
+    line-height: 5px;
+  }
   table {
     min-width: 95%;
   }
-  .table-index {
-    width: 1rem;
-  } 
-  .table-price {
-    width: 0rem;
+  .table-description {
+    padding-left: 5px;
   }
+  .table-index, .table-price {
+    width: 0rem;
+    padding: 0 0.5rem;
+  } 
   .table-more {
-    width: 0;
+    width: 2rem;
   }
 }
+
 
 
 /* Modals settings */
@@ -249,6 +296,7 @@ h2 {
 .button-close-whole.mobile {
   width: 80%;
 }
+
 
 
 /* About page settings */
