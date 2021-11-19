@@ -2,17 +2,17 @@ import TableHead from "./TableHead.js";
 import basicTableLine from "./basicTableLine";
 
 
-const TableAssembler = ({ isMobile, type, data, showTable = true, getDescW }) => {
+const TableAssembler = ({ isMobile, type, data, showTable = false, getDescW }) => {
 
   return(
     <table
       className = { `${data === "processing" ? "table-no-mouse-cursor" : ""} ${showTable ? "" : "collapse-table"}` }
     >
       <TableHead
-        mobile = { isMobile } 
-        type = { type } 
+        mobile    = { isMobile } 
+        type      = { type } 
         showTable = { showTable }
-        getDescW = { getDescW }
+        getDescW  = { getDescW }
       />
       <tbody>
         { data === "processing"

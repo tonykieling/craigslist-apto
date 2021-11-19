@@ -1,14 +1,13 @@
 import Architecture from "../graphics/architecture.png";
 
-import Temp from "./Temp";
 
 function About() {
   return (
     <div className="app-body">
       <h2>Home Seeker</h2>
-      <Temp />
       <h3 className = "h3-about">What is it?</h3>
       <p className = "p-about">Home seeker is a system that helps you look for a new home that suits your needs. </p>
+      <p className = "p-about"><i><u><b>p.s</b></u>. Currently, the system is not being watched carefully because <b>we already have found our new place to live <u>thanks to Home-seeker</u></b>. It means the system queries craigslist only once a day and we are not given too many attention to keep the availables list clean.</i> :)</p>
 
       <h3 className = "h3-about">How does it work?</h3>
       <p className = "p-about">Tired of checking craigslist multiple times a day or missing opportunities for a dream home? We were too!  </p>
@@ -25,7 +24,6 @@ function About() {
 
       <h3 className = "h3-about">When does it happens?</h3>
       <p className = "p-about">The queries are executed from morning to late evening each 30 minutes. It uses a schedule provided by GitHub Actions.</p>
-      <p className = "p-about"><i><u><b>p.s</b></u>. Currently, the GitHub Action is set to run once a day, as Home Seeker did its job and we found a new place to live.</i> :)</p>
       <p className = "p-about">Also, it is possible to execute a post request, with a secret, that will execute the queries, compare data and record new information in database.</p>
       <p className = "p-about">The client side can be executed at any time.</p>
 

@@ -25,15 +25,12 @@ const RemoveModal = props => {
   });
 
   const handleChange = event => {
-    console.log("event::", event.target);
     const { name, value } = event.target;
     setState(prevState => ({
         ...prevState,
         [name]: value
       })
     );
-
-    console.log("state", state);
   }
 
 

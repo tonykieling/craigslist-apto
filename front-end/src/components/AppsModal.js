@@ -2,7 +2,6 @@ import ReactModal from "react-modal";
 
 
 const AppsModal = props => {
-  console.log("props", props);
   const customStyle = {
     content : {
       top              : '40%',
@@ -17,7 +16,6 @@ const AppsModal = props => {
     }
   };
 
-  // console.log("props on modalXXX:", props);
   const { description, location, price, oldPrice, reactivated, changed, lastUpdate } = props.info;
 
   return(

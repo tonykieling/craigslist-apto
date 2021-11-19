@@ -122,23 +122,23 @@ const getItems = async () => {
   const url = "/api";
   try {
 
-    const getData = await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          data: {
-            apartments: tempDB
-          }}
-        );
-      }, 500);
-    });
-
-    // const getData = await axios.get( 
-    //   url,
-    //   {  
-    //     headers: { 
-    //       "Content-Type": "application/json"
-    //     }
+    // const getData = await new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve({
+    //       data: {
+    //         apartments: tempDB
+    //       }}
+    //     );
+    //   }, 500);
     // });
+
+    const getData = await axios.get( 
+      url,
+      {  
+        headers: { 
+          "Content-Type": "application/json"
+        }
+    });
 
 //  console.log("getDataaaaaaa", getData);
       if (!getData.data.apartments) {

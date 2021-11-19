@@ -342,7 +342,7 @@ const sendEmail = async (
 ) => {
 
   const dateTime = getDateTime();
-console.log("-------------dateTime", dateTime);
+  
   title = (
           title === "update" 
             ? "Apto's update" 

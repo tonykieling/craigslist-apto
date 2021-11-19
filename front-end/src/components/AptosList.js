@@ -137,18 +137,19 @@ function AptosList() {
         { mobile
           ?
             <TableMobile 
-              data = { availables } 
-              type = "a"
-              callRemoveItem = { callRemoveItem }
-              closeModal = { closeModal }
-              showTable = { true }
+              data            = { availables } 
+              type            = "a"
+              callRemoveItem  = { callRemoveItem }
+              closeModal      = { closeModal }
+              showTable       = { true }
             />
           :  
             <TableLarge
-              data = { availables}
-              type = "a"
-              callRemoveItem = { callRemoveItem }
-              closeModal = { closeModal }
+              data            = { availables}
+              type            = "a"
+              callRemoveItem  = { callRemoveItem }
+              closeModal      = { closeModal }
+              showTable       = { true }
             />
         }
 
@@ -172,23 +173,21 @@ function AptosList() {
       </div>
 
       { 
-      // showRBOTable
-      //   ?
-          mobile
-            ?
-              <TableMobile 
-                data          = { removedByOwnwer } 
-                type          = "rbo"
-                closeModal    = { closeModal }
-                showTable  = { showRBOTable }
-              />
-            :  
-              <TableLarge
-                data = { removedByOwnwer }
-                type = "rbo"
-                closeModal = { closeModal }
-              />
-        // : <table></table>
+        mobile
+          ?
+            <TableMobile 
+              data          = { removedByOwnwer } 
+              type          = "rbo"
+              closeModal    = { closeModal }
+              showTable  = { showRBOTable }
+            />
+          :  
+            <TableLarge
+              data        = { removedByOwnwer }
+              type        = "rbo"
+              closeModal  = { closeModal }
+              showTable   = { showRBOTable}
+            />
       }
 
 
@@ -224,6 +223,7 @@ function AptosList() {
                 data = { removedByAdmin }
                 type = "rba"
                 closeModal = { closeModal }
+                showTable = { showRBATable }
               />
         }
 

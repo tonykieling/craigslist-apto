@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import AppsModal from "./AppsModal";
 
 import TableAssembler from "./tableHelpers/TableAssembler";

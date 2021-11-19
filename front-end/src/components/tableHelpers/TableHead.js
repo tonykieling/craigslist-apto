@@ -7,14 +7,14 @@ import { useRef, useEffect } from "react";
     - type: a || rbo || tba
   It returns a line to be inserted into a 
 */ 
-const Head = ({mobile = false, type = "a", showTable = false, getDescW}) => {
+const Head = ({mobile = false, type = "a", showTable = true, getDescW}) => {
   
   const descriptionRef = useRef(null);
 
   useEffect(() => {
     if (descriptionRef.current)
       getDescW(descriptionRef.current.offsetWidth);
-      
+
     //eslint-disable-next-line
   }, [descriptionRef]);
 
