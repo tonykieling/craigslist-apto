@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import TableMobile from "./TableMobile.js";
 import TableLarge from "./TableLarge.js";
 import removeItem from "./helpers/removeItem.js";
@@ -19,6 +19,8 @@ function AptosList() {
 
   const [ closeModal, setCloseModal ] = useState(false);
 
+  const rboTopRef = useRef(null);
+  const rbaTopRef = useRef(null);
 
   const sortAnswer = (aptos, option = false) => {
     if (!option) {
@@ -120,6 +122,22 @@ function AptosList() {
   const [ showRBATable, setShowRBATable ] = useState(false);
 
 
+  useEffect(() => {
+    if (showRBATable)
+      setTimeout(() => {
+        rbaTopRef.current.scrollIntoView({ behavior: "smooth" });
+      }, 280);
+  }, [showRBATable]);
+
+
+  useEffect(() => {
+    if (showRBOTable)
+      setTimeout(() => {
+        rboTopRef.current.scrollIntoView({ behavior: "smooth" });
+      }, 280);
+  }, [showRBOTable]);
+
+
   return (
     <div className="app-body">
       <h1>List of apartments</h1>
@@ -154,7 +172,10 @@ function AptosList() {
         }
 
 
-
+      <div 
+        style = {{ paddingTop: showRBOTable ? "1rem" : 0}}
+        ref = { rboTopRef }
+      ></div>
       {/* Removed by Owners table title */}
       <div 
         className = "table-section-title rbo"
@@ -191,7 +212,10 @@ function AptosList() {
       }
 
 
-
+      <div 
+        style = {{ paddingTop: showRBATable ? "1rem" : 0}}
+        ref = { rbaTopRef }
+      ></div>
       {/* Removed by Admins table title */}
       <div 
         className = "table-section-title rba"

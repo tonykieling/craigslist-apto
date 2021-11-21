@@ -127,5 +127,6 @@ BE message workflow refactored + new crontab (GitHub Actions) schedule
 mobile tables with slow opening and closing + ellipses work fine
 updated About + fixed small error on BE when recording data + tables with slow movement
 new UI version: description field ellipses + table transitioning btw visible and not visible
+tweakes on table - rbo and rbaTables
 
 removebyadmin seems not working

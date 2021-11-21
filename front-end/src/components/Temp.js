@@ -10,18 +10,32 @@ const n = {
 };
 const st = { 
   borderCollapse: "collapse", 
-  border: "1px solid red"
+  border: "1px solid red",
+  height: "10rem"
 };
 const st1 = {border: "1px solid black"}
 
 const Temp = props => {
+  const tableRef = useRef(null);
   const descriptionField = useRef(null);
   const [ rbaData, setRbaData ] = useState(null);
   const [ flag, setFlag ] = useState(null);
 
+  const [ h, setH ] = useState(0);
+
+  useEffect(() => {
+    if (tableRef && tableRef.current) {
+      console.log("new width", tableRef.current.offsetWidth);
+      setH(tableRef.current.offsetWidth)
+    }
+  }, [tableRef]);
 
   const table = (
-    <table style = {st}>
+    <table 
+      // style = {st}
+      ref = { tableRef }
+      style = {{ height: h}}
+    >
       <colgroup>
         <col></col>
         <col
@@ -65,9 +79,9 @@ const Temp = props => {
   );
 
   useEffect(() => {
-    console.log("descr", descriptionField.current.offsetWidth);
+    console.log("tableRef", tableRef.current.offsetHeight, tableRef.current.offsetWidth);
   // }, [descriptionField.current && descriptionField.current.offsetWidth]);
-  }, []);
+  }, [tableRef]);
 
 
   const getData = async () => {

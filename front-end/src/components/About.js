@@ -1,6 +1,5 @@
 import Architecture from "../graphics/architecture.png";
 
-
 function About() {
   return (
     <div className="app-body">
