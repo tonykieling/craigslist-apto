@@ -396,7 +396,7 @@ module.exports = async(req, res) => {
       // it seems to be working the sorting by lastUpdate, even though it is a string, for instance "Nov-7, 20:49"
 
     // const resurts = dataFromDB.map(e => e._id);
-    // console.log("dataFromDB", dataFromDB);
+    // console.log("dataFromDB", "process.env.app_password");
     // if (1)
     //   return res.json({message: dataFromDB});
 
@@ -408,6 +408,51 @@ module.exports = async(req, res) => {
         {
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
+
+
+          // the code below is meant to cleanup the database because the system is not querying anymore - it already has done its job
+          // if the system needs to run, the lines below have to be commented
+          // it takes the active records and set them as 
+          //    active                  = false
+          //    removedByAdmin          = true
+          //    reasonRemovedFromAdmin  = automatically removed by the admin
+
+          /* on Postman
+            POST /api HTTP/1.1
+            Host: localhost:3001
+            Content-Type: application/json
+            Authorization: Bearer 'this is the real password not typed here'
+            Host: localhost:3001
+            {
+              "cleanup": "yeah"
+            }
+          */
+          if (req.body.cleanup) {
+            console.log("running cleanup");
+            
+            const onlyActiveRecords = dataFromDB.filter(e => e.active );
+
+            console.log("number of active records", onlyActiveRecords.length);
+            console.log("onlyActiveRecords", onlyActiveRecords);
+            for (const item of onlyActiveRecords) {
+              console.log("  ==> ", item.postId);
+              // await Apto
+              //   .updateOne(
+              //     { postId: item.postId },
+              //     {
+              //       active                  : false,
+              //       removedByAdmin          : true,
+              //       reasonRemovedFromAdmin  : "automatically removed by the admin for cleanup purpose"
+              //     }
+              //   );
+            }
+
+            return res.json({ message: "that's it! DB cleanedup!"});
+          }
+          // end of cleanup code
+
+
+
 
           const queries = [
             {

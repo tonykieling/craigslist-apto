@@ -16,7 +16,7 @@ const AppsModal = props => {
     }
   };
 
-  const { description, location, price, oldPrice, reactivated, changed, lastUpdate } = props.info;
+  const { description, location, price, oldPrice, reactivated, changed, lastUpdate, reasonRemovedFromAdmin } = props.info;
 
   return(
     <ReactModal
@@ -33,7 +33,7 @@ const AppsModal = props => {
         <span> <b>{ price }</b></span>
       </div>
       <div>
-        <span> Lat Update at <b>{ lastUpdate ? <b> { lastUpdate } </b> : "(no info at this time)" }</b></span>
+        <span> Last Update at <b>{ lastUpdate ? <b> { lastUpdate } </b> : "(no info at this time)" }</b></span>
       </div>
       {changed
         &&
@@ -48,6 +48,15 @@ const AppsModal = props => {
           <>
             <div className = "items-modal">
               <span> Item <u>reactivated by its owner</u></span>
+            </div>
+          </>
+      }
+
+      {
+        reasonRemovedFromAdmin && 
+          <>
+            <div className = "items-modal">
+              <span> Reason: { reasonRemovedFromAdmin }</span>
             </div>
           </>
       }
