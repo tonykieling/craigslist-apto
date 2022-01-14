@@ -6,7 +6,8 @@ function About() {
       <h2>Home Seeker</h2>
       <h3 className = "h3-about">What is it?</h3>
       <p className = "p-about">Home seeker is a system that helps you look for a new home that suits your needs. </p>
-      <p className = "p-about"><i><u><b>p.s</b></u>. Currently, the system is not being watched carefully because <b>we already have found our new place to live <u>thanks to Home-seeker</u></b>. It means the system queries craigslist only once a day and we are not given too many attention to keep the availables list clean.</i> :)</p>
+      {/* <p className = "p-about"><i><u><b>p.s</b></u>. Currently, the system is not being watched carefully because <b>we already have found our new place to live <u>thanks to Home-seeker</u></b>. It means the system queries craigslist only once a day and we are not given too many attention to keep the availables list clean.</i> :)</p> */}
+      <p className = "p-about"><i><u><b>p.s</b></u>. Currently, the system is no longer querying craigslist. <b>We already have found our new place to live <u>thanks to Home-seeker</u></b>.</i> :)</p>
 
       <h3 className = "h3-about">How does it work?</h3>
       <p className = "p-about">Tired of checking craigslist multiple times a day or missing opportunities for a dream home? We were too!  </p>

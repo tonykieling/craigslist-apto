@@ -3,6 +3,7 @@ require('dotenv').config();
 const mongoose    = require("mongoose");
 const nodemailer  = require("nodemailer");
 const fetch       = require("node-fetch");
+const { Console } = require('console');
 
 
 // Apto schema
@@ -427,32 +428,56 @@ module.exports = async(req, res) => {
               "cleanup": "yeah"
             }
           */
+
+          /*
           if (req.body.cleanup) {
+            // turns out I was not using $set on UpdateOne. It duplicates the records and messed up my mind :/ :D
             console.log("running cleanup");
             
             const onlyActiveRecords = dataFromDB.filter(e => e.active );
 
             console.log("number of active records", onlyActiveRecords.length);
-            console.log("onlyActiveRecords", onlyActiveRecords);
+            // onlyActiveRecords.forEach((e, i) => console.log(`${i} => ${e.postId}`));
+            // console.log("onlyActiveRecords", onlyActiveRecords);
             for (const item of onlyActiveRecords) {
-              console.log("  ==> ", item.postId);
-              // await Apto
-              //   .updateOne(
-              //     { postId: item.postId },
-              //     {
-              //       active                  : false,
-              //       removedByAdmin          : true,
-              //       reasonRemovedFromAdmin  : "automatically removed by the admin for cleanup purpose"
-              //     }
+              // console.log("  ==***> ", item.postId);
+              const update = await Apto
+                .updateOne(
+                  { 
+                    postId: item.postId 
+                  },
+                  {
+                    $set: {
+                      active                : false,
+                      removedByAdmin        : true,
+                      reasonRemovedFromAdmin: "automatically removed by the admin for cleanup purpose"
+                    }
+                  }
+                );
+              console.log("update", update);
+              // const update = await Apto
+              //   .find({ 
+              //     postId: item.postId,
+              //     lastUpdate: "TO BE REMOVED"
+              //   });
+              // console.log("update", update);
+
+
+              // to remove duplicate records
+              // const toDelete = await Apto
+              //   .remove(
+              //     { 
+              //       postId: item.postId,
+              //       lastUpdate: "TO BE REMOVED"
+              //      }
               //   );
+              // console.log("toDelete", toDelete);
             }
 
             return res.json({ message: "that's it! DB cleanedup!"});
           }
           // end of cleanup code
-
-
-
+          */
 
           const queries = [
             {
@@ -550,12 +575,15 @@ module.exports = async(req, res) => {
                   .updateOne(
                     { postId: item.postId },
                     {
-                      price       : item.price,
-                      oldPrice    : item.changed ? item.priceOld : undefined,
-                      changed     : item.changed ? true : undefined,
-                      active      : item.reactivated || undefined,
-                      reactivated : item.reactivated || undefined,
-                      lastUpdate  : dateTime
+                      $set: {
+                        price       : item.price,
+                        oldPrice    : item.changed ? item.priceOld : undefined,
+                        changed     : item.changed ? true : undefined,
+                        active      : item.reactivated || undefined,
+                        reactivated : item.reactivated || undefined,
+                        lastUpdate  : dateTime
+                      }
+
                     }
                   );
               }
@@ -568,8 +596,11 @@ module.exports = async(req, res) => {
                   .updateOne(
                     { postId: item.postId },
                     {
-                      active    : false,
-                      lastUpdate: dateTime
+                      $set: {
+                        active    : false,
+                        lastUpdate: dateTime
+                      }
+
                     }
                   );
               }
@@ -606,10 +637,12 @@ module.exports = async(req, res) => {
               .updateOne(
                 { _id },
                 {
-                  removedByAdmin          : true,
-                  reasonRemovedFromAdmin  : reason,
-                  active                  : false,
-                  lastUpdate              : dateTime 
+                  $set: {
+                    removedByAdmin          : true,
+                    reasonRemovedFromAdmin  : reason,
+                    active                  : false,
+                    lastUpdate              : dateTime 
+                  }
                 }
               );
 
