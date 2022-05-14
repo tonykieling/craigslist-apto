@@ -302,11 +302,17 @@ h2 {
 /* About page settings */
 .h3-about {
   margin: 3rem 10rem 0;
-  /* margi */
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
 }
 .p-about{
   margin: 0.5rem 10rem 0.5rem 11rem;
   line-height: 1.85rem;
+}
+.p-about-items{
+  margin: 0.5rem 10rem 0.5rem 12rem;
+  line-height: 1.5rem;
 }
 .position-img-about {
   margin-top: 3rem;
@@ -326,7 +332,7 @@ h2 {
 
 @media (max-width: 768px) {
   .h3-about {
-    margin: 2rem 1rem 0.5rem 2rem;
+    margin: 3rem 1rem 0.5rem 1.5rem;
   }
   .p-about {
     margin: 0.5rem 1rem 1rem 2rem;
@@ -339,6 +345,9 @@ h2 {
     width: 80%;
     margin: 1rem auto;
     line-height: 25px;
+  }
+  .p-about-items {
+    margin: 0.5rem 1rem 0.5rem 4rem;
   }
 }
 
@@ -359,7 +368,36 @@ h2 {
   color: #14D500;
   background-color: #282c34;
   font-weight: bold;
-  font-variant: small-caps; }
-  .signature span {
-    font-family: sans-serif; }
+  font-variant: small-caps; 
+}
+.signature span {
+  font-family: sans-serif; 
+}
   
+.anchors {
+  display: block;
+  position: relative;
+  top: -50px;
+  visibility: hidden;
+}
+
+.anchors-title {
+  display: block;
+  position: relative;
+  top: -200px;
+  visibility: hidden;
+}
+
+.links-to-go {
+  margin: 1rem 10rem 0;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .links-to-go {
+    margin: 1rem auto 1.5rem 1.5rem;
+  }
+}

@@ -11,11 +11,15 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path = "/aptosList">
+        <Route path = "/aptosList">
           <AptosList />
         </Route>
 
         <Route exact path = "/about">
+          <About />
+        </Route>
+
+        <Route>
           <About />
         </Route>
       </Switch>
