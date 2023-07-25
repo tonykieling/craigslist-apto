@@ -7,7 +7,18 @@ export default function basicTableLine(isMobile, status) {
         className = { status === "processing" ? "processing" : "tr-empty"}
         colSpan   = { isMobile ? 4  : 7}
       >
-        <b>{ (status === "processing") ? "Processing..." : "Empty for now ;)" }</b>
+        {/* <b>{ (status === "processing") ? "Processing..." : "Empty for now ;)" }</b> */}
+        { (status === "processing") 
+            ?
+                <b>Processing...</b> 
+            :
+                <div>
+                    <p><b>Empty for now ;)</b></p>
+                    <p style={{marginTop: "1.5rem"}}>The system is currently not grabbing new data because</p>
+                    <p>its job was already completed.</p>
+                    <p style={{marginTop: "1.5rem"}}>You can check the old data recorded on DB below.</p>
+                </div>
+        }
       </td>
     </tr>
   );
