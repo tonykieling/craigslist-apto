@@ -179,16 +179,19 @@ function AptosList() {
       {/* Removed by Owners table title */}
       <div 
         className = "table-section-title rbo"
+        title="Click the icon on the right to expand or hide"
       >
         Removed by Owners
         { showRBOTable
           ? <BiCollapse
-              className = "table-ExpCol expCol-blue"
+              className = "table-ExpCol expCol-green"
               onClick = {() => setShowRBOTable(false)}
+              title="Click to hide"
             />
           : <BiExpand
-              className = "table-ExpCol expCol-green"
+              className = "table-ExpCol expCol-blue"
               onClick = {() => setShowRBOTable(true)}
+              title="Click to expand"
             />
         }
       </div>
@@ -215,20 +218,23 @@ function AptosList() {
       <div 
         style = {{ paddingTop: showRBATable ? "1rem" : 0}}
         ref = { rbaTopRef }
-      ></div>
+        ></div>
       {/* Removed by Admins table title */}
       <div 
         className = "table-section-title rba"
+        title="Click the icon on the right to expand or hide"
       >
         Removed by Admins
         { showRBATable
           ? <BiCollapse 
-              className = "table-ExpCol expCol-blue"
+              className = "table-ExpCol expCol-green"
               onClick = {() => setShowRBATable(false)}
+              title="Click to hide"
             />
           : <BiExpand 
-              className = "table-ExpCol expCol-green" 
+              className = "table-ExpCol expCol-blue" 
               onClick = {() => setShowRBATable(true)}
+              title="Click to expand"
             />
         }
       </div>
