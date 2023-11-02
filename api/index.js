@@ -3,7 +3,6 @@ require('dotenv').config();
 const mongoose    = require("mongoose");
 const nodemailer  = require("nodemailer");
 const fetch       = require("node-fetch");
-const { Console } = require('console');
 
 
 // Apto schema
@@ -63,6 +62,8 @@ const removeXspaces = str => {
 
 // it gets the result-info div, extracts and returns the important data
 const getDataFromDOM = (item, location) => {
+  console.log("item::: ", item, location);
+  // console.log("id: ", item.querySelector(""));
   return (
     {
       postId: item.querySelector("a.result-title").getAttribute("data-id") ,
@@ -407,6 +408,7 @@ module.exports = async(req, res) => {
       // case for receiving request to execute the queries
       case "POST":
         {
+          // console.log("password::: ", req.headers.authorization.split(" ")[1] , " - end of password")
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
 
@@ -479,33 +481,7 @@ module.exports = async(req, res) => {
           // end of cleanup code
           */
 
-          const queries = [
-            {
-              location: "Patterson",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.7"
-            },
-            {
-              location: "Joyce",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.237509680216846&lon=-123.02994489669801&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.4"
-            },
-            // not considering the below commented locations for now
-            // {
-            //   location: "29th",
-            //   url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24460894085901&lon=-123.04670348335357&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
-            // },
-            // {
-            //   location: "Nanaimo",
-            //   url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24855720299385&lon=-123.0563888765191&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.2"
-            // },
-            {
-              location: "Metrotown",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22645364213039&lon=-123.00554297401902&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3",
-            },
-            {
-              location: "Royal Oak",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.219845624581566&lon=-122.98851849619629&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
-            }
-          ];
+          const queries = require("./queries.js");
           
           let dataFromWeb = [];
 
@@ -516,15 +492,35 @@ module.exports = async(req, res) => {
 
 
             for (let i = 0; i < queries.length; i++) {
+              // console.log("querying::: ", queries[i]["url"]);
               let addItem = {};
-              const response = await fetch(queries[i]["url"]);
-              const html = await response.text();
+              // const response = await fetch(queries[i]["url"]);
+              // const html = await response.text();
+
+const fs = require('fs');
+const path = require('path');
+
+// Specify the path to your HTML file
+const htmlFilePath = path.join(__dirname, 'data.html');
+let html = "";
+// Read the HTML file
+fs.readFile(htmlFilePath, 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading the HTML file:', err);
+  } else {
+    // console.log('HTML content:');
+    // console.log(data);
+    html = data;
+  }
+});
               
               const dom = new JSDOM(html);
-              const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-
-              addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
-
+              // const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
+              const domElements = [...dom.window.document.querySelectorAll("cl-static-search-results")];
+console.log("domElements======== ", domElements)
+              // addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
+              addItem = domElements.map(e => getDataFromDOM(e.querySelector(".cl-static-search-result"), queries[i].location));
+// console.log("addItem========= ", addItem);
               dataFromWeb = [...dataFromWeb, ...addItem];
             }
 
@@ -533,7 +529,8 @@ module.exports = async(req, res) => {
           }
 
           const newData = compareData(dataFromDB, dataFromWeb);
-
+// console.log("DataDB===> ", dataFromDB);
+// console.log("dataFromWeb = ", dataFromWeb);
         
           // any changes detected
           // 1- send email to the admins
@@ -546,67 +543,73 @@ module.exports = async(req, res) => {
             // 1.2 send email
 
             const title = ((newData.changed || newData.deleted) ? "update" : "new");
-            await sendEmail(title, message, siki = true);
+            
+            
+            ///////////////////////////////////////
+            //// to be activated
+            // await sendEmail(title, message, siki = true);
 
             const dateTime = getDateTime();
 
-            // 2- record on DB
-            // it inserts new data coming from web
-            if (newData.newItems && newData.newItems.length) {
-              for (const item of newData.newItems) {
-                const toInsert = new Apto({
-                  _id: new mongoose.Types.ObjectId(),
-                  postId      : item.postId,
-                  url         : item.url,
-                  description : item.description,
-                  price       : item.price,
-                  location    : item.location,
-                  lastUpdate  : dateTime
-                });
+            // // 2- record on DB
+            // // it inserts new data coming from web
+            // if (newData.newItems && newData.newItems.length) {
+            //   for (const item of newData.newItems) {
+            //     const toInsert = new Apto({
+            //       _id: new mongoose.Types.ObjectId(),
+            //       postId      : item.postId,
+            //       url         : item.url,
+            //       description : item.description,
+            //       price       : item.price,
+            //       location    : item.location,
+            //       lastUpdate  : dateTime
+            //     });
                 
-                await toInsert.save();
-              }
-            }
+            //     await toInsert.save();
+            //   }
+            // }
 
-            // it updates data coming from web about item changed
-            if (newData.changed && newData.changed.length) {
-              for (const item of newData.changed) {
-                await Apto
-                  .updateOne(
-                    { postId: item.postId },
-                    {
-                      $set: {
-                        price       : item.price,
-                        oldPrice    : item.changed ? item.priceOld : undefined,
-                        changed     : item.changed ? true : undefined,
-                        active      : item.reactivated || undefined,
-                        reactivated : item.reactivated || undefined,
-                        lastUpdate  : dateTime
-                      }
+            // // it updates data coming from web about item changed
+            // if (newData.changed && newData.changed.length) {
+            //   for (const item of newData.changed) {
+            //     await Apto
+            //       .updateOne(
+            //         { postId: item.postId },
+            //         {
+            //           $set: {
+            //             price       : item.price,
+            //             oldPrice    : item.changed ? item.priceOld : undefined,
+            //             changed     : item.changed ? true : undefined,
+            //             active      : item.reactivated || undefined,
+            //             reactivated : item.reactivated || undefined,
+            //             lastUpdate  : dateTime
+            //           }
 
-                    }
-                  );
-              }
-            }
+            //         }
+            //       );
+            //   }
+            // }
 
-            // it updates deleted data
-            if (newData.deleted && newData.deleted.length) {
-              for (const item of newData.deleted) {
-                await Apto
-                  .updateOne(
-                    { postId: item.postId },
-                    {
-                      $set: {
-                        active    : false,
-                        lastUpdate: dateTime
-                      }
+            // // it updates deleted data
+            // if (newData.deleted && newData.deleted.length) {
+            //   for (const item of newData.deleted) {
+            //     await Apto
+            //       .updateOne(
+            //         { postId: item.postId },
+            //         {
+            //           $set: {
+            //             active    : false,
+            //             lastUpdate: dateTime
+            //           }
 
-                    }
-                  );
-              }
-            }
+            //         }
+            //       );
+            //   }
+            // }
           } else
-            await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
+
+            ////////////////////////////////////////////// to be activated
+            // await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
 
           return res.json({message: "OK, just checking, all good ;)"});
         }
@@ -656,6 +659,8 @@ module.exports = async(req, res) => {
         default:
           console.log("does not apply");
       }
+
+      return res.json({ message: "no answer"});
 
     } catch (error) {
       // the code commented below is before we found the apt, since then, do not need it anymore 
