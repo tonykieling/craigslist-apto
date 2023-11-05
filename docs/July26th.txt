@@ -1,0 +1,3 @@
+- the node update did not get effect, need:
+  - change the vercel on Vercel dashboard and submit new version to deployment
+- change message "empty for now" so it does not overflow ("because" is doing that)

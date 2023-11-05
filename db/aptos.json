@@ -1,0 +1,1545 @@
+[{
+  "_id": {
+    "$oid": "617c2e6e9b1b8be91f664b1d"
+  },
+  "postId": "7400842851",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-for-rent/7400842851.html",
+  "description": "Studio for rent",
+  "price": "$1,600",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619eae1440c3c23d3c674556"
+  },
+  "postId": "7411477464",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-subletting-new-renovated-studio/7411477464.html",
+  "description": "Subletting New Renovated studio Apartment in the most convenient area",
+  "price": "$1,250",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-26, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ce242af6647f487075ddd5"
+  },
+  "postId": "7426549422",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-silver-bedroom-apartment-for/7426549422.html",
+  "description": "Silver 1 bedroom apartment for rent",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-30, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "6185b2ccd3adacc947513c61"
+  },
+  "postId": "7404059227",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bright-and-spacious-basement/7404059227.html",
+  "description": "Bright and Spacious Basement Suite w/ Bonus Room for Rent",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "29th",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 17:01",
+  "reasonRemovedFromAdmin": "good location but basement "
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac177"
+  },
+  "postId": "7386280018",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-br-1den-brand-new-apartment/7386280018.html",
+  "description": "1 Br+ 1Den Brand New Apartment For Rent",
+  "price": "$1,800",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small",
+  "removedByAdmin": true
+},{
+  "_id": {
+    "$oid": "61ae804f1a8bdd8aef92ae04"
+  },
+  "postId": "7416901115",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-joyce-collingwood/7416901115.html",
+  "description": "Joyce Collingwood",
+  "price": "$1,595",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-25, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179b3f3fae23bdd4b958f7d"
+  },
+  "postId": "7400016145",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-for-rent/7400016145.html",
+  "description": "Studio for rent",
+  "price": "$1,600",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61c0f543ba24afbb51f69c04"
+  },
+  "postId": "7422900427",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-large-one-bedroom/7422900427.html",
+  "description": "Metrotown Large One Bedroom Apartment for Rent",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-21, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61abdd527b648143b7534cae"
+  },
+  "postId": "7415785576",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suite-for/7415785576.html",
+  "description": "***1 BEDROOM SUITE FOR RENT...AVAILABLE FROM JANUARY 1 ST***",
+  "price": "$1,500",
+  "oldPrice": "$1,400",
+  "location": "Joyce",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-12, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617a24a92000a1e5805bc964"
+  },
+  "postId": "7400187857",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-joyce-bedroom-den-solarium/7400187857.html",
+  "description": "Joyce 1 Bedroom + 1 Den + Solarium",
+  "price": "$1,800",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619eae1440c3c23d3c674558"
+  },
+  "postId": "7411187040",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7411187040.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,687",
+  "oldPrice": "$1,692",
+  "location": "Patterson",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-29, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61bfa39626472badb13c81c1"
+  },
+  "postId": "7422555736",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-2beds1bath-ground-floor/7422555736.html",
+  "description": "2Beds1Bath Ground Floor basement suite For Rent Feb 1st",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-19, 13:26",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "61a3f3ed8ee5e1c7ad78b34e"
+  },
+  "postId": "7413692278",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-yr-young-large-studio-by/7413692278.html",
+  "description": "6 yr young large studio by metrotown sky train",
+  "price": "$1,550",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-30, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ca2fb130393f2eefff971b"
+  },
+  "postId": "7425469778",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-ground-floor-suite-near/7425469778.html",
+  "description": "1 bdrm ground floor suite near Metrotown/Royal Oak",
+  "price": "$1,300",
+  "oldPrice": "0",
+  "location": "Royal Oak",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-29, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6182f3a9558c6b97ae0374f9"
+  },
+  "postId": "7403082331",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-br-condo/7403082331.html",
+  "description": "One br Condo",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-13, 23:39",
+  "reasonRemovedFromAdmin": "no laundry"
+},{
+  "_id": {
+    "$oid": "61c0f543ba24afbb51f69c06"
+  },
+  "postId": "7422968596",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-furnished-bedden-bath-at/7422968596.html",
+  "description": "FURNISHED 1 Bed+Den/1 Bath at METROTOWN w/ Mountain VIEW Incl. Utiliti",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-20, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "617da8514446aa8b3413510d"
+  },
+  "postId": "7401367688",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1br-675ft-unfurnished-apt-for/7401367688.html",
+  "description": "1br - 675ft- Unfurnished Apt For Rent - 1 Bed + Big Den - Jan 01",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6179986a1ca78fbc0b1316e4"
+  },
+  "postId": "7397274357",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-spacious-bedroom-plus-den/7397274357.html",
+  "description": "Spacious 1 Bedroom plus Den Condo",
+  "price": "$1,850",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618b395230728038bec11777"
+  },
+  "postId": "7405844824",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-apartment-at-metrotown/7405844824.html",
+  "description": "1 BDRM APARTMENT AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-14, 21:19",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac17d"
+  },
+  "postId": "7396370714",
+  "url": "https://vancouver.craigslist.org/van/apa/d/one-bedroom-rental-suit-available/7396370714.html",
+  "description": "One Bedroom Rental Suit. Available November first",
+  "price": "$1,675",
+  "location": "29th",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0,
+  "lastUpdate": "Nov-6, 17:49",
+  "reasonRemovedFromAdmin": "no parking",
+  "removedByAdmin": true
+},{
+  "_id": {
+    "$oid": "6181f3f13ca80eee66762391"
+  },
+  "postId": "7402750796",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-next-to-joyce-station-bedroom/7402750796.html",
+  "description": "Next to Joyce Station 1 Bedroom for Rent",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-10, 14:54",
+  "reasonRemovedFromAdmin": "carpet"
+},{
+  "_id": {
+    "$oid": "61b274c7c3d375bd8da452b8"
+  },
+  "postId": "7418596983",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-unfurnished-1bd-with-walk-in/7418596983.html",
+  "description": "Unfurnished 1BD with Walk-in Closet",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-14, 13:25",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617d5377e237560a5ca98f5e"
+  },
+  "postId": "7401174016",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-for-rent/7401174016.html",
+  "description": "Studio for rent",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61944083ff625dd497d8efa0"
+  },
+  "postId": "7408213236",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-available-now-1800/7408213236.html",
+  "description": "1 Bedroom Available Now, $1800",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-24, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618e9de3883da0f014c6d4af"
+  },
+  "postId": "7403972243",
+  "url": "https://vancouver.craigslist.org/pml/apa/d/burnaby-brand-bew-2br-suite-close-to/7403972243.html",
+  "description": "BRAND BEW 2br suite close to Skytrain Stn",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Royal Oak",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-14, 21:15",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},{
+  "_id": {
+    "$oid": "619fff8b4f1b60f840b60673"
+  },
+  "postId": "7400816017",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-bedroom-suite/7400816017.html",
+  "description": "Furnished 1 Bedroom Suite Skytrain, Gym, Great View Available Dec",
+  "price": "$1,795",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-2, 13:25",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61c246ab6291018265559b29"
+  },
+  "postId": "7423373471",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-br-1den-brand-new-apartment/7423373471.html",
+  "description": "1 Br+ 1Den Brand New Apartment For Rent",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-21, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac171"
+  },
+  "postId": "7393640731",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-nice-suite-upgraded-with/7393640731.html",
+  "description": "Nice Suite - Upgraded with Laminate",
+  "price": "$1,700",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b5178cab6f92eb15cb2589"
+  },
+  "postId": "7418754533",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-metrotown-area/7418754533.html",
+  "description": "1 Bedroom Metrotown area",
+  "price": "$1,350",
+  "oldPrice": "0",
+  "location": "Royal Oak",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-15, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617ea50408a58446ab8ec66e"
+  },
+  "postId": "7401576591",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-for-rent/7401576591.html",
+  "description": "Studio for rent",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ae804f1a8bdd8aef92ae00"
+  },
+  "postId": "7417212242",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-one-bedroom/7417212242.html",
+  "description": "One Bedroom",
+  "price": "$1,450",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-9, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6186092e2f843901dfd0dc6e"
+  },
+  "postId": "7380919325",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html",
+  "description": "Spacious - STUDIO - WITH GREAT VIEWS",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-6, 18:41",
+  "reasonRemovedFromAdmin": "studio"
+},{
+  "_id": {
+    "$oid": "61870d1b770dccd6fe8813ae"
+  },
+  "postId": "7404534547",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-bath-centrally/7404534547.html",
+  "description": "2 bedroom/1 bath centrally located -close to transit",
+  "price": "$1,750",
+  "oldPrice": "$1,725",
+  "location": "Nanaimo",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 17:07",
+  "reasonRemovedFromAdmin": "excellent location, no garage, basement"
+},{
+  "_id": {
+    "$oid": "619eae1340c3c23d3c674554"
+  },
+  "postId": "7411792020",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown/7411792020.html",
+  "description": "metrotown",
+  "price": "$1,550",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-27, 14:43",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6180a720c79035fea6264861"
+  },
+  "postId": "7402320577",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-cozy-suite-for-rent-at-the/7402320577.html",
+  "description": "Cozy Suite for Rent at The Centro",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617c72e8b5be8c00d3a4513e"
+  },
+  "postId": "7400997278",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-joyce-station/7400997278.html",
+  "description": "一房一廳 - Joyce Station",
+  "price": "$1,599",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "carpet"
+},{
+  "_id": {
+    "$oid": "61ae804f1a8bdd8aef92ae02"
+  },
+  "postId": "7417212543",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-one-bedroom/7417212543.html",
+  "description": "One Bedroom",
+  "price": "$1,450",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-9, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b90be7d1a3a19ba6920208"
+  },
+  "postId": "7420192337",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-open-studio-huge/7420192337.html",
+  "description": "Metrotown Open Studio w/ Huge Sundeck & Parking @ Maywood Park",
+  "price": "$1,790",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-27, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac179"
+  },
+  "postId": "7389149234",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-joyce-station/7389149234.html",
+  "description": "一房一廳 - Joyce Station",
+  "price": "$1,688",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61944083ff625dd497d8efa2"
+  },
+  "postId": "7408586045",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-brand-new-bed-condo-in-center/7408586045.html",
+  "description": "Brand new 1 bed condo in center of metrotown",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-16, 15:36",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "61bbaf264ff129e3c21d11c7"
+  },
+  "postId": "7421558904",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-nice-suite-close-to-metrotown/7421558904.html",
+  "description": "Nice Suite - Close to Metrotown",
+  "price": "$1,350",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-22, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a1510054140f5e916e639c"
+  },
+  "postId": "7412915343",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7412915343.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,692",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-29, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a1510054140f5e916e63a4"
+  },
+  "postId": "7412669715",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-brand-new-bed1-bath-condo-by/7412669715.html",
+  "description": "Brand New 1 Bed+1 Bath Condo by Metrotown Skytrain Station",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-26, 13:26",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "61b274c7c3d375bd8da452ba"
+  },
+  "postId": "7418677651",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-brand-new-bed-den-storage/7418677651.html",
+  "description": "BRAND NEW 1 bed + den/storage high-hise 23F @ JOYCE",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-16, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617985affd66bf2f2588911b"
+  },
+  "postId": "7399908589",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-welcome-to-star-crest-apt/7399908589.html",
+  "description": "Welcome to Star Crest Apt",
+  "price": "$1,225",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617f074b6c7d16df3ba533cd"
+  },
+  "postId": "7401775295",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-apartment-at-metrotown/7401775295.html",
+  "description": "1 BDRM APARTMENT AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 16:36",
+  "reasonRemovedFromAdmin": "no laundry and not too close to train"
+},{
+  "_id": {
+    "$oid": "61b1234e114de543b0011d20"
+  },
+  "postId": "7418106415",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-one-bedroom/7418106415.html",
+  "description": "One Bedroom",
+  "price": "$1,450",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-11, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac175"
+  },
+  "postId": "7380919325",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7380919325.html",
+  "description": "Spacious - STUDIO - WITH GREAT VIEWS",
+  "price": "$1,650",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "studio",
+  "removedByAdmin": true
+},{
+  "_id": {
+    "$oid": "6188a54a82e161279148883c"
+  },
+  "postId": "7399854822",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1250-brand-new-bedroom-den/7399854822.html",
+  "description": "$1250 Brand New 2 Bedroom + Den and 2 Bath Condo",
+  "price": "$1,250",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-7, 20:49",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619fff8b4f1b60f840b60671"
+  },
+  "postId": "7412604843",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-studio-with-great-views/7412604843.html",
+  "description": "Spacious - STUDIO - WITH GREAT VIEWS",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-25, 13:26",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "61d0c7280b9e91e8e65be334"
+  },
+  "postId": "7427232957",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-at-metrotown-february/7427232957.html",
+  "description": "1 BDRM AT METROTOWN - FEBRUARY 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Jan-1, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "6196c46049b7599a2ddf829c"
+  },
+  "postId": "7409354627",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-gold-house-br-condo-in/7409354627.html",
+  "description": "Gold House 1 BR condo in Metrotown - Great Location, Available Now~",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-18, 13:23",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "61856356b95ed9cf077adee7"
+  },
+  "postId": "7402338093",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metro-town-prime-location/7402338093.html",
+  "description": "Metro town Prime Location",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 17:14",
+  "reasonRemovedFromAdmin": "too high"
+},{
+  "_id": {
+    "$oid": "61b5178cab6f92eb15cb2587"
+  },
+  "postId": "7419448971",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suite-for/7419448971.html",
+  "description": "***1 BEDROOM SUITE FOR RENT..AVAILABLE FROM JANUARY 1 ST***",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-12, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b1234e114de543b0011d22"
+  },
+  "postId": "7417982534",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7417982534.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,662",
+  "oldPrice": "$1,704",
+  "location": "Patterson",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-16, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "617c023362e93cafa8d3a67e"
+  },
+  "postId": "7400659955",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7400659955.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,692",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 16:27",
+  "reasonRemovedFromAdmin": "additional costs (parking, laundry, zone 2)",
+  "removedByAdmin": true
+},{
+  "_id": {
+    "$oid": "619eae1440c3c23d3c67455a"
+  },
+  "postId": "7412074836",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-latitude-condo-near-joyce/7412074836.html",
+  "description": "Latitude Condo @ Near Joyce Skytrain Station",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-30, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619967e3e0db9c84e075c5ef"
+  },
+  "postId": "7410258498",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-gold-house-br-condo-in/7410258498.html",
+  "description": "Gold House 1 BR condo in Metrotown - Great Location, Available Now~",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-20, 13:25",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "61ae804f1a8bdd8aef92ae06"
+  },
+  "postId": "7417317672",
+  "url": "https://vancouver.craigslist.org/van/apa/d/burnaby-1bedroom-1375/7417317672.html",
+  "description": "1Bedroom $1375",
+  "price": "$1,375",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-6, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac173"
+  },
+  "postId": "7393401852",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-one-bedroom-apartment/7393401852.html",
+  "description": "Metrotown One Bedroom Apartment for Rent",
+  "price": "$1,320",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "far away",
+  "removedByAdmin": true
+},{
+  "_id": {
+    "$oid": "618c3bc816883589ec6c69b3"
+  },
+  "postId": "7406222378",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-highrise-one-bed-one/7406222378.html",
+  "description": "Metrotown highrise one-bed one living room for rent",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-12, 12:45",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba5dadd2ed50839ebd6c7a"
+  },
+  "postId": "7421137752",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-studiomodern/7421137752.html",
+  "description": "Furnished Studio,Modern highrise building near Joyce Skytrain Station,",
+  "price": "$1,400",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-21, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61881e7d2ae081c7c27e65ac"
+  },
+  "postId": "7404791412",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-great-area/7404791412.html",
+  "description": "Great Area",
+  "price": "$1,450",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-7, 17:07",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "smal,, no laundry onsite and not close to train"
+},{
+  "_id": {
+    "$oid": "6181816720bdb9482a4a56ea"
+  },
+  "postId": "7402568234",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-at-metrotown-december/7402568234.html",
+  "description": "1 BDRM AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 16:36",
+  "reasonRemovedFromAdmin": "no laundry, 5 min to metro"
+},{
+  "_id": {
+    "$oid": "61afd1dc46c34f742f03c4d2"
+  },
+  "postId": "7417646166",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-one-bedroom/7417646166.html",
+  "description": "One Bedroom",
+  "price": "$1,450",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-9, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618ac1cba50b019982a6a05f"
+  },
+  "postId": "7405685963",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-br-1den-brand-new-apartment/7405685963.html",
+  "description": "1 Br+ 1Den Brand New Apartment For Rent",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-14, 21:18",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small"
+},{
+  "_id": {
+    "$oid": "61ba5dadd2ed50839ebd6c7e"
+  },
+  "postId": "7414377049",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-silver-bedroom-apartment-for/7414377049.html",
+  "description": "Silver 1 bedroom apartment for rent",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-15, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "619967e3e0db9c84e075c5ed"
+  },
+  "postId": "7406394429",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-studio-for-rent-at-sovereign/7406394429.html",
+  "description": "Studio for Rent at Sovereign Metrotown",
+  "price": "$1,750",
+  "oldPrice": "$1,800",
+  "location": "Patterson",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-8, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a2b47cf358f2995ac66f9a"
+  },
+  "postId": "7413104813",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-condo-in-metrotown/7413104813.html",
+  "description": "******1 bedroom condo in Metrotown******",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-11, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619967e3e0db9c84e075c5e5"
+  },
+  "postId": "7410337580",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-unfurnished-1bd-near-metrotown/7410337580.html",
+  "description": "Unfurnished 1BD near Metrotown",
+  "price": "$1,300",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-2, 13:25",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6180ad528939d3db7958e53f"
+  },
+  "postId": "7402338093",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metro-town-prime-location/7402338093.html",
+  "description": "Metro town Prime Location",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "23th is too high, plus not close to train."
+},{
+  "_id": {
+    "$oid": "61c246ab6291018265559b2b"
+  },
+  "postId": "7423305108",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-condo-plus-den-with-beautiful/7423305108.html",
+  "description": "Condo Plus Den with a Beautiful View Next to Joyce Skytrain Station",
+  "price": "$1,695",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-26, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "617c812b673c7c599c43a070"
+  },
+  "postId": "7401007014",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bright-and-spacious-basement/7401007014.html",
+  "description": "Bright and Spacious Basement Suite w/ Bonus Room for Rent",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "29th",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "basement + carpet"
+},{
+  "_id": {
+    "$oid": "61944083ff625dd497d8ef9c"
+  },
+  "postId": "7408749850",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-ground-floor-bedroom-bathroom/7408749850.html",
+  "description": "Ground Floor 2 Bedroom, 1 Bathroom Suite in Joyce-Collingwood!",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-24, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6196c46049b7599a2ddf829a"
+  },
+  "postId": "7409318402",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-one-bedroom/7409318402.html",
+  "description": "One Bedroom",
+  "price": "$1,450",
+  "oldPrice": "$1,430",
+  "location": "Patterson",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-2, 13:25",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61944083ff625dd497d8ef9e"
+  },
+  "postId": "7408360623",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-ground-floor-bedroom-bathroom/7408360623.html",
+  "description": "Ground Floor 2 Bedroom, 1 Bathroom Suite in Joyce-Collingwood!",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-19, 10:10",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated ad"
+},{
+  "_id": {
+    "$oid": "61783e168382ba474af6df23"
+  },
+  "postId": "7399428405",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-spacious-compl-renod-br-suite/7399428405.html",
+  "description": "Spacious, compl. reno’d 1 BR Suite with View @ Central Park",
+  "price": "$1,750",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61911a07808f0a8d096be809"
+  },
+  "postId": "7407724305",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-latitude-condo-near-joyce/7407724305.html",
+  "description": "Latitude Condo @ Near Joyce Skytrain Station",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-24, 13:26",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6186ac9144b6d7a7d0767770"
+  },
+  "postId": "7404321972",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-at-metrotown-december/7404321972.html",
+  "description": "1 BDRM AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 17:03",
+  "reasonRemovedFromAdmin": "no laundry, too far"
+},{
+  "_id": {
+    "$oid": "618e9de3883da0f014c6d4ab"
+  },
+  "postId": "7406565983",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-apartment-at-metrotown/7406565983.html",
+  "description": "1 BDRM APARTMENT AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-14, 21:17",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},{
+  "_id": {
+    "$oid": "619967e3e0db9c84e075c5f1"
+  },
+  "postId": "7409928352",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-at-metrotown-december/7409928352.html",
+  "description": "1 BDRM AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-20, 13:25",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "617aefb837b8a3212856ad4c"
+  },
+  "postId": "7400361768",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bright-bed-room-and-sun-room/7400361768.html",
+  "description": "Bright 1 bed room and Sun room + Den $1800",
+  "price": "$1,800",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac17b"
+  },
+  "postId": "7380063018",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-3489-ascot-place-big-bdrm/7380063018.html",
+  "description": "3489 Ascot Place, 1 big bdrm suite hirise now for rent.",
+  "price": "$1,830",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61c4e9aeb9087e0f34c563d9"
+  },
+  "postId": "7424092305",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-jr-1bed-1bath-for-rent/7424092305.html",
+  "description": "Studio/ jr. 1bed 1bath for rent! (right across Joyce sky train!)",
+  "price": "$1,675",
+  "oldPrice": "$1,750",
+  "location": "Joyce",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-25, 13:26",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "618e9de3883da0f014c6d4ad"
+  },
+  "postId": "7406565983",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bdrm-apartment-at-metrotown/7406565983.html",
+  "description": "1 BDRM APARTMENT AT METROTOWN - DECEMBER 1",
+  "price": "$1,684",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-14, 21:16",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},{
+  "_id": {
+    "$oid": "6175cf6566b2261468fac16f"
+  },
+  "postId": "7395198686",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-central-park-area-ground-level/7395198686.html",
+  "description": "Central Park Area - Ground level 1 bedroom + den apartment 620 sf",
+  "price": "$1,800",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a6972280c6426e7204e7d3"
+  },
+  "postId": "7414202065",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7414202065.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,692",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-8, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a1510054140f5e916e639e"
+  },
+  "postId": "7412830432",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-one-bedroom-apartment/7412830432.html",
+  "description": "Metrotown One Bedroom Apartment for Rent",
+  "price": "$1,320",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-26, 13:26",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "6186092e2f843901dfd0dc6c"
+  },
+  "postId": "7393401852",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-one-bedroom-apartment/7393401852.html",
+  "description": "Metrotown One Bedroom Apartment for Rent",
+  "price": "$1,320",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "lastUpdate": "Nov-7, 17:02",
+  "reasonRemovedFromAdmin": "no laudry, distance to train"
+},{
+  "_id": {
+    "$oid": "61a6972280c6426e7204e7d5"
+  },
+  "postId": "7414213972",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-brand-new-bed-den-storage/7414213972.html",
+  "description": "BRAND NEW 1 bed + den/storage high-hise 23F @ JOYCE",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-16, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a2b47cf358f2995ac66f9c"
+  },
+  "postId": "7413104813",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-bedroom-condo-in-metrotown/7413104813.html",
+  "description": "******1 bedroom condo in Metrotown******",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov-27, 21:29",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "repeated"
+},{
+  "_id": {
+    "$oid": "61a939c991ab8673637e482a"
+  },
+  "postId": "7415248035",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-one-bedroom-for-rent/7415248035.html",
+  "description": "One bedroom for rent",
+  "price": "$1,300",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-6, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61a1510054140f5e916e63a0"
+  },
+  "postId": "7412682744",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7412682744.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,687",
+  "oldPrice": "$1,692",
+  "location": "Patterson",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec-29, 13:27",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ba5dadd2ed50839ebd6c7c"
+  },
+  "postId": "7414385054",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-metrotown-station-bedroom/7414385054.html",
+  "description": "Metrotown Station 1 bedroom apartment",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Metrotown",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec-15, 13:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "automatically removed by the admin for cleanup purpose"
+},{
+  "_id": {
+    "$oid": "617c47a5c53a347b9bde6844"
+  },
+  "postId": "7400873876",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-latitude-condo-near-joyce/7400873876.html",
+  "description": "Latitude Condo @ Near Joyce Skytrain Station",
+  "price": "$1,480",
+  "oldPrice": "$1,550",
+  "location": "Joyce",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "__v": 0,
+  "reasonRemovedFromAdmin": "studio"
+},{
+  "_id": {
+    "$oid": "6176c2d749d982d413d2bfd8"
+  },
+  "postId": "7398870815",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-for-rent/7398870815.html",
+  "description": "Studio for rent",
+  "price": "$1,600",
+  "location": "Joyce",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619967e3e0db9c84e075c5e9"
+  },
+  "postId": "7409931164",
+  "url": "https://vancouver.craigslist.org/bnc/apa/d/burnaby-large-bedroom-suite-orchard-inn/7409931164.html",
+  "description": "Large 1 bedroom suite | Orchard Inn",
+  "price": "$1,692",
+  "oldPrice": "0",
+  "location": "Patterson",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov-24, 13:26",
+  "__v": 0
+}]

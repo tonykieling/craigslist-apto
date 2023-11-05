@@ -39,6 +39,7 @@ const Head = ({mobile = false, type = "a", showTable = true, getDescW}) => {
           </th>
           <th
             className = "table-price"
+            style={{ whiteSpace: "nowrap" }}
           > 
             { mobile ? "$" : "$ Now"}
           </th>
@@ -52,11 +53,13 @@ const Head = ({mobile = false, type = "a", showTable = true, getDescW}) => {
           <>
             <th
               className = "table-price"
+              style={{ whiteSpace: "nowrap" }}
             > 
               $ Before
             </th>
             <th 
               className = "table-location"
+              // style={{ maxWidth: "5rem" }}
             > Location </th>
             <th
               className = "table-reactivated"
@@ -64,6 +67,7 @@ const Head = ({mobile = false, type = "a", showTable = true, getDescW}) => {
             {type === "a" &&
               <th
                 className = "table-remove"
+                style={{ width: "0.5rem" }}
               > </th>
             }
             </>

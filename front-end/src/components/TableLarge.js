@@ -74,6 +74,12 @@ const TableLarge = props => {
           </td>
           <td
             className = "table-location"
+            style={{
+              maxWidth: "5rem",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "clip"
+            }}
           >
             { location }
           </td>
@@ -107,7 +113,8 @@ const TableLarge = props => {
                   backgroundImage: `url('data:image/svg+xml;utf8,${BTTrash}`, 
                   backgroundSize: "22px",
                   backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center"
+                  backgroundPosition: "center",
+                  width: "2rem"
                 }}
               >
               </td>

@@ -3,7 +3,6 @@ require('dotenv').config();
 const mongoose    = require("mongoose");
 const nodemailer  = require("nodemailer");
 const fetch       = require("node-fetch");
-const { Console } = require('console');
 
 
 // Apto schema
@@ -62,14 +61,21 @@ const removeXspaces = str => {
 }
 
 // it gets the result-info div, extracts and returns the important data
-const getDataFromDOM = (item, location) => {
+const getDataFromDOM = (item) => {
+  // it gets only the number (suppose to be the id, from the url)
+  const href = item.querySelector("a").getAttribute("href");
+  let temp = href.split("/");
+  // console.log("temp", temp, temp.at(-1));
+  const fileName = temp[temp.length - 1];
+  // console.log("fileName: ", fileName)
+  temp = fileName.split(".");
   return (
     {
-      postId: item.querySelector("a.result-title").getAttribute("data-id") ,
-      url: item.querySelector("a.result-title").getAttribute("href"),
-      description: removeXspaces(item.querySelector("a.result-title").textContent),
-      price: item.querySelector("span.result-price").textContent,
-      location
+      postId: temp[0],
+      url: item.querySelector("a").getAttribute("href"),
+      description: removeXspaces(item.querySelector(".title").textContent),
+      price: item.querySelector(".price").textContent,
+      location: removeXspaces(item.querySelector(".location").textContent)
     }
   );
 };
@@ -104,6 +110,8 @@ result: {
   }
 */
 const compareData = (fromDB, fromWeb) => {
+// console.log("data from web:\n", fromWeb.length, "\ndata from DB:\n", fromDB.length);
+
   // it adds the item for the right place in the object that will be the return of compareData function
   const checkProperty = (property, item) => {
     return (
@@ -115,18 +123,27 @@ const compareData = (fromDB, fromWeb) => {
         : [item]
     );
   };
-
+  
   let result = {};  
   // check the data coming from web against db's data 
   // to see whether there are new or changed items
-  for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
-    if (fromDB.length === 0) {
-      const newItem = checkProperty("newItems", fromWeb[iWeb]);
+  
+  // when DB is empty
+  if (fromDB.length === 0) {
+    fromWeb.forEach(e => {
+      // console.log("item::: ", e.postId, {...e, active: true});
+      // const newItems = checkProperty("newItems", {...e, active: true});
+      const newItems = checkProperty("newItems", e);
       result = {
         ...result,
-        newItem
+        newItems
       };
-    }
+    });
+    
+    return result;
+  }
+
+  for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {      
     if(fromDB[fromWeb[iWeb].postId] && fromDB[fromWeb[iWeb].postId].removedByAdmin) continue;
 
     for (let iDB = 0; iDB < fromDB.length; iDB++) {
@@ -341,7 +358,6 @@ const sendEmail = async (
   message = "<div>it is a default msg</div>",
   siki = false
 ) => {
-
   const dateTime = getDateTime();
   
   title = (
@@ -368,12 +384,12 @@ const sendEmail = async (
 const getDateTime = () => {
   const today = new Date(new Date().toLocaleString("en-US", { timeZone: "Canada/Pacific"}));
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const date = (monthNames[today.getMonth()]) + '-' + today.getDate();
+  const date = (monthNames[today.getMonth()]) + ' ' + today.getDate() + ", " + today.getFullYear();
   
   const hour = today.getHours();
   const min = today.getMinutes();
   const time = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min);
-  const dateTime = date + ', ' + time;
+  const dateTime = date + ' @' + time;
   return dateTime;
 };
 
@@ -401,15 +417,12 @@ module.exports = async(req, res) => {
     // if (1)
     //   return res.json({message: dataFromDB});
 
-
     switch(method) {
-
       // case for receiving request to execute the queries
       case "POST":
         {
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
-
 
           // the code below is meant to cleanup the database because the system is not querying anymore - it already has done its job
           // if the system needs to run, the lines below have to be commented
@@ -479,33 +492,7 @@ module.exports = async(req, res) => {
           // end of cleanup code
           */
 
-          const queries = [
-            {
-              location: "Patterson",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22789608809298&lon=-123.01077174761237&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.7"
-            },
-            {
-              location: "Joyce",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.237509680216846&lon=-123.02994489669801&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.4"
-            },
-            // not considering the below commented locations for now
-            // {
-            //   location: "29th",
-            //   url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24460894085901&lon=-123.04670348335357&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
-            // },
-            // {
-            //   location: "Nanaimo",
-            //   url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.24855720299385&lon=-123.0563888765191&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.2"
-            // },
-            {
-              location: "Metrotown",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.22645364213039&lon=-123.00554297401902&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3",
-            },
-            {
-              location: "Royal Oak",
-              url: "https://vancouver.craigslist.org/search/apa?availabilityMode=0&lat=49.219845624581566&lon=-122.98851849619629&max_price=1850&min_price=1100&sale_date=all%20dates&search_distance=0.3"
-            }
-          ];
+          const queries = require("./queries.js");
           
           let dataFromWeb = [];
 
@@ -519,21 +506,57 @@ module.exports = async(req, res) => {
               let addItem = {};
               const response = await fetch(queries[i]["url"]);
               const html = await response.text();
-              
+
               const dom = new JSDOM(html);
-              const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
 
-              addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
-
+              const domElements = [...dom.window.document.querySelectorAll(".cl-static-search-result")];
+              addItem = domElements.map(e => getDataFromDOM(e, queries[i].location));
               dataFromWeb = [...dataFromWeb, ...addItem];
             }
 
           } catch(error) {
-            throw (error.message || error);
+            console.log("Error:::::::: ", error);
+            throw ("###Error on getting data from Cragslist: " + " " + error.message || error);
           }
-
+// dataFromWeb = [
+//   {
+//     postId: '7684144311',
+//     url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-brm-bsmt-3mths-only-pets-okay/7684144311.html',
+//     description: '2 brm bsmt - 3mths only - Pets Okay',
+//     price: '$2,000',
+//     location: 'Hillcrest/ Main St'
+//   },
+//   {
+//     postId: '7684128055',
+//     url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-new-cozy-bachelor-suite-for/7684128055.html',
+//     description: 'New Cozy Bachelor Suite for one person near Oakridge and Langara',
+//     price: '$1,880',
+//     location: 'Vancouver'
+//   },
+//   {
+//     postId: '7684092281',
+//     url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-condo-near-queen/7684092281.html',
+//     description: '1 Bedroom Condo near Queen Elizabeth Park',
+//     price: '$1,800',
+//     location: 'Vancouver'
+//   },
+//   // {
+//   //   postId: '7683900780',
+//   //   url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7683900780.html',
+//   //   description: 'Garden Furnished Main Floor suite in a house utilities included',
+//   //   price: '$2,000',
+//   //   location: 'Main & 29th Avenue'
+//   // },
+//   // {
+//   //   postId: '7681546075',
+//   //   url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7681546075.html',
+//   //   description: 'Garden Furnished Main Floor suite in house including utilities',
+//   //   price: '$2,000',
+//   //   location: 'Main & 29th'
+//   // }
+// ];
           const newData = compareData(dataFromDB, dataFromWeb);
-
+// console.log("newData- ", newData)
         
           // any changes detected
           // 1- send email to the admins
@@ -546,10 +569,12 @@ module.exports = async(req, res) => {
             // 1.2 send email
 
             const title = ((newData.changed || newData.deleted) ? "update" : "new");
-            await sendEmail(title, message, siki = true);
+            
+            await sendEmail(title, message, true);
+            // await sendEmail(title, message);
 
             const dateTime = getDateTime();
-
+// console.log("dateTime-------- ", dateTime)
             // 2- record on DB
             // it inserts new data coming from web
             if (newData.newItems && newData.newItems.length) {
@@ -561,7 +586,8 @@ module.exports = async(req, res) => {
                   description : item.description,
                   price       : item.price,
                   location    : item.location,
-                  lastUpdate  : dateTime
+                  lastUpdate  : dateTime,
+                  active      : item.active
                 });
                 
                 await toInsert.save();
@@ -606,7 +632,8 @@ module.exports = async(req, res) => {
               }
             }
           } else
-            await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
+            // await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
+            await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
 
           return res.json({message: "OK, just checking, all good ;)"});
         }
@@ -616,7 +643,7 @@ module.exports = async(req, res) => {
         // it is a function to return the FE query about all apartments, 
         // then the UI will cort into availables, removed by owner or removed by admin
         case "GET": {
-          return res.json({apartments: dataFromDB});
+          return res.json({ apartments: dataFromDB });
         }
 
 
@@ -649,7 +676,7 @@ module.exports = async(req, res) => {
             return res.json({message: "OK"});
 
           } catch(error){
-            return res.json({error: error.message || error});
+            return res.json("###Error Patching: " + " " + {error: error.message || error});
           }
         }
 
@@ -657,9 +684,11 @@ module.exports = async(req, res) => {
           console.log("does not apply");
       }
 
+      return res.json({ message: "no answer"});
+
     } catch (error) {
       // the code commented below is before we found the apt, since then, do not need it anymore 
-      // because the system will be trigged one a day
+      // because the system will be trigged once a day
     // const t = new Date();
     // const nowHours = t.getHours();
     // const nowMinutes = t.getMinutes();
@@ -669,11 +698,8 @@ module.exports = async(req, res) => {
     //       ||  ((nowHours == 2) && (nowMinutes <= 30))
     //       // || ((nowHours > 18) && (nowHours < 21))
     //     )
-      await sendEmail("error :/", error.message || error);
-
-    res.json({message: error.message || error});
-
-
+      await sendEmail(error.message || error);
+      return res.json({ message: error.message || error });
   } finally {
     mongoose.disconnect();
   }
