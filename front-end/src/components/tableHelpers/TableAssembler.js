@@ -7,6 +7,7 @@ const TableAssembler = ({ isMobile, type, data, showTable = false, getDescW }) =
   return(
     <table
       className = { `${data === "processing" ? "table-no-mouse-cursor" : ""} ${showTable ? "" : "collapse-table"}` }
+      style={{ tableLayout: "auto" }} //////////////
     >
       <TableHead
         mobile    = { isMobile } 

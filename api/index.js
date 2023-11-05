@@ -61,21 +61,17 @@ const removeXspaces = str => {
 }
 
 // it gets the result-info div, extracts and returns the important data
-const getDataFromDOM = (item, location) => {
-  // console.log("item::: ", item, location);
-  // console.log("item.textContent= ", item.textContent)
-  // console.log("href: ", item.querySelector("a").getAttribute("href"));
-  // console.log("description: ", removeXspaces(item.querySelector(".title").textContent));
-  // console.log("price: ", item.querySelector(".price").textContent);
-  // console.log("location: ", item.querySelector(".location").textContent);
+const getDataFromDOM = (item) => {
+  // it gets only the number (suppose to be the id, from the url)
+  const href = item.querySelector("a").getAttribute("href");
+  let temp = href.split("/");
+  // console.log("temp", temp, temp.at(-1));
+  const fileName = temp[temp.length - 1];
+  // console.log("fileName: ", fileName)
+  temp = fileName.split(".");
   return (
     {
-      // postId: item.querySelector("a.result-title").getAttribute("data-id") ,
-      // url: item.querySelector("a.result-title").getAttribute("href"),
-      // description: removeXspaces(item.querySelector("a.result-title").textContent),
-      // price: item.querySelector("span.result-price").textContent,
-      // location
-      postId: item.querySelector("a").getAttribute("href"),
+      postId: temp[0],
       url: item.querySelector("a").getAttribute("href"),
       description: removeXspaces(item.querySelector(".title").textContent),
       price: item.querySelector(".price").textContent,
@@ -114,6 +110,8 @@ result: {
   }
 */
 const compareData = (fromDB, fromWeb) => {
+// console.log("data from web:\n", fromWeb.length, "\ndata from DB:\n", fromDB.length);
+
   // it adds the item for the right place in the object that will be the return of compareData function
   const checkProperty = (property, item) => {
     return (
@@ -125,18 +123,27 @@ const compareData = (fromDB, fromWeb) => {
         : [item]
     );
   };
-
+  
   let result = {};  
   // check the data coming from web against db's data 
   // to see whether there are new or changed items
-  for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {
-    if (fromDB.length === 0) {
-      const newItem = checkProperty("newItems", fromWeb[iWeb]);
+  
+  // when DB is empty
+  if (fromDB.length === 0) {
+    fromWeb.forEach(e => {
+      // console.log("item::: ", e.postId, {...e, active: true});
+      // const newItems = checkProperty("newItems", {...e, active: true});
+      const newItems = checkProperty("newItems", e);
       result = {
         ...result,
-        newItem
+        newItems
       };
-    }
+    });
+    
+    return result;
+  }
+
+  for(let iWeb = 0; iWeb < fromWeb.length; iWeb++) {      
     if(fromDB[fromWeb[iWeb].postId] && fromDB[fromWeb[iWeb].postId].removedByAdmin) continue;
 
     for (let iDB = 0; iDB < fromDB.length; iDB++) {
@@ -351,7 +358,6 @@ const sendEmail = async (
   message = "<div>it is a default msg</div>",
   siki = false
 ) => {
-
   const dateTime = getDateTime();
   
   title = (
@@ -378,12 +384,12 @@ const sendEmail = async (
 const getDateTime = () => {
   const today = new Date(new Date().toLocaleString("en-US", { timeZone: "Canada/Pacific"}));
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const date = (monthNames[today.getMonth()]) + '-' + today.getDate();
+  const date = (monthNames[today.getMonth()]) + ' ' + today.getDate() + ", " + today.getFullYear();
   
   const hour = today.getHours();
   const min = today.getMinutes();
   const time = (hour < 10 ? `0${hour}` : hour) + ":" + (min < 10 ? `0${min}` : min);
-  const dateTime = date + ', ' + time;
+  const dateTime = date + ' @' + time;
   return dateTime;
 };
 
@@ -411,16 +417,12 @@ module.exports = async(req, res) => {
     // if (1)
     //   return res.json({message: dataFromDB});
 
-
     switch(method) {
-
       // case for receiving request to execute the queries
       case "POST":
         {
-          // console.log("password::: ", req.headers.authorization.split(" ")[1] , " - end of password")
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
-
 
           // the code below is meant to cleanup the database because the system is not querying anymore - it already has done its job
           // if the system needs to run, the lines below have to be commented
@@ -501,7 +503,6 @@ module.exports = async(req, res) => {
 
 
             for (let i = 0; i < queries.length; i++) {
-              console.log("querying::: ", queries[i]["url"]);
               let addItem = {};
               const response = await fetch(queries[i]["url"]);
               const html = await response.text();
@@ -509,11 +510,7 @@ module.exports = async(req, res) => {
               const dom = new JSDOM(html);
 
               const domElements = [...dom.window.document.querySelectorAll(".cl-static-search-result")];
-// console.log("domElements 3 ", domElements.length, domElements)
-              // addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
-              // addItem = domElements.map(e => getDataFromDOM(e.querySelector(".cl-static-search-result"), queries[i].location));
               addItem = domElements.map(e => getDataFromDOM(e, queries[i].location));
-// console.log("addItem========= ", addItem);
               dataFromWeb = [...dataFromWeb, ...addItem];
             }
 
@@ -521,11 +518,45 @@ module.exports = async(req, res) => {
             console.log("Error:::::::: ", error);
             throw ("###Error on getting data from Cragslist: " + " " + error.message || error);
           }
-
+// dataFromWeb = [
+//   {
+//     postId: '7684144311',
+//     url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-brm-bsmt-3mths-only-pets-okay/7684144311.html',
+//     description: '2 brm bsmt - 3mths only - Pets Okay',
+//     price: '$2,000',
+//     location: 'Hillcrest/ Main St'
+//   },
+//   {
+//     postId: '7684128055',
+//     url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-new-cozy-bachelor-suite-for/7684128055.html',
+//     description: 'New Cozy Bachelor Suite for one person near Oakridge and Langara',
+//     price: '$1,880',
+//     location: 'Vancouver'
+//   },
+//   {
+//     postId: '7684092281',
+//     url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-condo-near-queen/7684092281.html',
+//     description: '1 Bedroom Condo near Queen Elizabeth Park',
+//     price: '$1,800',
+//     location: 'Vancouver'
+//   },
+//   // {
+//   //   postId: '7683900780',
+//   //   url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7683900780.html',
+//   //   description: 'Garden Furnished Main Floor suite in a house utilities included',
+//   //   price: '$2,000',
+//   //   location: 'Main & 29th Avenue'
+//   // },
+//   // {
+//   //   postId: '7681546075',
+//   //   url: 'https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7681546075.html',
+//   //   description: 'Garden Furnished Main Floor suite in house including utilities',
+//   //   price: '$2,000',
+//   //   location: 'Main & 29th'
+//   // }
+// ];
           const newData = compareData(dataFromDB, dataFromWeb);
-console.log("DataDB===> ", dataFromDB);
-console.log("dataFromWeb = ", dataFromWeb);
-console.log("newData- ", newData)
+// console.log("newData- ", newData)
         
           // any changes detected
           // 1- send email to the admins
@@ -539,74 +570,72 @@ console.log("newData- ", newData)
 
             const title = ((newData.changed || newData.deleted) ? "update" : "new");
             
-            
-            ///////////////////////////////////////
-            //// to be activated
-            // await sendEmail(title, message, siki = true);
+            await sendEmail(title, message, true);
+            // await sendEmail(title, message);
 
             const dateTime = getDateTime();
-
-            // // 2- record on DB
-            // // it inserts new data coming from web
-            // if (newData.newItems && newData.newItems.length) {
-            //   for (const item of newData.newItems) {
-            //     const toInsert = new Apto({
-            //       _id: new mongoose.Types.ObjectId(),
-            //       postId      : item.postId,
-            //       url         : item.url,
-            //       description : item.description,
-            //       price       : item.price,
-            //       location    : item.location,
-            //       lastUpdate  : dateTime
-            //     });
+// console.log("dateTime-------- ", dateTime)
+            // 2- record on DB
+            // it inserts new data coming from web
+            if (newData.newItems && newData.newItems.length) {
+              for (const item of newData.newItems) {
+                const toInsert = new Apto({
+                  _id: new mongoose.Types.ObjectId(),
+                  postId      : item.postId,
+                  url         : item.url,
+                  description : item.description,
+                  price       : item.price,
+                  location    : item.location,
+                  lastUpdate  : dateTime,
+                  active      : item.active
+                });
                 
-            //     await toInsert.save();
-            //   }
-            // }
+                await toInsert.save();
+              }
+            }
 
-            // // it updates data coming from web about item changed
-            // if (newData.changed && newData.changed.length) {
-            //   for (const item of newData.changed) {
-            //     await Apto
-            //       .updateOne(
-            //         { postId: item.postId },
-            //         {
-            //           $set: {
-            //             price       : item.price,
-            //             oldPrice    : item.changed ? item.priceOld : undefined,
-            //             changed     : item.changed ? true : undefined,
-            //             active      : item.reactivated || undefined,
-            //             reactivated : item.reactivated || undefined,
-            //             lastUpdate  : dateTime
-            //           }
+            // it updates data coming from web about item changed
+            if (newData.changed && newData.changed.length) {
+              for (const item of newData.changed) {
+                await Apto
+                  .updateOne(
+                    { postId: item.postId },
+                    {
+                      $set: {
+                        price       : item.price,
+                        oldPrice    : item.changed ? item.priceOld : undefined,
+                        changed     : item.changed ? true : undefined,
+                        active      : item.reactivated || undefined,
+                        reactivated : item.reactivated || undefined,
+                        lastUpdate  : dateTime
+                      }
 
-            //         }
-            //       );
-            //   }
-            // }
+                    }
+                  );
+              }
+            }
 
-            // // it updates deleted data
-            // if (newData.deleted && newData.deleted.length) {
-            //   for (const item of newData.deleted) {
-            //     await Apto
-            //       .updateOne(
-            //         { postId: item.postId },
-            //         {
-            //           $set: {
-            //             active    : false,
-            //             lastUpdate: dateTime
-            //           }
+            // it updates deleted data
+            if (newData.deleted && newData.deleted.length) {
+              for (const item of newData.deleted) {
+                await Apto
+                  .updateOne(
+                    { postId: item.postId },
+                    {
+                      $set: {
+                        active    : false,
+                        lastUpdate: dateTime
+                      }
 
-            //         }
-            //       );
-            //   }
-            // }
+                    }
+                  );
+              }
+            }
           } else
+            // await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
+            await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
 
-            ////////////////////////////////////////////// to be activated
-            await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
-
-          // return res.json({message: "OK, just checking, all good ;)"});
+          return res.json({message: "OK, just checking, all good ;)"});
         }
 
 
@@ -614,7 +643,7 @@ console.log("newData- ", newData)
         // it is a function to return the FE query about all apartments, 
         // then the UI will cort into availables, removed by owner or removed by admin
         case "GET": {
-          return res.json({apartments: dataFromDB});
+          return res.json({ apartments: dataFromDB });
         }
 
 
@@ -659,7 +688,7 @@ console.log("newData- ", newData)
 
     } catch (error) {
       // the code commented below is before we found the apt, since then, do not need it anymore 
-      // because the system will be trigged one a day
+      // because the system will be trigged once a day
     // const t = new Date();
     // const nowHours = t.getHours();
     // const nowMinutes = t.getMinutes();
@@ -670,10 +699,7 @@ console.log("newData- ", newData)
     //       // || ((nowHours > 18) && (nowHours < 21))
     //     )
       await sendEmail(error.message || error);
-
-    res.json({message: error.message || error});
-
-
+      return res.json({ message: error.message || error });
   } finally {
     mongoose.disconnect();
   }
