@@ -62,15 +62,24 @@ const removeXspaces = str => {
 
 // it gets the result-info div, extracts and returns the important data
 const getDataFromDOM = (item, location) => {
-  console.log("item::: ", item, location);
-  // console.log("id: ", item.querySelector(""));
+  // console.log("item::: ", item, location);
+  // console.log("item.textContent= ", item.textContent)
+  // console.log("href: ", item.querySelector("a").getAttribute("href"));
+  // console.log("description: ", removeXspaces(item.querySelector(".title").textContent));
+  // console.log("price: ", item.querySelector(".price").textContent);
+  // console.log("location: ", item.querySelector(".location").textContent);
   return (
     {
-      postId: item.querySelector("a.result-title").getAttribute("data-id") ,
-      url: item.querySelector("a.result-title").getAttribute("href"),
-      description: removeXspaces(item.querySelector("a.result-title").textContent),
-      price: item.querySelector("span.result-price").textContent,
-      location
+      // postId: item.querySelector("a.result-title").getAttribute("data-id") ,
+      // url: item.querySelector("a.result-title").getAttribute("href"),
+      // description: removeXspaces(item.querySelector("a.result-title").textContent),
+      // price: item.querySelector("span.result-price").textContent,
+      // location
+      postId: item.querySelector("a").getAttribute("href"),
+      url: item.querySelector("a").getAttribute("href"),
+      description: removeXspaces(item.querySelector(".title").textContent),
+      price: item.querySelector(".price").textContent,
+      location: removeXspaces(item.querySelector(".location").textContent)
     }
   );
 };
@@ -492,45 +501,31 @@ module.exports = async(req, res) => {
 
 
             for (let i = 0; i < queries.length; i++) {
-              // console.log("querying::: ", queries[i]["url"]);
+              console.log("querying::: ", queries[i]["url"]);
               let addItem = {};
-              // const response = await fetch(queries[i]["url"]);
-              // const html = await response.text();
+              const response = await fetch(queries[i]["url"]);
+              const html = await response.text();
 
-const fs = require('fs');
-const path = require('path');
-
-// Specify the path to your HTML file
-const htmlFilePath = path.join(__dirname, 'data.html');
-let html = "";
-// Read the HTML file
-fs.readFile(htmlFilePath, 'utf8', (err, data) => {
-  if (err) {
-    console.error('Error reading the HTML file:', err);
-  } else {
-    // console.log('HTML content:');
-    // console.log(data);
-    html = data;
-  }
-});
-              
               const dom = new JSDOM(html);
-              // const domElements = [...dom.window.document.querySelectorAll("li.result-row")];
-              const domElements = [...dom.window.document.querySelectorAll("cl-static-search-results")];
-console.log("domElements======== ", domElements)
+
+              const domElements = [...dom.window.document.querySelectorAll(".cl-static-search-result")];
+// console.log("domElements 3 ", domElements.length, domElements)
               // addItem = domElements.map(e => getDataFromDOM(e.querySelector(".result-info"), queries[i].location));
-              addItem = domElements.map(e => getDataFromDOM(e.querySelector(".cl-static-search-result"), queries[i].location));
+              // addItem = domElements.map(e => getDataFromDOM(e.querySelector(".cl-static-search-result"), queries[i].location));
+              addItem = domElements.map(e => getDataFromDOM(e, queries[i].location));
 // console.log("addItem========= ", addItem);
               dataFromWeb = [...dataFromWeb, ...addItem];
             }
 
           } catch(error) {
-            throw (error.message || error);
+            console.log("Error:::::::: ", error);
+            throw ("###Error on getting data from Cragslist: " + " " + error.message || error);
           }
 
           const newData = compareData(dataFromDB, dataFromWeb);
-// console.log("DataDB===> ", dataFromDB);
-// console.log("dataFromWeb = ", dataFromWeb);
+console.log("DataDB===> ", dataFromDB);
+console.log("dataFromWeb = ", dataFromWeb);
+console.log("newData- ", newData)
         
           // any changes detected
           // 1- send email to the admins
@@ -609,9 +604,9 @@ console.log("domElements======== ", domElements)
           } else
 
             ////////////////////////////////////////////// to be activated
-            // await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
+            await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
 
-          return res.json({message: "OK, just checking, all good ;)"});
+          // return res.json({message: "OK, just checking, all good ;)"});
         }
 
 
@@ -652,7 +647,7 @@ console.log("domElements======== ", domElements)
             return res.json({message: "OK"});
 
           } catch(error){
-            return res.json({error: error.message || error});
+            return res.json("###Error Patching: " + " " + {error: error.message || error});
           }
         }
 
@@ -674,7 +669,7 @@ console.log("domElements======== ", domElements)
     //       ||  ((nowHours == 2) && (nowMinutes <= 30))
     //       // || ((nowHours > 18) && (nowHours < 21))
     //     )
-      await sendEmail("error :/", error.message || error);
+      await sendEmail(error.message || error);
 
     res.json({message: error.message || error});
 
