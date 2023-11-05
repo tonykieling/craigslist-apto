@@ -5,7 +5,7 @@ name: cron1
 on:
   schedule:
     # - cron: "*/15 14-23 * * *"
-    - cron: "*/15 16-5 * * *"
+    - cron: "*/15 15-02 * * *"
 jobs:
   cron:
     runs-on: ubuntu-latest
