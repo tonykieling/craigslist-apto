@@ -631,9 +631,16 @@ module.exports = async(req, res) => {
                   );
               }
             }
-          } else
+          } else {
             // await sendEmail("Just checking", "Nothing to update or new.\n System is up and running. ;)");
+            const temp = getDateTime().split("@");
+            const time = temp[1];
+            const timeTemp = time.split(":");
+            if (+timeTemp[0] === 20 && (+timeTemp[1] >= 0 && +timeTemp[1] < 15))
+              await sendEmail("Home-Seeker is working fine ;)", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+
             await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
+          }
 
           return res.json({message: "OK, just checking, all good ;)"});
         }

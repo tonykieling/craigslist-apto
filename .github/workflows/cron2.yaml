@@ -1,12 +1,16 @@
-# this script has to be runned on github actions
-# it runs every 45 minutes, every day, between 7 until 22 hours
+# in order to this file becomes a github actions, it needs 
+# - to be placed in the current directory
+# - .yaml extension
+
 # seems to be needed one file to set the shedule to run up to 24, 
 # and this second one makes the script for 0 to 5 (8 hours diff - UTC)
 
 name: cron2
 on:
   schedule:
-    - cron: "*/15 0-5 * * *"
+    # - cron: "*/15 0-5 * * *"
+    - cron: "0,15,30,45 0-5 * * *" ### Vancouver UTC-8 16:00 to 21:45, running every 15 minutes
+
 jobs:
   cron:
     runs-on: ubuntu-latest

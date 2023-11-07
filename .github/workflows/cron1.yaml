@@ -1,10 +1,17 @@
-# this script has to be runned on github actions
-# it runs every 15 minutes, every day, between 8am until 4pm (both Vancouver time)
+# in order to this file becomes a github actions, it needs 
+# - to be placed in the current directory
+# - .yaml extension
+
+# in order to get the cron running after midnight, it needs to have a second cron for that
+# the first cron runs until 23, and the second one starts at 0
+# * 8 hours diff - UTC
 
 name: cron1
 on:
   schedule:
-    - cron: "*/15 16-23 * * *"
+    # - cron: "*/15 16-23 * * *"
+    - cron: "0,15,30,45 16-23 * * *" 
+    ### ^^ Vancouver UTC-8 16:00 to 21:45, running every 15 minutes
 jobs:
   cron:
     runs-on: ubuntu-latest
