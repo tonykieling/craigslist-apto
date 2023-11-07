@@ -636,7 +636,7 @@ module.exports = async(req, res) => {
             const temp = getDateTime().split("@");
             const time = temp[1];
             const timeTemp = time.split(":");
-            if (+timeTemp[0] === 20 && (+timeTemp[1] >= 0 && +timeTemp[1] < 15))
+            if (+timeTemp[0] === 11 && (+timeTemp[1] >= 45 && +timeTemp[1] <= 59))
               await sendEmail("Home-Seeker is working fine ;)", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
 
             await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
