@@ -636,15 +636,21 @@ module.exports = async(req, res) => {
             const temp = getDateTime().split("@");
             const time = temp[1];
             const timeTemp = time.split(":");
-            if (+timeTemp[0] === 11 && (+timeTemp[1] >= 45 && +timeTemp[1] <= 59))
-              await sendEmail("Home-Seeker is working fine ;)", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+            const hour = +timeTemp[0];
+            const minute = +timeTemp[1];
+            if ((hour === 8) && (minute < 45))
+              await sendEmail("Good Morning from Home-Seeker 🌞", `Nothing new to report. System is up and running. \o/ \o/ \o/<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+            else if ((hour === 11) && ((minute >= 45) && (minute <= 59)))
+              await sendEmail("Home-Seeker here - have a good lunch 🍳🍕🍔🥪🥪", `Nothing new to report. System is up and running. \o/ <br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+            else if ((hour === 21) && (minute >= 45))
+              await sendEmail("Home-Seeker wishes you a good night 😴💤", `Nothing new to report. System is up and running. ;)<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
 
-            await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
+            // disabling email for each checking, instead setting email 3 times a day (^^ just to make sure it's all good)
+            // await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
           }
 
           return res.json({message: "OK, just checking, all good ;)"});
         }
-
 
         
         // it is a function to return the FE query about all apartments, 
@@ -691,7 +697,7 @@ module.exports = async(req, res) => {
           console.log("does not apply");
       }
 
-      return res.json({ message: "no answer"});
+      return res.json({ message: "no answer"}); // just in case return
 
     } catch (error) {
       // the code commented below is before we found the apt, since then, do not need it anymore 

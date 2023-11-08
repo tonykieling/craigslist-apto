@@ -11,7 +11,7 @@ on:
   schedule:
     # - cron: "*/15 16-23 * * *"
     - cron: "0,15,30,45 16-23 * * *" 
-    ### ^^ Vancouver UTC-8 16:00 to 21:45, running every 15 minutes
+    ### ^^ Vancouver UTC-8 08:00 to 15:45, running every 15 minutes
 jobs:
   cron:
     runs-on: ubuntu-latest
