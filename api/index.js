@@ -407,7 +407,7 @@ module.exports = async(req, res) => {
     let dataFromDB;
 
     if (method !== "PATCH")
-      dataFromDB = await Apto.find().sort({ lastUpdate: -1});
+      dataFromDB = await Apto.find().sort({ postId: -1});
       // sorting by lastUpdate
       // as not all register has it, it will go by _id
       // it seems to be working the sorting by lastUpdate, even though it is a string, for instance "Nov-7, 20:49"
@@ -638,11 +638,11 @@ module.exports = async(req, res) => {
             const timeTemp = time.split(":");
             const hour = +timeTemp[0];
             const minute = +timeTemp[1];
-            if ((hour === 8) && (minute < 45))
-              await sendEmail("Good Morning from Home-Seeker 🌞", `Nothing new to report. System is up and running. \o/ \o/ \o/<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+            if ((hour === 8) && (minute < 30))
+              await sendEmail("Good Morning from Home-Seeker 🌞", `Nothing new to report. System is up and running. \\o/ \\o/ \\o/<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
             else if ((hour === 11) && ((minute >= 45) && (minute <= 59)))
-              await sendEmail("Home-Seeker here - have a good lunch 🍳🍕🍔🥪🥪", `Nothing new to report. System is up and running. \o/ <br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
-            else if ((hour === 21) && (minute >= 45))
+              await sendEmail("Home-Seeker here - have a good lunch 🍳🍕🍔🥪", `Nothing new to report. System is up and running. \\o/ <br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+            else if ((hour === 21) && ((minute < 45) && (minute > 15))) 
               await sendEmail("Home-Seeker wishes you a good night 😴💤", `Nothing new to report. System is up and running. ;)<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
 
             // disabling email for each checking, instead setting email 3 times a day (^^ just to make sure it's all good)
