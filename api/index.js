@@ -3,6 +3,7 @@ require('dotenv').config();
 const mongoose    = require("mongoose");
 const nodemailer  = require("nodemailer");
 const fetch       = require("node-fetch");
+const queries = require('./queries.js');
 
 
 // Apto schema
@@ -372,7 +373,8 @@ const sendEmail = async (
   // it sends an email to the user confirming the procedure
   const footer = `
     <div style="margin-top:2.5rem">
-      Visit <a href="https://home-seeker.tkwebdev.ca" target="_blank">https://home-seeker.tkwebdev.ca</a> for more information.
+      <p>Visit <a href="https://home-seeker.tkwebdev.ca" target="_blank">https://home-seeker.tkwebdev.ca</a> for more information.</p>
+      <p>Craigslist is querying at ${queries[0].url} </p>
     </div>
   `;
   const success = await generalSender(title, `<div>${message} ${footer}</div>`, siki);
@@ -638,12 +640,12 @@ module.exports = async(req, res) => {
             const timeTemp = time.split(":");
             const hour = +timeTemp[0];
             const minute = +timeTemp[1];
-            if ((hour === 8) && (minute < 30))
-              await sendEmail("Good Morning from Home-Seeker 🌞", `Nothing new to report. System is up and running. \\o/ \\o/ \\o/<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+            if ((hour === 8) && (minute < 15))
+              await sendEmail("Good Morning from Home-Seeker 🌞", `Nothing new to report. System is up and running. \\o/ \\o/ \\o/<br><br><br>- Data from DB (Home-seeker): ${dataFromDB.length}<br>- Data from Web (Craigslist): ${dataFromWeb.length}`, true);
             else if ((hour === 11) && ((minute >= 45) && (minute <= 59)))
-              await sendEmail("Home-Seeker here - have a good lunch 🍳🍕🍔🥪", `Nothing new to report. System is up and running. \\o/ <br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
-            else if ((hour === 21) && ((minute < 45) && (minute > 15))) 
-              await sendEmail("Home-Seeker wishes you a good night 😴💤", `Nothing new to report. System is up and running. ;)<br><br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`, true);
+              await sendEmail("Home-Seeker here - have a good lunch 🍳🍕🍔🥪", `Nothing new to report. System is up and running. \\o/ <br><br><br>- Data from DB (Home-seeker): ${dataFromDB.length}<br>- Data from Web (Craigslist): ${dataFromWeb.length}`, true);
+            else if ((hour === 21) && ((minute < 45) && (minute > 30))) 
+              await sendEmail("Home-Seeker wishes you a good night 😴💤", `Nothing new to report. System is up and running. ;)<br><br><br>- Data from DB (Home-seeker): ${dataFromDB.length}<br>- Data from Web (Craigslist): ${dataFromWeb.length}`, true);
 
             // disabling email for each checking, instead setting email 3 times a day (^^ just to make sure it's all good)
             // await sendEmail("Just checking", `Nothing to update or new. System is up and running. ;)<br><br>- Data from DB: ${dataFromDB.length}<br>- Data from Web: ${dataFromWeb.length}`);
