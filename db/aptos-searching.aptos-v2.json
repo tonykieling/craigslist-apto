@@ -1,0 +1,3287 @@
+[{
+  "_id": {
+    "$oid": "6547f55175388f2034177ffa"
+  },
+  "postId": "7680347090",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-modern-furnished-studio/7680347090.html",
+  "description": "Modern Furnished Studio - Monthly by Rental Available Nov.and Dec.",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Riley Park/Main",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @19:35",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no couple"
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f2034178012"
+  },
+  "postId": "7676075224",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suite-for-rent-wifi/7676075224.html",
+  "description": "1 BEDROOM SUITE FOR RENT - Wifi & Utilities included",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 6, 2023 @09:06",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177ff2"
+  },
+  "postId": "7682211888",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bd-1bath-laneway-house/7682211888.html",
+  "description": "1bd/1bath Laneway house (Fraser and King Edwards)",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 11, 2023 @08:49",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fe0"
+  },
+  "postId": "7681546075",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7681546075.html",
+  "description": "Garden Furnished Main Floor suite in house including utilities",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Main & 29th",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 5, 2023 @12:11",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fdc"
+  },
+  "postId": "7684092281",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-condo-near-queen/7684092281.html",
+  "description": "1 Bedroom Condo near Queen Elizabeth Park",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @18:39",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "654d05877e6b238c930c91a6"
+  },
+  "postId": "7685706705",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-ground-level-bed-bath/7685706705.html",
+  "description": "Ground level 2 bed 1 bath",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 19, 2023 @17:25",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no light inside the unit, no bike storage"
+},
+{
+  "_id": {
+    "$oid": "6558e2c05c4e014110066cdd"
+  },
+  "postId": "7688882122",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-suite-furnished-new/7688882122.html",
+  "description": "Basement Suite Furnished new in the good location",
+  "price": "$1,950",
+  "oldPrice": "$2,100",
+  "location": "South Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 19, 2023 @17:20",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "furnished"
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f203417801a"
+  },
+  "postId": "7674062260",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-short-term-rental-beautiful/7674062260.html",
+  "description": "Short term rental Beautiful 2 bedroom/ 1 bath + den ground level suite",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 6, 2023 @13:06",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654bb98ef5afa8f712cf4459"
+  },
+  "postId": "7685432716",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7685432716.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 8, 2023 @17:41",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "654d79f2c9cd158f4e31ee6d"
+  },
+  "postId": "7685993497",
+  "url": "https://vancouver.craigslist.org/van/apa/d/clean-basement-suite-available/7685993497.html",
+  "description": "*Clean Basement Suite Available Immediately (Main St and 46th)",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Quebec Street & 46th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 9, 2023 @20:58",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no washer"
+},
+{
+  "_id": {
+    "$oid": "654e5705e151223e93b0f579"
+  },
+  "postId": "7686146943",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-new-bedroom-suite/7686146943.html",
+  "description": "New 1 Bedroom Suite",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 29, 2023 @08:40",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6553f97cc722d2d38a478ba6"
+  },
+  "postId": "7687708453",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-bath/7687708453.html",
+  "description": "1 bedroom 1 bath",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 14, 2023 @16:32",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fee"
+  },
+  "postId": "7682647532",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-cozy-studio/7682647532.html",
+  "description": "Cozy Studio",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Fraser St.",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @18:31",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "small (studio) and expensive"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177ff4"
+  },
+  "postId": "7681091765",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-studio-apartment-for-rent/7681091765.html",
+  "description": "Studio apartment for rent",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 5, 2023 @17:54",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fe8"
+  },
+  "postId": "7683693036",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-suit/7683693036.html",
+  "description": "Basement suit",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "49th And Main st",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 11, 2023 @16:29",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fe2"
+  },
+  "postId": "7683846527",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-suite/7683846527.html",
+  "description": "basement suite",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Kensington Cedar Cottage Neighborhood",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @19:42",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034177ffe"
+  },
+  "postId": "7679601707",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bed-bath-unit/7679601707.html",
+  "description": "1 Bed 1 Bath Unit",
+  "price": "$1,899",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 7, 2023 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f2034178014"
+  },
+  "postId": "7674545217",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suite-for-rent-wifi/7674545217.html",
+  "description": "1 BEDROOM SUITE FOR RENT - Wifi & Utilities included",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 5, 2023 @12:06",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f203417801e"
+  },
+  "postId": "7670064547",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suite-for-rent/7670064547.html",
+  "description": "1 Bedroom Suite for Rent",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 5, 2023 @14:21",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "65490fdfc2f011fab863f44b"
+  },
+  "postId": "7684653556",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-apt-for-rent/7684653556.html",
+  "description": "one bedroom apt for rent",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver, BC",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 6, 2023 @14:07",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034178006"
+  },
+  "postId": "7678729551",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-basement-in-brand-new/7678729551.html",
+  "description": "2 bedroom basement in a brand new house for rent",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 7, 2023 @16:31",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034178008"
+  },
+  "postId": "7678577811",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-fraserkingsway/7678577811.html",
+  "description": "**FRASER&KINGSWAY**",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "VANCOUVER",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 14, 2023 @09:34",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f203417800c"
+  },
+  "postId": "7676228355",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-main-and-28th-ave-one-bedroom/7676228355.html",
+  "description": "Main and 28th Ave one bedroom self contained",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @22:13",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "Fully furnished + pricie"
+},
+{
+  "_id": {
+    "$oid": "654fbb459cda41d0302e877c"
+  },
+  "postId": "7686550729",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bdr-suit/7686550729.html",
+  "description": "1 BDR Suit",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 11, 2023 @14:13",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fde"
+  },
+  "postId": "7683900780",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7683900780.html",
+  "description": "Garden Furnished Main Floor suite in a house utilities included",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Main & 29th Avenue",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @22:22",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "Furnished"
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034178002"
+  },
+  "postId": "7679194044",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7679194044.html",
+  "description": "Garden Furnished Main Floor suite in a house utilities included",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Main & 29th Avenue",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @22:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f203417800a"
+  },
+  "postId": "7676579896",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-suite-furnished/7676579896.html",
+  "description": "One bedroom suite - Furnished",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @20:12",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "furnished, small, and $"
+},
+{
+  "_id": {
+    "$oid": "654a629fd296bfbdacbf04a3"
+  },
+  "postId": "7684921245",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-brand-new-bedroom-suite/7684921245.html",
+  "description": "Brand New 1-bedroom Suite",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Fraser Street and East 26th Avenue",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 12, 2023 @20:08",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654d0da87858ce90d25569b4"
+  },
+  "postId": "7685807172",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7685807172.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 9, 2023 @21:03",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "fully furnished + short term"
+},
+{
+  "_id": {
+    "$oid": "654fa830229c7c0fa2880119"
+  },
+  "postId": "7686437383",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bright-and-comfortable/7686437383.html",
+  "description": "Bright and comfortable 1 bedroom suite in a beautiful and convenient n",
+  "price": "$1,900",
+  "oldPrice": "$2,000",
+  "location": "Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 20, 2023 @12:12",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65539c8edfcc780f01f32a26"
+  },
+  "postId": "7687533342",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7687533342.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 14, 2023 @08:32",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated + short term"
+},
+{
+  "_id": {
+    "$oid": "654e6403a8980d6631f47104"
+  },
+  "postId": "7686179444",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7686179444.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 10, 2023 @14:53",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term + furnished + duplicated"
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fd6"
+  },
+  "postId": "7683476657",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-bedrooms-bathroom/7683476657.html",
+  "description": "Basement 2 bedrooms 1 bathroom Vancouver East",
+  "price": "$1,999",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 6, 2023 @21:24",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fe6"
+  },
+  "postId": "7682882271",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-garden-suite-for/7682882271.html",
+  "description": "Furnished Garden Suite for Rent in Vancouver's Main Street Area #858",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Main Street",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @22:18",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "Fully furnished ÷ pricie"
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f2034178016"
+  },
+  "postId": "7676066261",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-brand-new-bedroom-basement/7676066261.html",
+  "description": "Brand New 1 Bedroom Basement Suite",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @18:40",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "65565c36ef0e5c593e538c88"
+  },
+  "postId": "7688311490",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1br-basement-suite-for-rent/7688311490.html",
+  "description": "1Br Basement suite for Rent",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 16, 2023 @18:17",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundru"
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034177ff8"
+  },
+  "postId": "7680448904",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-basement/7680448904.html",
+  "description": "One Bedroom Basement",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 19, 2023 @17:28",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fe4"
+  },
+  "postId": "7674868731",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-fraser-east-49th/7674868731.html",
+  "description": "One (1) Bedroom @ FRASER + East 49th Ave",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @22:19",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry + small ÷ pricie"
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f2034178010"
+  },
+  "postId": "7676198514",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-basement-for-rent/7676198514.html",
+  "description": "1 bedroom basement for rent December 1st in new home",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 6, 2023 @20:08",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f2034178018"
+  },
+  "postId": "7668102968",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-main-street-short-term-rental/7668102968.html",
+  "description": "Main Street short term rental 1 bedroom",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "33rd Avenue and Prince Edward Street",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @20:03",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "654c3820848f5afc4f3b22fd"
+  },
+  "postId": "7685641515",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-apt-for-rent/7685641515.html",
+  "description": "one bedroom apt for rent",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver, BC",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 9, 2023 @15:35",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654d345b0e1e1f8015e5e20b"
+  },
+  "postId": "7685884274",
+  "url": "https://vancouver.craigslist.org/van/apa/d/1br-apartment-close-to-main-and-41st/7685884274.html",
+  "description": "1BR Apartment close to Main and 41st",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Cree Street",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 9, 2023 @18:30",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655192eb4258812d4aaebeb3"
+  },
+  "postId": "7685731335",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-suite-wifi/7685731335.html",
+  "description": "Two bedroom suite, wifi internet, utilities included",
+  "price": "$1,950",
+  "oldPrice": "$2,000",
+  "location": "Fraser & E41st area",
+  "active": false,
+  "changed": true,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 18, 2023 @09:09",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034177ff6"
+  },
+  "postId": "7670986610",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-sunset-bed-bath-garden-level/7670986610.html",
+  "description": "Sunset - 1 Bed 1 Bath, Garden Level Suite; Laundry, Backyard",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Sunset, East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 10, 2023 @17:35",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fd8"
+  },
+  "postId": "7684144311",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-brm-bsmt-3mths-only-pets-okay/7684144311.html",
+  "description": "2 brm bsmt - 3mths only - Pets Okay",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Hillcrest/ Main St",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 5, 2023 @12:13",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fea"
+  },
+  "postId": "7681801307",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-new-bedroom-suite/7681801307.html",
+  "description": "New 1 Bedroom Suite",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @20:00",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "carpete, small, $"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177fec"
+  },
+  "postId": "7682120644",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-quiet-cozy-bedroom-bathroom/7682120644.html",
+  "description": "Quiet, Cozy 2 Bedroom, 1 Bathroom Basement Suite",
+  "price": "$2,100",
+  "oldPrice": "$1,950",
+  "location": "Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": true,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 9, 2023 @21:04",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "small + expensive"
+},
+{
+  "_id": {
+    "$oid": "65499ef5fbadfe3233ff335d"
+  },
+  "postId": "7684913965",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-suite-for-rent/7684913965.html",
+  "description": "Suite for rent",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Sunset",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @18:29",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no couple"
+},
+{
+  "_id": {
+    "$oid": "65499ef5fbadfe3233ff335f"
+  },
+  "postId": "7684911543",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-lower-level/7684911543.html",
+  "description": "One bedroom lower level garden suite for Rent",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Mount Pleasant area - Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 13, 2023 @20:08",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655838a1e1d4792d22f1ea89"
+  },
+  "postId": "7688858693",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-apt-for-rent/7688858693.html",
+  "description": "one bedroom apt for rent",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver, BC",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 17, 2023 @21:06",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034178004"
+  },
+  "postId": "7677735708",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-garden-furnished-main-floor/7677735708.html",
+  "description": "Garden Furnished Main Floor suite including utilities",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Main & 29th",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @20:01",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "654eda7bdc02beba3551131f"
+  },
+  "postId": "7686384828",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-sunset-bed-bath-garden-level/7686384828.html",
+  "description": "Sunset - 1 Bed 1 Bath, Garden Level Suite; Laundry, Backyard",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Sunset, East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 22, 2023 @08:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fda"
+  },
+  "postId": "7684128055",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-new-cozy-bachelor-suite-for/7684128055.html",
+  "description": "New Cozy Bachelor Suite for one person near Oakridge and Langara",
+  "price": "$1,880",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 7, 2023 @18:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small - 220ft2"
+},
+{
+  "_id": {
+    "$oid": "6547f55075388f2034177ff0"
+  },
+  "postId": "7682444207",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1br-bedroom-bath-with-full/7682444207.html",
+  "description": "1br - 1 Bedroom 1 Bath, with full kitchen + living room (basement suit",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 6, 2023 @10:36",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654d1281902e568773495715"
+  },
+  "postId": "7685818345",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-fully-furnished-bedroom-avail/7685818345.html",
+  "description": "Fully Furnished - 1 Bedroom Avail December 1",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 9, 2023 @21:00",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "fully furnished"
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f203417801c"
+  },
+  "postId": "7671555246",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-in-vancouver-for-rent/7671555246.html",
+  "description": "1 bedroom in Vancouver for rent",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "city of vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 6, 2023 @20:08",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65484ae6d3c51c032142039c"
+  },
+  "postId": "7684506786",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-ground-level-suite/7684506786.html",
+  "description": "1 bedroom, ground level suite near public transportation.",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 5, 2023 @18:11",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry, only for one person"
+},
+{
+  "_id": {
+    "$oid": "655192eb4258812d4aaebeb1"
+  },
+  "postId": "7685149666",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-suite-wifi/7685149666.html",
+  "description": "Two bedroom suite, wifi internet, utilities included",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Fraser & E41st area",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 13, 2023 @11:17",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicate"
+},
+{
+  "_id": {
+    "$oid": "6547f54f75388f2034177fd4"
+  },
+  "postId": "7677545629",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-spacious-bedroom-near-langara/7677545629.html",
+  "description": "Spacious 1 bedroom near Langara",
+  "price": "$1,800",
+  "oldPrice": "$1,700",
+  "location": "Langara",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 11, 2023 @14:15",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no heater control, no bike room"
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034177ffc"
+  },
+  "postId": "7679988888",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-new-ground-level/7679988888.html",
+  "description": "1 bedroom NEW ground level Basment suite",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 8, 2023 @08:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55175388f2034178000"
+  },
+  "postId": "7668622629",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-newly-renovated-bedroom-air/7668622629.html",
+  "description": "Newly renovated 1 bedroom air-conditioned garden suite",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 6, 2023 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6547f55275388f203417800e"
+  },
+  "postId": "7676595339",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-suite-near/7676595339.html",
+  "description": "One bedroom suite Near Langara College",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Langara and 49th Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 6, 2023 @20:07",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "654e5705e151223e93b0f57b"
+  },
+  "postId": "7686107030",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suit-in-south-van-1650/7686107030.html",
+  "description": "1 BEDROOM SUIT IN SOUTH VAN $1650",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "SOUTH VANCOUVER",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 11, 2023 @14:28",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small"
+},
+{
+  "_id": {
+    "$oid": "654fa830229c7c0fa288011b"
+  },
+  "postId": "7686437127",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-mature-couple-seeking-housing/7686437127.html",
+  "description": "Mature couple Seeking housing",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Lower mainland",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 11, 2023 @14:26",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "it's a tenant ad"
+},
+{
+  "_id": {
+    "$oid": "65666950fcd9744ce7626917"
+  },
+  "postId": "7692314515",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-suite-for-rent/7692314515.html",
+  "description": "Furnished suite for rent short term 4-6 months",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Riley park",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 29, 2023 @08:40",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655bd99c68028b3a13dabb41"
+  },
+  "postId": "7689743121",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-suite-near/7689743121.html",
+  "description": "One bedroom suite Near Langara College",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Langara and 49th Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 23, 2023 @17:52",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "656a069039adb94738e9bb89"
+  },
+  "postId": "7693142537",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-suite-for-rent/7693142537.html",
+  "description": "Suite for rent",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Sunset",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 1, 2023 @13:02",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no couples"
+},
+{
+  "_id": {
+    "$oid": "656d36fc5e1025ced338054e"
+  },
+  "postId": "7694092356",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-laneway-house/7694092356.html",
+  "description": "1 Bedroom Laneway House",
+  "price": "$1,850",
+  "oldPrice": "$2,000",
+  "location": "Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 3, 2024 @21:46",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655ffeb25e2ff02085df81af"
+  },
+  "postId": "7690703055",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-basement-suite-for/7690703055.html",
+  "description": "1 Bedroom Basement suite for Rent",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 23, 2023 @17:48",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "6567696c1939589da901c3f3"
+  },
+  "postId": "7692431277",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-lovely-bdrm-furnished-suite/7692431277.html",
+  "description": "Lovely 1 bdrm furnished suite",
+  "price": "$1,875",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 29, 2023 @21:47",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "furnished"
+},
+{
+  "_id": {
+    "$oid": "6573c53bddc436a96374140b"
+  },
+  "postId": "7695888364",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-basement-suite-all/7695888364.html",
+  "description": "1Bedroom Basement Suite All inclusive, No furniture in Great Location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Langara College, Fraser & 55th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 8, 2023 @17:41",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "656bcd54081e109aefd28ee6"
+  },
+  "postId": "7693767136",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-garden-1br-suite-in-the-heart/7693767136.html",
+  "description": "Garden 1BR suite in the heart of Fraserhood",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 10, 2023 @10:13",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6570017188ead94fd27f5fff"
+  },
+  "postId": "7694516693",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-short-term-bed-bath-furnished/7694516693.html",
+  "description": "Short term 1 bed 2 Bath furnished laneway",
+  "price": "$1,950",
+  "oldPrice": "$2,050",
+  "location": "Kensington cedar cottage",
+  "active": false,
+  "changed": true,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 9, 2023 @19:31",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656a13b08fed0b9bc493defb"
+  },
+  "postId": "7693249723",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7693249723.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 1, 2023 @22:14",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "656d0b31b46ad497ee720ad5"
+  },
+  "postId": "7694049261",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-suite-near-main-and/7694049261.html",
+  "description": "Basement suite near Main and King Edward",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 5, 2023 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6575ffe3fcf19ad5270d44e0"
+  },
+  "postId": "7696366795",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-charming-br-basement-suite/7696366795.html",
+  "description": "Charming 1-BR Basement Suite near Oakridge Centre - Prime Location!",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 22, 2023 @21:55",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small"
+},
+{
+  "_id": {
+    "$oid": "657005db696ee330a93165fb"
+  },
+  "postId": "7694857446",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-bedroom-for-rent/7694857446.html",
+  "description": "Furnished Bedroom for Rent - Main & King Edward, Vancouver",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 5, 2023 @21:34",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "just the bedroom"
+},
+{
+  "_id": {
+    "$oid": "65738c01bbccba1f5bafb2ff"
+  },
+  "postId": "7695808459",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-basement-suite-all/7695808459.html",
+  "description": "1Bedroom Basement Suite All inclusive, No furniture in Great Location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Langara College, Fraser & 55th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 8, 2023 @17:41",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "657b816c27d21098634ef54e"
+  },
+  "postId": "7697862260",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-available-now-18-dec-balcony/7697862260.html",
+  "description": "Available now. 18 Dec Balcony, Mountain View 1 bed apt",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 14, 2023 @17:42",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6564c0b4143957e3e242b3af"
+  },
+  "postId": "7691719265",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-suite-near/7691719265.html",
+  "description": "One bedroom suite Near Langara College",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Langara and 49th Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 27, 2023 @10:19",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "656ce680a2cb1145589c478b"
+  },
+  "postId": "7693996867",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-ground-level/7693996867.html",
+  "description": "1 Bedroom Ground Level",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 21, 2024 @08:14",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6573411e42ad74a90ff6aa27"
+  },
+  "postId": "7695659744",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7695659744.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 8, 2023 @17:42",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "656d1e7b810dc7980b00e46d"
+  },
+  "postId": "7694061124",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-unit/7694061124.html",
+  "description": "One bedroom unit",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "King Edward",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 3, 2023 @16:34",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655a55d2eb5f114621ab3db1"
+  },
+  "postId": "7688974988",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-balcony-clean-dishwasher/7688974988.html",
+  "description": "Balcony - Clean - Dishwasher - Laundry - Big - Bright- Quiet - Central",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "vancouver east,vancouver west, main, fraser, cambie",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 21, 2023 @21:46",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655a87ce5f0f1fe7ea099ac3"
+  },
+  "postId": "7689388870",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-fantastic-one-bedroom-in/7689388870.html",
+  "description": "Fantastic one bedroom in Downtown",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "E 33rd Ave",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 19, 2023 @14:25",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655b92b649113a6d4318f5f0"
+  },
+  "postId": "7689613499",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7689613499.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 22, 2023 @08:38",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65637bdd52c902751e7af905"
+  },
+  "postId": "7691458073",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-br-spacious-bedroom-suite/7691458073.html",
+  "description": "$1,800 / 1br - Spacious 1 bedroom suite near Langara",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Sunset",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 26, 2023 @18:47",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "655c0b92a408c4d67b106bce"
+  },
+  "postId": "7689798737",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-basement/7689798737.html",
+  "description": "Two bedroom basement",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "49th And Main st",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 24, 2023 @21:14",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no windows, no ar flow"
+},
+{
+  "_id": {
+    "$oid": "656f59c0bef330474fd0923e"
+  },
+  "postId": "7694611861",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7694611861.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 6, 2023 @11:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "655bcb5cdbb319744638c18e"
+  },
+  "postId": "7689719986",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-basement-near-langara/7689719986.html",
+  "description": "1 Bedroom basement near Langara and Oakridge",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 23, 2023 @17:50",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laubdry & fully furnished"
+},
+{
+  "_id": {
+    "$oid": "655d95c1e569bf64d2f7dfd5"
+  },
+  "postId": "7690199579",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-balcony-clean-dishwasher/7690199579.html",
+  "description": "Balcony - Clean - Dishwasher - Laundry - Big - Bright- Quiet - Central",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "vancouver east,vancouver west, main, fraser, cambie",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 22, 2023 @13:10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65621d30351f657f8faaa456"
+  },
+  "postId": "7691106272",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7691106272.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 25, 2023 @08:16",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term"
+},
+{
+  "_id": {
+    "$oid": "657751c08b44c132fefa4ee2"
+  },
+  "postId": "7696701419",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-suite/7696701419.html",
+  "description": "One bedroom suite",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 11, 2023 @10:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655a3ca3bc04aa2461c3c996"
+  },
+  "postId": "7689291489",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7689291489.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 19, 2023 @12:07",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term + furnished + duplicated"
+},
+{
+  "_id": {
+    "$oid": "656649cc662577d9d406f66c"
+  },
+  "postId": "7692252131",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bright-half-basement-in-east/7692252131.html",
+  "description": "Bright Half-Basement in East Vancouver! Convenient Location and Easy L",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 29, 2023 @21:51",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "furnished"
+},
+{
+  "_id": {
+    "$oid": "65677fa8f317842ecef93873"
+  },
+  "postId": "7692562266",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-clean-one-bedroom-suite-for/7692562266.html",
+  "description": "Clean one Bedroom Suite for Rent - Jan 1 or sooner",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 29, 2023 @12:49",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry + only one tenant allowed"
+},
+{
+  "_id": {
+    "$oid": "656abf6734d510f52a4825b4"
+  },
+  "postId": "7693495442",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-basement-for/7693495442.html",
+  "description": "Two bedroom basement for rent(East Vancouver)",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 3, 2023 @11:34",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657274865cc4cee676f26102"
+  },
+  "postId": "7695477421",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-basement-suite-all/7695477421.html",
+  "description": "1Bedroom Basement Suite All inclusive, No furniture in Great Location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Langara College, Fraser & 55th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 14, 2023 @12:12",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6575e3b980512f8c52b22574"
+  },
+  "postId": "7696330874",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7696330874.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 10, 2023 @08:56",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6576291b0467bd41afa22d34"
+  },
+  "postId": "7696428280",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-all-utilities-included-great/7696428280.html",
+  "description": "ALL UTILITIES INCLUDED! GREAT LOCATION!",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Mt. Pleasant, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 11, 2023 @18:25",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "too small"
+},
+{
+  "_id": {
+    "$oid": "6560edb1a5052ef35a46613d"
+  },
+  "postId": "7690869349",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-fraser-east-49th/7690869349.html",
+  "description": "One (1) Bedroom @ FRASER + East 49th Ave",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 5, 2023 @14:11",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65636eb53440abc7bf161e50"
+  },
+  "postId": "7691429449",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7691429449.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 26, 2023 @18:48",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "short term + furnished"
+},
+{
+  "_id": {
+    "$oid": "656bcd54081e109aefd28ee8"
+  },
+  "postId": "7693174508",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-suite-wifi/7693174508.html",
+  "description": "Two bedroom suite, wifi internet, utilities included",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Fraser & E41st area",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 9, 2023 @10:52",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6574bb3f744359a91ff90cab"
+  },
+  "postId": "7696091041",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-basement-suite-all/7696091041.html",
+  "description": "1Bedroom Basement Suite All inclusive, No furniture in Great Location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Langara College, Fraser & 55th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 9, 2023 @15:24",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "656423f8857d201f802efef5"
+  },
+  "postId": "7691666746",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-bathroom-main-floor/7691666746.html",
+  "description": "1 Bedroom 1 Bathroom Main Floor Suite for Rent",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "city of vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 11, 2024 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6570ab34f3f0718869d2e501"
+  },
+  "postId": "7694970014",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7694970014.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 6, 2023 @11:27",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6573411e42ad74a90ff6aa29"
+  },
+  "postId": "7695572210",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-basement/7695572210.html",
+  "description": "Two bedroom basement",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "49th And Main st",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 9, 2023 @10:49",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "657e2e8ddd0c85349c321823"
+  },
+  "postId": "7698541889",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-br-bedroom-suite-on-main-floor/7698541889.html",
+  "description": "$1550/1br - 1 Bedroom suite on main floor",
+  "price": "$1,550",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 22, 2023 @21:54",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "657369f281931ccce86db095"
+  },
+  "postId": "7695742364",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-basement-suite-all/7695742364.html",
+  "description": "1Bedroom Basement Suite All inclusive, No furniture in Great Location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Langara College, Fraser & 55th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 9, 2023 @10:48",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6573b5a30544c0800d3448c5"
+  },
+  "postId": "7695862112",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-basement-suite/7695862112.html",
+  "description": "One bedroom basement suite.",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 8, 2023 @18:02",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "< 500ft2"
+},
+{
+  "_id": {
+    "$oid": "657bd1450737b431eba94604"
+  },
+  "postId": "7697944107",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-suite-furnished/7697944107.html",
+  "description": "1 Bedroom Suite - Furnished",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 14, 2023 @20:11",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "furnished"
+},
+{
+  "_id": {
+    "$oid": "655eadada540085570e5c2db"
+  },
+  "postId": "7690473870",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bright-and-clean-bedroom/7690473870.html",
+  "description": "Bright and clean 1 bedroom suite in central location",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 25, 2023 @16:35",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656f8458feac3fc11b999b18"
+  },
+  "postId": "7694702815",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-cozy-studio/7694702815.html",
+  "description": "Cozy Studio",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Fraser St.",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 5, 2023 @12:32",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "small + furnished"
+},
+{
+  "_id": {
+    "$oid": "65727d02bfe208d5ae957907"
+  },
+  "postId": "7695530372",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-basement-suite-all/7695530372.html",
+  "description": "1Bedroom Basement Suite All inclusive, No furniture in Great Location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Langara College, Fraser & 55th Avenue, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 7, 2023 @18:32",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "655e363dd40b995fbc949503"
+  },
+  "postId": "7690300207",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7690300207.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 23, 2023 @09:35",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655f8d55fbd5cd2c8ec531fb"
+  },
+  "postId": "7690603819",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7690603819.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Nov 25, 2023 @08:13",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65666950fcd9744ce7626915"
+  },
+  "postId": "7692314781",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-main-st-ground-level-bed-bath/7692314781.html",
+  "description": "Main st ground level 1 bed/1 bath plus workspace studio.",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 29, 2023 @21:50",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "65693b5120f92e85cad8c73e"
+  },
+  "postId": "7692278261",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-suite-wifi/7692278261.html",
+  "description": "Two bedroom suite, wifi internet, utilities included",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Fraser & E41st area",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 22, 2023 @19:07",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656e623869f8bdf903682773"
+  },
+  "postId": "7688695534",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-bath/7688695534.html",
+  "description": "$2000 - 1 Bedroom, 1 Bath",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 23, 2023 @14:10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6575080272bf7808de46739a"
+  },
+  "postId": "7696207025",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-new-basement-unit-for-rent/7696207025.html",
+  "description": "New Basement unit for rent",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 19, 2023 @16:27",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657f3a5940c84f26eeaffe1a"
+  },
+  "postId": "7698712792",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7698712792.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 17, 2023 @10:50",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "656a5db8630436f9520c4bd3"
+  },
+  "postId": "7693392910",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-laneway-house/7693392910.html",
+  "description": "Two bedroom Laneway house",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 13, 2023 @16:33",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65681cbb90346e4df44ecae5"
+  },
+  "postId": "7692774089",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bdr-suit-just-for-one-person/7692774089.html",
+  "description": "1 BDR Suit - Just for one person",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "East Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Nov 29, 2023 @21:46",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "only one person allowed"
+},
+{
+  "_id": {
+    "$oid": "6574960994c62e7bb1c4503e"
+  },
+  "postId": "7696027556",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-furn/7696027556.html",
+  "description": "Avail. Jan.1st Beautiful 1 furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 9, 2023 @10:48",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "657735e3615b84ff55d24a82"
+  },
+  "postId": "7696643561",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7696643561.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,750",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 11, 2023 @09:06",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6579d87a50bcaafb9c11e057"
+  },
+  "postId": "7697307513",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-pet-friendly-beds-bath-street/7697307513.html",
+  "description": "PET FRIENDLY 2 BEDS + 1 BATH + STREET PARKING IN VANCOUVER",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver, BC",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 13, 2023 @13:10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6579452f2b08cf82e61fdd9c"
+  },
+  "postId": "7697266603",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-furnished-basement/7697266603.html",
+  "description": "1 bedroom furnished basement suite",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 14, 2023 @20:12",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "furnished"
+},
+{
+  "_id": {
+    "$oid": "6579d87b50bcaafb9c11e059"
+  },
+  "postId": "7697275041",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-for-rent/7697275041.html",
+  "description": "Basement for rent",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "city of vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 22, 2023 @21:53",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "no laundry"
+},
+{
+  "_id": {
+    "$oid": "657f85ba4a6514bade918896"
+  },
+  "postId": "7698823816",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-vancouver-fraser-st-1bed-1bath/7698823816.html",
+  "description": "Vancouver Fraser St 1Bed 1Bath",
+  "price": "$1,700",
+  "oldPrice": "$1,800",
+  "location": "Vancouver Fraser Street Mount Pleasant",
+  "active": true,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 30, 2023 @13:34",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658d9ee5e5af9159e42636db"
+  },
+  "postId": "7701922933",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7701922933.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 29, 2023 @09:38",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplucated"
+},
+{
+  "_id": {
+    "$oid": "65aaceea74fa190940cfdf65"
+  },
+  "postId": "7709156673",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-bsmt-suite/7709156673.html",
+  "description": "**One Bedroom Bsmt Suite**",
+  "price": "$1,875",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 19, 2024 @11:35",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658e4635b370affb90ecafe9"
+  },
+  "postId": "7702163714",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-bathroom-laneway/7702163714.html",
+  "description": "1 Bedroom + 1 bathroom Laneway",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Langara",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 1, 2024 @16:32",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6587073167784f6397088ae5"
+  },
+  "postId": "7700625625",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7700625625.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 23, 2023 @09:46",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "658dcddb4202e244b7b00e04"
+  },
+  "postId": "7702018040",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-suite-unfurnished/7702018040.html",
+  "description": "Basement Suite - Unfurnished, 1 Bedroom",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 31, 2023 @13:09",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a33d22c1b2709ba499b3d2"
+  },
+  "postId": "7707318250",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-bright-garden-level/7707318250.html",
+  "description": "$1800 – furnished, bright, garden-level apt",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 15, 2024 @10:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a5c13c7dfc599b4367b2a8"
+  },
+  "postId": "7707902275",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-for-rent/7707902275.html",
+  "description": "Basement for rent",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Mar 23, 2024 @17:44",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "removed by owner"
+},
+{
+  "_id": {
+    "$oid": "65a9b075dab57c5b0bf18421"
+  },
+  "postId": "7708898077",
+  "url": "https://vancouver.craigslist.org/van/apa/d/all-utilities-wifi-included-basement/7708898077.html",
+  "description": "*All Utilities & Wifi Included-Basement Unit Available Immediately",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Closer to Quebec Street & 46th Avenue, Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 18, 2024 @15:12",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658312c3f06e14fe0a9ed562"
+  },
+  "postId": "7699586998",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-suite-unfurnished/7699586998.html",
+  "description": "Basement Suite - Unfurnished, 1 Bedroom",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Main St & King Ed",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 31, 2023 @13:09",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658471b6a67e13b8854655ee"
+  },
+  "postId": "7700026486",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7700026486.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 21, 2023 @10:48",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "658c51b4ff2a78036bccd9a8"
+  },
+  "postId": "7701593569",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7701593569.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 30, 2023 @17:07",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "658caa003d246a1e57dde941"
+  },
+  "postId": "7701729844",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-rental-suite/7701729844.html",
+  "description": "2 Bedroom Rental Suite",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 28, 2023 @11:09",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659d71276d951d722c531958"
+  },
+  "postId": "7705734865",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-main-and-28th-ave-one-bedroom/7705734865.html",
+  "description": "Main and 28th Ave one bedroom self contained",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 9, 2024 @08:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a6c7b307c1f03463621226"
+  },
+  "postId": "7703500999",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-two-bedroom-person-suite/7703500999.html",
+  "description": "Two bedroom / 2 person suite, utilities and wifi included with rent",
+  "price": "$2,100",
+  "oldPrice": "$2,000",
+  "location": "Fraser & E41st area",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 20, 2024 @21:25",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6596d98fe7c3c886b2bc8200"
+  },
+  "postId": "7704000763",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-laneway-house/7704000763.html",
+  "description": "1 Bedroom Laneway House",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 4, 2024 @17:41",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a4bd9957d9f7e7a4259087"
+  },
+  "postId": "7707617657",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-newly-renovated-basement-suite/7707617657.html",
+  "description": "Newly Renovated Basement Suite",
+  "price": "$2,050",
+  "oldPrice": "0",
+  "location": "Oakridge Area",
+  "active": true,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 23, 2024 @15:12",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65886128eafcb9d673a119a5"
+  },
+  "postId": "7700884135",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7700884135.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 24, 2023 @09:35",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "658b9009ed7e2961c154c8c0"
+  },
+  "postId": "7701474311",
+  "url": "https://vancouver.craigslist.org/rch/apa/d/vancouver-br-vancouver/7701474311.html",
+  "description": "$1,500 / 1Br - Vancouver",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 26, 2023 @21:43",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "bedroom"
+},
+{
+  "_id": {
+    "$oid": "65a36bd8ac34145537d1600d"
+  },
+  "postId": "7707046094",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-bedroom-suite/7707046094.html",
+  "description": "Furnished 1 bedroom suite (ground level) close to Langara",
+  "price": "$1,880",
+  "oldPrice": "0",
+  "location": "VANCOUVER",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 24, 2024 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65873eea2a3f9f6b2b3a48f0"
+  },
+  "postId": "7700703641",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-brand-new-one-bedroom/7700703641.html",
+  "description": "Brand new one bedroom basement suite near major transit lines in South Vancouver",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 28, 2023 @08:14",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659369bcbe38e90ecfbf12fc"
+  },
+  "postId": "7703243672",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-separate-suite-with-own/7703243672.html",
+  "description": "Separate suite with own entrance - April 13 or April 20 available",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 19, 2024 @08:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659f10f4a4543a6469ca7be2"
+  },
+  "postId": "7706245238",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-0ne-bedroom-basement/7706245238.html",
+  "description": "0ne bedroom basement, available Feb01, or Feb 15/2024",
+  "price": "$1,650",
+  "oldPrice": "$1,500",
+  "location": "49 th ave",
+  "active": false,
+  "changed": true,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 17, 2024 @20:26",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b18b0be1d56714d0950caf"
+  },
+  "postId": "7710877388",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-top-floor-bedroom/7710877388.html",
+  "description": "Top Floor 1 Bedroom",
+  "price": "$2,095",
+  "oldPrice": "0",
+  "location": "Main and King Edward",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 24, 2024 @14:11",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658b470544bbcaaae35224b3"
+  },
+  "postId": "7701392425",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-private-bedroom-for/7701392425.html",
+  "description": "Furnished Private Bedroom for Rent - Main & King Edward, Vancouver",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 26, 2023 @15:57",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "shared place"
+},
+{
+  "_id": {
+    "$oid": "65a1aabf7a028f42471f0710"
+  },
+  "postId": "7706917843",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-furnished/7706917843.html",
+  "description": "1 bedroom furnished",
+  "price": "$1,850",
+  "oldPrice": "0",
+  "location": "East vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 17, 2024 @15:12",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6581d431360ee98947e5cf33"
+  },
+  "postId": "7699359333",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7699359333.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 19, 2023 @12:36",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "6583236843f14bd0666c10e1"
+  },
+  "postId": "7699697081",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7699697081.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 20, 2023 @13:05",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "65938c406a289c27bb4d8e9d"
+  },
+  "postId": "7703269340",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-south-vancouver-bedroom/7703269340.html",
+  "description": "South Vancouver 1-bedroom basement suite for rent near Langara College",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "South Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 1, 2024 @20:08",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659780c9e3b8d958649b1593"
+  },
+  "postId": "7704338285",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-luxurious-brand-new-bachelor/7704338285.html",
+  "description": "Luxurious BRAND NEW Bachelor Suite in heart of Riley QE Park/Main St N",
+  "price": "$1,980",
+  "oldPrice": "$2,100",
+  "location": "Riley QE Park/ Main Street Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 18, 2024 @14:49",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658e00cf1e2dcb2602399db6"
+  },
+  "postId": "7702098191",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-basement-for-rent/7702098191.html",
+  "description": "1 BEDROOM BASEMENT FOR RENT",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 1, 2024 @10:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6597782a9176d80fe985c593"
+  },
+  "postId": "7704327720",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-1bedroom-1bathroom-near-41st/7704327720.html",
+  "description": "1Bedroom 1Bathroom near 41st Ave & Knight St.",
+  "price": "$1,650",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 14, 2024 @17:45",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659c1fa787e20bfc544dcc01"
+  },
+  "postId": "7705315465",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-bsmt-available/7705315465.html",
+  "description": "One bedroom bsmt available for rent /Feb1st",
+  "price": "$2,050",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 8, 2024 @08:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ad42d61f5e0c2b2083b6b2"
+  },
+  "postId": "7709706604",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-nice-bdrm-suite-with-own/7709706604.html",
+  "description": "Nice 1 bdrm suite with own entrance",
+  "price": "$1,950",
+  "oldPrice": "0",
+  "location": "Sunset",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 21, 2024 @08:14",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658080db9f152ad4e968ee3a"
+  },
+  "postId": "7698978782",
+  "url": "https://vancouver.craigslist.org/nvn/apa/d/vancouver-lovely-1bed-1bath-house-for/7698978782.html",
+  "description": "Lovely 1bed 1bath house for rent",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "6910 Ross St, Vancouver, BC V5V 4T6",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 18, 2023 @09:49",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658a68b6c0b2904687e313a9"
+  },
+  "postId": "7701178755",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-laneway/7701178755.html",
+  "description": "1 Bedroom Laneway",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 25, 2023 @21:46",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6592e4e8c16eead970cbf734"
+  },
+  "postId": "7703073861",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7703073861.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 11, 2024 @09:26",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6592e4e8c16eead970cbf736"
+  },
+  "postId": "7703019958",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-private-bedroom-guesthouse-in/7703019958.html",
+  "description": "Private 1 Bedroom Guesthouse in A+ Location",
+  "price": "$1,750",
+  "oldPrice": "$1,950",
+  "location": "Oakridge Mall, Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 6, 2024 @19:31",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659984a89a9fee1c1609b3ef"
+  },
+  "postId": "7704805083",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-now-beautiful-fully/7704805083.html",
+  "description": "Avail. Now Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 11, 2024 @09:26",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a362676607178c64def57f"
+  },
+  "postId": "7707343971",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-years-old-basement-suite-1bed/7707343971.html",
+  "description": "3 years old basement suite 1bed / 1bath for rent",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "fraser st / east vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 24, 2024 @11:49",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b2aa619d4919c12526423b"
+  },
+  "postId": "7710849156",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-riley-park-garden-suite/7710849156.html",
+  "description": "Riley Park garden suite",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 25, 2024 @10:37",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659193506b4b3833d6840a3f"
+  },
+  "postId": "7702797814",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-short-term-bedroom-suite/7702797814.html",
+  "description": "Short term 1 bedroom suite until June 30",
+  "price": "$1,760",
+  "oldPrice": "0",
+  "location": "East Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 31, 2023 @08:14",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659984a89a9fee1c1609b3ed"
+  },
+  "postId": "7704805452",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-now-beautiful-fully/7704805452.html",
+  "description": "Avail. Now Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 11, 2024 @09:26",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65af4979dda02dddb65db261"
+  },
+  "postId": "7710283579",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-br-basement-suite-mount/7710283579.html",
+  "description": "$1600 / 1br basement suite, Mount Pleasant",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 22, 2024 @21:07",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657f801e5ba2c3c9988fec51"
+  },
+  "postId": "7698814057",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedroom-ground-level-suite/7698814057.html",
+  "description": "3-Bedroom Ground Level Suite",
+  "price": "$1,900",
+  "oldPrice": "$1,600",
+  "location": "Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 7, 2024 @20:27",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6580ad13bbfb42de55440eab"
+  },
+  "postId": "7699048718",
+  "url": "https://vancouver.craigslist.org/nvn/apa/d/vancouver-lovely-1bed-1bath-house-for/7699048718.html",
+  "description": "Lovely 1bed 1bath house for rent",
+  "price": "$1,500",
+  "oldPrice": "0",
+  "location": "6910 Ross St, Vancouver, BC V5V 4T6",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Dec 18, 2023 @20:26",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b0881d4cd57bd883e201f9"
+  },
+  "postId": "7710618562",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-basement-for-rent/7710618562.html",
+  "description": "Basement for rent",
+  "price": "$2,000",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Mar 23, 2024 @17:44",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "removed by owner"
+},
+{
+  "_id": {
+    "$oid": "65b0881d4cd57bd883e201fb"
+  },
+  "postId": "7710616996",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-new-bedroom-basement-suite/7710616996.html",
+  "description": "New 2 Bedroom Basement Suite rent Sunset Neighbourhood",
+  "price": "$1,900",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 23, 2024 @19:46",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659ae0cd11dbcaff3a31404f"
+  },
+  "postId": "7704437033",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-now-beautiful-fully/7704437033.html",
+  "description": "Avail. Now Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,600",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 11, 2024 @09:26",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a88a9144cb797c1737d243"
+  },
+  "postId": "7708607137",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-fantastic-one-bedroom-in/7708607137.html",
+  "description": "Fantastic one bedroom in Downtown",
+  "price": "$1,975",
+  "oldPrice": "0",
+  "location": "E 33rd Ave",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 18, 2024 @08:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a96fb331a1ec3993aed170"
+  },
+  "postId": "7708792143",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bedrooms-bathroom-basement/7708792143.html",
+  "description": "2 Bedrooms 1 Bathroom Basement suite",
+  "price": "$1,800",
+  "oldPrice": "0",
+  "location": "South Vancouver Vancouver East",
+  "active": true,
+  "changed": false,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 20, 2024 @13:10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6585c8c59b035742de4dae25"
+  },
+  "postId": "7700352647",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-avail-jan1st-beautiful-fully/7700352647.html",
+  "description": "Avail. Jan.1st Beautiful fully furn. 1 bdrm suite",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Fraser",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": true,
+  "lastUpdate": "Dec 22, 2023 @11:10",
+  "__v": 0,
+  "reasonRemovedFromAdmin": "duplicated"
+},
+{
+  "_id": {
+    "$oid": "65959ad0ad3c6f4ee38f6c13"
+  },
+  "postId": "7702791100",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-bed-and-bathroom-laneway-house/7702791100.html",
+  "description": "1 Bed and 1 bathroom laneway house",
+  "price": "$1,700",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 3, 2024 @13:10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659cc19d4671f292dbeac07b"
+  },
+  "postId": "7704708539",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-feb-furnished-langara/7704708539.html",
+  "description": "Feb 1: Furnished Langara Oakridge basement",
+  "price": "$1,875",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 10, 2024 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ad6bee99ffb4e406533ed7"
+  },
+  "postId": "7709780522",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-one-bedroom-one-bath-basement/7709780522.html",
+  "description": "One Bedroom one bath basement suite available to rent .",
+  "price": "$1,800",
+  "oldPrice": "$1,750",
+  "location": "Sunset community, Vancouver",
+  "active": false,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 23, 2024 @08:16",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a030399037e837afa38556"
+  },
+  "postId": "7706500788",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-fully-furnished-suite/7706500788.html",
+  "description": "Fully furnished suite - Vancouver Fraserhood",
+  "price": "$1,990",
+  "oldPrice": "0",
+  "location": "city of vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 11, 2024 @10:15",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a19d3a3cd48bc33a647a69"
+  },
+  "postId": "7706875965",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-furnished-suite-in-convenient/7706875965.html",
+  "description": "Furnished suite in convenient location",
+  "price": "$2,100",
+  "oldPrice": "0",
+  "location": "Vancouver",
+  "active": true,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 12, 2024 @12:12",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a31e3a5a765df1287b0417"
+  },
+  "postId": "7707287505",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-all-utilities-included-great/7707287505.html",
+  "description": "ALL UTILITIES INCLUDED! GREAT LOCATION!",
+  "price": "$1,590",
+  "oldPrice": "0",
+  "location": "Mt. Pleasant, Vancouver",
+  "active": false,
+  "changed": false,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 23, 2024 @18:41",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658a019b1648c7892bb53d2f"
+  },
+  "postId": "7701124680",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-ground-level-bed-bath/7701124680.html",
+  "description": "Ground level 2 bed 1 bath",
+  "price": "$1,850",
+  "oldPrice": "$1,895",
+  "location": "Vancouver",
+  "active": true,
+  "changed": true,
+  "reactivated": false,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 21, 2024 @14:10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6592e4e8c16eead970cbf738"
+  },
+  "postId": "7703019559",
+  "url": "https://vancouver.craigslist.org/van/apa/d/vancouver-charming-br-basement-suite/7703019559.html",
+  "description": "Charming 1-BR Basement Suite near Oakridge Centre - Prime Location!",
+  "price": "$1,850",
+  "oldPrice": "$1,900",
+  "location": "Vancouver",
+  "active": true,
+  "changed": true,
+  "reactivated": true,
+  "removedByAdmin": false,
+  "lastUpdate": "Jan 24, 2024 @11:49",
+  "__v": 0
+}]

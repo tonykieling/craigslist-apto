@@ -5,5 +5,3 @@ X- changed the url to be queried for the current need
 X- chenged the code a bit in order to handle DB empty
 X- set github actions to query automatically and handle an empty database (aptos-v1 holds data from the previous run)
   changed file name cron1.txt to cron1.yaml
-
-* to get the system running with vercel: vercel dev

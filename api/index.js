@@ -6,54 +6,105 @@ const fetch       = require("node-fetch");
 const queries = require('./queries.js');
 
 
-// Apto schema
-const Apto = mongoose.model("Apto", mongoose.Schema(
-  {
-    _id: mongoose.Schema.Types.ObjectId,
+// Aptos schema
+const aptosSchema = new mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
     
-    postId: {
-      type: String
-    },
-    url: {
-      type: String
-    },
-    description: {
-      type: String
-    },
-    price: {
-      type: String
-    },
-    oldPrice: {
-      type: String,
-      default: "0"
-    },
-    location: {
-      type: String
-    },
-    active: {
-      type    : Boolean,
-      default : true
-    },
-    changed: {
-      type    : Boolean,
-      default : false
-    },
-    reactivated: {
-      type    : Boolean,
-      default : false
-    },
-    removedByAdmin: {
-      type    : Boolean,
-      default : false,
-    },
-    reasonRemovedFromAdmin: {
-      type    : String
-    },
-    lastUpdate: {
-      type  : String
-    }
-  })
-);
+  postId: {
+    type: String
+  },
+  url: {
+    type: String
+  },
+  description: {
+    type: String
+  },
+  price: {
+    type: String
+  },
+  oldPrice: {
+    type: String,
+    default: "0"
+  },
+  location: {
+    type: String
+  },
+  active: {
+    type    : Boolean,
+    default : true
+  },
+  changed: {
+    type    : Boolean,
+    default : false
+  },
+  reactivated: {
+    type    : Boolean,
+    default : false
+  },
+  removedByAdmin: {
+    type    : Boolean,
+    default : false,
+  },
+  reasonRemovedFromAdmin: {
+    type    : String
+  },
+  lastUpdate: {
+    type  : String
+  }
+}, {
+  collection: 'aptos-v3' // Specify the exact collection name
+});
+
+// Apto model
+const Apto = mongoose.model('Apto', aptosSchema);
+// const Apto = mongoose.model('Apto', mongoose.Schema(
+//   {
+//     _id: mongoose.Schema.Types.ObjectId,
+    
+//     postId: {
+//       type: String
+//     },
+//     url: {
+//       type: String
+//     },
+//     description: {
+//       type: String
+//     },
+//     price: {
+//       type: String
+//     },
+//     oldPrice: {
+//       type: String,
+//       default: "0"
+//     },
+//     location: {
+//       type: String
+//     },
+//     active: {
+//       type    : Boolean,
+//       default : true
+//     },
+//     changed: {
+//       type    : Boolean,
+//       default : false
+//     },
+//     reactivated: {
+//       type    : Boolean,
+//       default : false
+//     },
+//     removedByAdmin: {
+//       type    : Boolean,
+//       default : false,
+//     },
+//     reasonRemovedFromAdmin: {
+//       type    : String
+//     },
+//     lastUpdate: {
+//       type  : String
+//     }
+//   })
+// );
+
 
 // it removes new lines and extar spaces in the description field
 const removeXspaces = str => {
@@ -373,7 +424,7 @@ const sendEmail = async (
   // it sends an email to the user confirming the procedure
   const footer = `
     <div style="margin-top:2.5rem">
-      <p>Visit <a href="https://home-seeker.tkwebdev.ca" target="_blank">https://home-seeker.tkwebdev.ca</a> for more information.</p>
+      <p>Visit <a href="https://home-seeker-mm66goudr-tonykieling.vercel.app" target="_blank">https://home-seeker-mm66goudr-tonykieling.vercel.app</a> for more information.</p>
       <p>Craigslist is querying at ${queries[0].url} </p>
     </div>
   `;
@@ -407,9 +458,10 @@ module.exports = async(req, res) => {
 
     const { method } = req;
     let dataFromDB;
-
+    
     if (method !== "PATCH")
       dataFromDB = await Apto.find().sort({ postId: -1});
+  // console.log("here1::::: ", dataFromDB[0], dataFromDB.length);
       // sorting by lastUpdate
       // as not all register has it, it will go by _id
       // it seems to be working the sorting by lastUpdate, even though it is a string, for instance "Nov-7, 20:49"
@@ -425,7 +477,7 @@ module.exports = async(req, res) => {
         {
           if (process.env.app_password !== req.headers.authorization.split(" ")[1]) 
             break;
-
+          
           // the code below is meant to cleanup the database because the system is not querying anymore - it already has done its job
           // if the system needs to run, the lines below have to be commented
           // it takes the active records and set them as 
@@ -493,12 +545,12 @@ module.exports = async(req, res) => {
           }
           // end of cleanup code
           */
-
-          const queries = require("./queries.js");
-          
-          let dataFromWeb = [];
-
-          try {
+         
+         const queries = require("./queries.js");
+         
+         let dataFromWeb = [];
+         
+         try {
             // it gets data from craigslist and transform it into text
             const jsdom = require("jsdom");
             const { JSDOM } = jsdom;
@@ -557,19 +609,20 @@ module.exports = async(req, res) => {
 //   //   location: 'Main & 29th'
 //   // }
 // ];
+
           const newData = compareData(dataFromDB, dataFromWeb);
 // console.log("newData- ", newData)
         
-          // any changes detected
+// any changes detected
           // 1- send email to the admins
           // 2- record on DB
           if (Object.getOwnPropertyNames(newData).length) {
             // 1- email
             // 1.1 format message
-
+            
             const message = formatEmailMessage(newData);
             // 1.2 send email
-
+            
             const title = ((newData.changed || newData.deleted) ? "update" : "new");
             
             await sendEmail(title, message, true);

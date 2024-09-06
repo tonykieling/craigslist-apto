@@ -1,0 +1,16 @@
+- DB was defined to have "v" number, which especifies the version number
+- currently, v3
+- later, will compare data from diff versions to make some sense about market (how much price is higher than previous version)
+
+- check craigslist queries
+
+- will deploy using vercel naming, instead of tkwebdev
+
+* to get the system running with vercel: vercel dev
+system seems to be fine
+connection with DB is okay
+query and craigslist data structure is still compatible
+
+need to re-check places (query)
+Xand update links - no more tkwebdev but instead vercel naming space
+deploy and tests
